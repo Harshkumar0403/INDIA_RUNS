@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────────────────────────
+# Redrob Hackathon — Candidate Ranking System
+# Constraint: CPU only · no network at rank time · ≤16 GB RAM
+#
+# ONNX strategy:
+#   all-MiniLM-L6-v2  → minilm_l6.onnx      (~22 MB)  embeddings
+#   t5-small (int8)   → t5_small_int8.onnx   (~60 MB)  reasoning
+#   Both exported once offline via export_onnx.py, loaded at runtime.
+#   No transformers/torch needed at rank time → saves ~2 GB RAM.
+# ─────────────────────────────────────────────────────────────────
+
+# Core numeric / data
+numpy
+pandas
+
+# ONNX runtime (CPU, no CUDA dependency)
+onnxruntime
+
+# FAISS — CPU build only
+faiss-cpu
+
+# Tokenizer for MiniLM (lightweight, no torch required)
+tokenizers
+
+# Sentence-transformers used OFFLINE only to export ONNX
+# Comment out if ONNX models already exported
+sentence-transformers
+
+# HuggingFace hub + transformers — OFFLINE ONLY (ONNX export)
+# At rank time these are NOT imported
+transformers
+huggingface-hub
+
+# Optimum — ONNX export helper
+optimum[onnxruntime]
+
+# Graph operations (career KG)
+networkx
+
+# Serialization
+pickle5 ; python_version < "3.8"
+# pickle is stdlib for 3.8+
+
+# Progress bars
+tqdm
+
+# Utilities
+python-dateutil
+scikit-learn    # cosine_similarity, normalize
+
+# ─────────────────────────────────────────────────────────────────
+# Install:  pip install -r requirements.txt --break-system-packages
+# ONNX export (run once offline):  python export_onnx.py
+# ─────────────────────────────────────────────────────────────────
