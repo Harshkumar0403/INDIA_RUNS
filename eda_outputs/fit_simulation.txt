@@ -1,0 +1,417 @@
+====================================================================
+JD FIT SIMULATION  (v2: IDF-weighted + JD-aware)
+Dataset: 100,000  |  eligible: 3,430  |  2026-06-02
+====================================================================
+
+ Rk               ID  Title                                  YoE      Score  DaysAgo  Notice  Location
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  1     CAND_0088025  Staff Machine Learning Engineer        8.6    0.80292       19d      90d  Jaipur, Rajasthan
+     breakdown: title=0.166  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.027  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('Staff Machine Learning Engineer' rel=0.828) | +idf_skills(6, sum=23.13) | +hard_req(3: {'Elasticsearch', 'Pinecone', 'pgvector'}) | +prod_evidence(2 cues) | +ctx_verified(1 JD skills in text) | +yoe(8.6yr) | +product_co(3)
+
+  2     CAND_0072660  Machine Learning Engineer              7.1    0.79488        9d      30d  Berlin
+     breakdown: title=0.130  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Machine Learning Engineer' rel=0.649) | +idf_skills(6, sum=24.50) | +hard_req(4: {'Elasticsearch', 'FAISS', 'pgvector', 'OpenSearch'}) | +prod_evidence(5 cues) | +yoe(7.1yr) | +product_co(1)
+
+  3     CAND_0064326  Search Engineer                        7.6    0.79212       12d      45d  Gurgaon, Haryana
+     breakdown: title=0.125  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Search Engineer' rel=0.624) | +idf_skills(3, sum=12.82) | +hard_req(2: {'Weaviate', 'Milvus'}) | +prod_evidence(3 cues) | +yoe(7.6yr) | +product_co(3) | +location_metro
+
+  4     CAND_0046064  Senior NLP Engineer                    8.9    0.78629       37d      30d  Coimbatore, Tamil Nadu
+     breakdown: title=0.152  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.053  exp=0.055  avail=0.880  neg=1.000
+     signals: +title('Senior NLP Engineer' rel=0.759) | +idf_skills(5, sum=20.22) | +hard_req(3: {'Elasticsearch', 'Pinecone', 'OpenSearch'}) | +prod_evidence(7 cues) | +ctx_verified(2 JD skills in text) | +yoe(8.9yr) | +product_co(2)
+
+  5     CAND_0041669  Recommendation Systems Engineer        8.0    0.78153       57d      60d  Noida, Uttar Pradesh
+     breakdown: title=0.138  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Recommendation Systems Engineer' rel=0.690) | +idf_skills(6, sum=24.38) | +hard_req(4: {'FAISS', 'Qdrant', 'Milvus', 'Weaviate'}) | +prod_evidence(4 cues) | +yoe(8.0yr) | +product_co(2) | +location_metro
+
+  6     CAND_0014440  Recommendation Systems Engineer        6.4    0.76709       23d      60d  Chennai, Tamil Nadu
+     breakdown: title=0.138  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.950  neg=1.000
+     signals: +title('Recommendation Systems Engineer' rel=0.690) | +idf_skills(5, sum=18.90) | +hard_req(4: {'Elasticsearch', 'FAISS', 'Qdrant', 'Milvus'}) | +prod_evidence(5 cues) | +yoe(6.4yr) | +github(90) | +assessments(1, avg=58.1)
+
+  7     CAND_0068811  Applied ML Engineer                    8.0    0.76297       12d      30d  Pune, Maharashtra
+     breakdown: title=0.139  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.053  exp=0.070  avail=1.000  neg=0.850
+     signals: +title('Applied ML Engineer' rel=0.696) | +idf_skills(8, sum=30.42) | +hard_req(7: {'Qdrant', 'Pinecone', 'pgvector', 'Vector Search', 'OpenSearch', 'Weaviate', 'Embeddings'}) | +prod_evidence(8 cues) | +ctx_verified(2 JD skills in text) | +yoe(8.0yr) | +product_co(1)
+
+  8     CAND_0095528  Senior Data Scientist                  5.3    0.75863       30d      45d  Indore, Madhya Pradesh
+     breakdown: title=0.135  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('Senior Data Scientist' rel=0.675) | +idf_skills(6, sum=23.24) | +hard_req(5: {'Elasticsearch', 'Qdrant', 'pgvector', 'Vector Search', 'OpenSearch'}) | +prod_evidence(7 cues) | +yoe(5.3yr) | +product_co(1) | +assessments(3, avg=67.7)
+
+  9     CAND_0073883  AI Specialist                          5.3    0.75792        9d      90d  Chandigarh, Chandigarh
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(4, sum=14.61) | +hard_req(3: {'FAISS', 'Vector Search', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(5.3yr) | +product_co(1) | +willing_relocate
+
+ 10     CAND_0073314  Senior Software Engineer (ML)          5.2    0.75722        8d      60d  Noida, Uttar Pradesh
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(4, sum=17.18) | +hard_req(3: {'Elasticsearch', 'Weaviate', 'Milvus'}) | +prod_evidence(3 cues) | +yoe(5.2yr) | +product_co(1) | +location_metro
+
+ 11     CAND_0067866  Senior Software Engineer (ML)          6.4    0.75442       11d      45d  Noida, Uttar Pradesh
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(6, sum=24.45) | +hard_req(4: {'Elasticsearch', 'Qdrant', 'pgvector', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(6.4yr) | +location_metro | +github(28)
+
+ 12     CAND_0098454  AI Specialist                          6.6    0.74038        6d      60d  Indore, Madhya Pradesh
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(5, sum=17.58) | +hard_req(5: {'Pinecone', 'Vector Search', 'OpenSearch', 'Weaviate', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(6.6yr) | +willing_relocate | +github(29)
+
+ 13     CAND_0043860  Junior ML Engineer                     6.1    0.73779        7d      30d  Bhubaneswar, Odisha
+     breakdown: title=0.072  idf=0.290  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(3, sum=11.54) | +hard_req(3: {'Qdrant', 'pgvector', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(6.1yr) | +product_co(1) | +willing_relocate
+
+ 14     CAND_0061257  Staff Machine Learning Engineer        8.0    0.73346       47d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.166  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Staff Machine Learning Engineer' rel=0.828) | +idf_skills(4, sum=34.39) | +hard_req(2: {'Indexing Algorithms', 'Vector Representations'}) | +prod_evidence(3 cues) | +yoe(8.0yr) | +product_co(2) | +location_metro
+
+ 15     CAND_0092255  ML Engineer                            5.2    0.73013       26d      60d  Noida, Uttar Pradesh
+     breakdown: title=0.081  idf=0.292  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=11.61) | +hard_req(3: {'Weaviate', 'Vector Search', 'OpenSearch'}) | +prod_evidence(5 cues) | +yoe(5.2yr) | +product_co(1) | +location_metro
+
+ 16     CAND_0037980  Senior Applied Scientist               9.0    0.72862       66d       0d  Kolkata, West Bengal
+     breakdown: title=0.200  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.800  neg=1.000
+     signals: +title('Senior Applied Scientist' rel=1.000) | +idf_skills(7, sum=45.69) | +hard_req(3: {'Indexing Algorithms', 'Text Encoders', 'pgvector'}) | +prod_evidence(7 cues) | +yoe(9.0yr) | +product_co(2) | +willing_relocate
+
+ 17     CAND_0006567  Senior AI Engineer                     7.9    0.72680       30d      60d  Noida, Uttar Pradesh
+     breakdown: title=0.159  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.950  neg=0.850
+     signals: +title('Senior AI Engineer' rel=0.793) | +idf_skills(4, sum=33.13) | +hard_req(3: {'Text Encoders', 'Vector Representations', 'Ranking Systems'}) | +prod_evidence(5 cues) | +yoe(7.9yr) | +product_co(2) | +location_metro
+
+ 18     CAND_0071974  Senior AI Engineer                     7.8    0.71904       47d      45d  Vizag, Andhra Pradesh
+     breakdown: title=0.159  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.080  exp=0.070  avail=0.880  neg=0.850
+     signals: +title('Senior AI Engineer' rel=0.793) | +idf_skills(7, sum=27.43) | +hard_req(5: {'Elasticsearch', 'Qdrant', 'Pinecone', 'Weaviate', 'Embeddings'}) | +prod_evidence(7 cues) | +ctx_verified(3 JD skills in text) | +yoe(7.8yr) | +product_co(3)
+
+ 19     CAND_0043228  Applied ML Engineer                    6.8    0.71602       11d      30d  Chennai, Tamil Nadu
+     breakdown: title=0.139  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Applied ML Engineer' rel=0.696) | +idf_skills(4, sum=15.89) | +hard_req(4: {'Weaviate', 'pgvector', 'Vector Search', 'OpenSearch'}) | +prod_evidence(6 cues) | +yoe(6.8yr) | +product_co(1) | +github(48)
+
+ 20     CAND_0043637  Junior ML Engineer                     5.5    0.71042        9d      45d  Delhi, Delhi
+     breakdown: title=0.072  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(3, sum=12.82) | +hard_req(2: {'Milvus', 'pgvector'}) | +prod_evidence(3 cues) | +yoe(5.5yr) | +product_co(3) | +location_metro
+
+ 21     CAND_0053527  Junior ML Engineer                     7.0    0.70920        6d      90d  Bangalore, Karnataka
+     breakdown: title=0.072  idf=0.290  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(3, sum=11.54) | +hard_req(2: {'Qdrant', 'Pinecone'}) | +prod_evidence(4 cues) | +yoe(7.0yr) | +product_co(1) | +location_metro
+
+ 22     CAND_0008425  Senior NLP Engineer                    7.8    0.70756       38d      90d  Kolkata, West Bengal
+     breakdown: title=0.152  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.027  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Senior NLP Engineer' rel=0.759) | +idf_skills(4, sum=15.82) | +hard_req(2: {'Qdrant', 'pgvector'}) | +prod_evidence(9 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.8yr) | +product_co(1)
+
+ 23     CAND_0096823  Data Scientist                         4.4    0.70448       29d      60d  Jaipur, Rajasthan
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.035  avail=0.950  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(6, sum=23.13) | +hard_req(5: {'Elasticsearch', 'Pinecone', 'pgvector', 'Milvus', 'Weaviate'}) | +prod_evidence(5 cues) | +yoe(4.4yr) | +product_co(3)
+
+ 24     CAND_0016659  ML Engineer                            4.4    0.70226       11d      45d  Coimbatore, Tamil Nadu
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.035  avail=1.000  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=14.53) | +hard_req(3: {'FAISS', 'Pinecone', 'Weaviate'}) | +prod_evidence(3 cues) | +yoe(4.4yr) | +product_co(1) | +github(13)
+
+ 25     CAND_0057736  Computer Vision Engineer               6.2    0.69690       10d      90d  Coimbatore, Tamil Nadu
+     breakdown: title=0.072  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Computer Vision Engineer' rel=0.359) | +idf_skills(4, sum=15.83) | +hard_req(3: {'Weaviate', 'Qdrant', 'Embeddings'}) | +prod_evidence(2 cues) | +yoe(6.2yr) | +product_co(1) | +willing_relocate
+
+ 26     CAND_0093193  Senior Machine Learning Engineer       7.9    0.69605       45d      45d  Bangalore, Karnataka
+     breakdown: title=0.156  idf=0.300  hard_req=0.150  prod=0.000  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Senior Machine Learning Engineer' rel=0.782) | +idf_skills(8, sum=69.19) | +hard_req(6: {'Qdrant', 'Ranking Systems', 'OpenSearch', 'Indexing Algorithms', 'Text Encoders', 'Vector Representations'}) | +yoe(7.9yr) | +product_co(2) | +location_metro | +github(34)
+
+ 27     CAND_0007009  Recommendation Systems Engineer        7.9    0.69476       75d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.138  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.027  exp=0.070  avail=0.800  neg=1.000
+     signals: +title('Recommendation Systems Engineer' rel=0.690) | +idf_skills(7, sum=27.43) | +hard_req(3: {'Weaviate', 'Embeddings', 'OpenSearch'}) | +prod_evidence(3 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.9yr) | +product_co(2)
+
+ 28     CAND_0019288  AI Research Engineer                   5.7    0.69329       30d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.074  idf=0.292  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(3, sum=11.61) | +hard_req(3: {'FAISS', 'pgvector', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(5.7yr) | +location_metro | +assessments(2, avg=68.4)
+
+ 29     CAND_0095457  Data Scientist                         4.1    0.68656       13d      60d  Gurgaon, Haryana
+     breakdown: title=0.087  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.035  avail=1.000  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(3, sum=12.84) | +hard_req(2: {'Weaviate', 'Milvus'}) | +prod_evidence(5 cues) | +yoe(4.1yr) | +product_co(1) | +location_metro
+
+ 30     CAND_0017093  ML Engineer                            5.9    0.68002       13d      30d  Hyderabad, Telangana
+     breakdown: title=0.081  idf=0.257  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=10.23) | +hard_req(2: {'pgvector', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(5.9yr) | +product_co(1) | +location_metro
+
+ 31     CAND_0025640  AI Research Engineer                   5.6    0.67820       30d      30d  Jaipur, Rajasthan
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(5, sum=18.94) | +hard_req(3: {'Elasticsearch', 'FAISS', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.6yr) | +product_co(1) | +assessments(1, avg=74.9)
+
+ 32     CAND_0095031  Computer Vision Engineer               5.7    0.67779        7d      90d  Chandigarh, Chandigarh
+     breakdown: title=0.072  idf=0.290  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('Computer Vision Engineer' rel=0.359) | +idf_skills(3, sum=11.53) | +hard_req(2: {'Weaviate', 'pgvector'}) | +prod_evidence(3 cues) | +yoe(5.7yr) | +product_co(2) | +willing_relocate
+
+ 33     CAND_0090155  ML Engineer                            5.8    0.67632       20d      90d  Pune, Maharashtra
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(5, sum=20.10) | +hard_req(3: {'Qdrant', 'Pinecone', 'Milvus'}) | +prod_evidence(2 cues) | +yoe(5.8yr) | +location_metro | +github(76)
+
+ 34     CAND_0002120  ML Engineer                            6.5    0.67509       13d      45d  Berlin
+     breakdown: title=0.081  idf=0.258  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=10.25) | +hard_req(3: {'Qdrant', 'Pinecone', 'Embeddings'}) | +prod_evidence(3 cues) | +yoe(6.5yr) | +github(50) | +assessments(1, avg=57.0)
+
+ 35     CAND_0028287  Data Scientist                         5.7    0.66665       29d      90d  Vizag, Andhra Pradesh
+     breakdown: title=0.087  idf=0.260  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(3, sum=10.32) | +hard_req(3: {'Pinecone', 'Vector Search', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(5.7yr) | +willing_relocate | +github(42)
+
+ 36     CAND_0024878  AI Specialist                          5.7    0.66382        7d      60d  Vizag, Andhra Pradesh
+     breakdown: title=0.074  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(4, sum=17.18) | +hard_req(2: {'Elasticsearch', 'pgvector'}) | +prod_evidence(3 cues) | +yoe(5.7yr) | +product_co(1) | +github(25)
+
+ 37     CAND_0015967  Senior Software Engineer (ML)          5.4    0.66154       20d      30d  Hyderabad, Telangana
+     breakdown: title=0.079  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(4, sum=13.21) | +hard_req(2: {'Pinecone', 'Embeddings'}) | +prod_evidence(3 cues) | +yoe(5.4yr) | +product_co(1) | +location_metro
+
+ 38     CAND_0091890  AI Research Engineer                   4.7    0.66073       19d      60d  Hyderabad, Telangana
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.035  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(5, sum=20.23) | +hard_req(5: {'Elasticsearch', 'Pinecone', 'OpenSearch', 'Milvus', 'Weaviate'}) | +prod_evidence(2 cues) | +yoe(4.7yr) | +product_co(1) | +location_metro
+
+ 39     CAND_0048558  Data Scientist                         6.7    0.66008        6d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.070  avail=1.000  neg=0.850
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(3, sum=12.97) | +hard_req(3: {'Elasticsearch', 'Qdrant', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(6.7yr) | +product_co(2) | +location_metro
+
+ 40     CAND_0093883  AI Research Engineer                   5.0    0.65922       21d      60d  Bhubaneswar, Odisha
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(5, sum=20.19) | +hard_req(4: {'Qdrant', 'Milvus', 'Embeddings', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.0yr) | +product_co(1)
+
+ 41     CAND_0065786  AI Specialist                          4.9    0.65857       10d      45d  Indore, Madhya Pradesh
+     breakdown: title=0.074  idf=0.291  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.035  avail=1.000  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(3, sum=11.56) | +hard_req(2: {'Qdrant', 'Pinecone'}) | +prod_evidence(4 cues) | +yoe(4.9yr) | +product_co(1) | +github(71)
+
+ 42     CAND_0077067  AI Specialist                          5.4    0.65339       25d      90d  Kochi, Kerala
+     breakdown: title=0.074  idf=0.259  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(3, sum=10.30) | +hard_req(3: {'Elasticsearch', 'Pinecone', 'Vector Search'}) | +prod_evidence(5 cues) | +yoe(5.4yr) | +product_co(1) | +github(25)
+
+ 43     CAND_0019159  ML Engineer                            6.1    0.65273       21d      45d  Seattle
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.836  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(5, sum=18.81) | +hard_req(3: {'Qdrant', 'Milvus', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(6.1yr) | +product_co(3) | +willing_relocate
+
+ 44     CAND_0028793  Search Engineer                        7.2    0.65109       50d     120d  Trivandrum, Kerala
+     breakdown: title=0.125  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.027  exp=0.070  avail=0.774  neg=1.000
+     signals: +title('Search Engineer' rel=0.624) | +idf_skills(5, sum=20.10) | +hard_req(2: {'pgvector', 'Embeddings'}) | +prod_evidence(4 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.2yr) | +product_co(2)
+
+ 45     CAND_0029671  Data Scientist                         5.7    0.64699        6d      90d  Toronto
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(4, sum=14.53) | +hard_req(3: {'Qdrant', 'Pinecone', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(5.7yr) | +product_co(1) | +willing_relocate
+
+ 46     CAND_0005311  AI Research Engineer                   5.7    0.64558       27d      30d  Mumbai, Maharashtra
+     breakdown: title=0.074  idf=0.300  hard_req=0.050  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(4, sum=15.85) | +hard_req(1: {'Qdrant'}) | +prod_evidence(4 cues) | +yoe(5.7yr) | +product_co(1) | +location_metro
+
+ 47     CAND_0005632  Backend Engineer                       5.6    0.64555        8d      60d  Chandigarh, Chandigarh
+     breakdown: title=0.033  idf=0.294  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('Backend Engineer' rel=0.163) | +idf_skills(3, sum=11.67) | +hard_req(3: {'Elasticsearch', 'Pinecone', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.6yr) | +github(50) | +assessments(1, avg=71.5)
+
+ 48     CAND_0052706  AI Research Engineer                   5.1    0.63865       28d      60d  Coimbatore, Tamil Nadu
+     breakdown: title=0.074  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(4, sum=15.83) | +hard_req(2: {'Weaviate', 'Pinecone'}) | +prod_evidence(5 cues) | +yoe(5.1yr) | +product_co(1) | +assessments(1, avg=41.7)
+
+ 49     CAND_0070398  Machine Learning Engineer              7.2    0.63823       49d     120d  Kochi, Kerala
+     breakdown: title=0.130  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.027  exp=0.070  avail=0.774  neg=1.000
+     signals: +title('Machine Learning Engineer' rel=0.649) | +idf_skills(6, sum=20.52) | +hard_req(3: {'FAISS', 'pgvector', 'Embeddings'}) | +prod_evidence(2 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.2yr) | +product_co(2)
+
+ 50     CAND_0064888  ML Engineer                            5.8    0.63687        8d      30d  Vizag, Andhra Pradesh
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=14.60) | +hard_req(3: {'Elasticsearch', 'pgvector', 'Embeddings'}) | +prod_evidence(5 cues) | +yoe(5.8yr) | +product_co(1) | +willing_relocate
+
+ 51     CAND_0070202  Machine Learning Engineer              5.1    0.63275       13d      90d  Jaipur, Rajasthan
+     breakdown: title=0.130  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.027  exp=0.055  avail=0.880  neg=1.000
+     signals: +title('Machine Learning Engineer' rel=0.649) | +idf_skills(4, sum=14.57) | +hard_req(2: {'Qdrant', 'Embeddings'}) | +prod_evidence(3 cues) | +ctx_verified(1 JD skills in text) | +yoe(5.1yr) | +assessments(3, avg=62.4)
+
+ 52     CAND_0076381  Backend Engineer                       7.6    0.63259       11d      90d  Seattle
+     breakdown: title=0.033  idf=0.290  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Backend Engineer' rel=0.163) | +idf_skills(3, sum=11.54) | +hard_req(2: {'Qdrant', 'Milvus'}) | +prod_evidence(5 cues) | +yoe(7.6yr) | +willing_relocate | +assessments(1, avg=47.7)
+
+ 53     CAND_0047542  Senior Software Engineer (ML)          5.0    0.63092       50d      45d  Chennai, Tamil Nadu
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.880  neg=1.000
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(6, sum=24.37) | +hard_req(3: {'Weaviate', 'pgvector', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(5.0yr) | +willing_relocate | +github(15)
+
+ 54     CAND_0046525  Senior Machine Learning Engineer       6.1    0.62936       10d      60d  Pune, Maharashtra
+     breakdown: title=0.156  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=1.000  neg=0.700
+     signals: +title('Senior Machine Learning Engineer' rel=0.782) | +idf_skills(4, sum=15.87) | +hard_req(3: {'Elasticsearch', 'Qdrant', 'pgvector'}) | +prod_evidence(5 cues) | +yoe(6.1yr) | +product_co(2) | +location_metro
+
+ 55     CAND_0007596  Junior ML Engineer                     4.4    0.62721       11d      45d  Delhi, Delhi
+     breakdown: title=0.072  idf=0.291  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.035  avail=1.000  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(3, sum=11.55) | +hard_req(2: {'Weaviate', 'Vector Search'}) | +prod_evidence(3 cues) | +yoe(4.4yr) | +location_metro | +assessments(1, avg=45.9)
+
+ 56     CAND_0021100  Data Engineer                          7.0    0.62647       20d      90d  London
+     breakdown: title=0.035  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.070  avail=0.950  neg=1.000
+     signals: +title('Data Engineer' rel=0.174) | +idf_skills(3, sum=12.97) | +hard_req(3: {'Elasticsearch', 'Milvus', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(7.0yr) | +github(17) | +assessments(2, avg=55.9)
+
+ 57     CAND_0070514  AI Specialist                          5.5    0.62625       13d      60d  Bangalore, Karnataka
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(5, sum=18.90) | +hard_req(3: {'FAISS', 'Pinecone', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.5yr) | +product_co(1) | +location_metro
+
+ 58     CAND_0068456  Data Scientist                         4.8    0.61926        8d     120d  Chennai, Tamil Nadu
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.035  avail=0.880  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(4, sum=15.95) | +hard_req(3: {'Elasticsearch', 'Milvus', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(4.8yr) | +github(61)
+
+ 59     CAND_0094023  Data Scientist                         3.5    0.61681       36d      45d  Vizag, Andhra Pradesh
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.000  avail=0.880  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(4, sum=15.82) | +hard_req(3: {'Weaviate', 'pgvector', 'Vector Search'}) | +prod_evidence(3 cues) | +product_co(2) | +github(76) | +assessments(1, avg=46.3)
+
+ 60     CAND_0053591  AI Engineer                            5.3    0.61606       16d      60d  Toronto
+     breakdown: title=0.126  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.027  exp=0.055  avail=0.950  neg=0.850
+     signals: +title('AI Engineer' rel=0.630) | +idf_skills(4, sum=15.90) | +hard_req(4: {'Qdrant', 'Milvus', 'Embeddings', 'OpenSearch'}) | +prod_evidence(3 cues) | +ctx_verified(1 JD skills in text) | +yoe(5.3yr) | +github(76)
+
+ 61     CAND_0036121  ML Engineer                            5.2    0.61504       87d      60d  Chennai, Tamil Nadu
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.800  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=14.50) | +hard_req(3: {'pgvector', 'Vector Search', 'Embeddings'}) | +prod_evidence(4 cues) | +yoe(5.2yr) | +product_co(1) | +willing_relocate
+
+ 62     CAND_0053300  Data Analyst                           7.4    0.61083       14d      30d  Kochi, Kerala
+     breakdown: title=0.032  idf=0.292  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.070  avail=1.000  neg=1.000
+     signals: +title('Data Analyst' rel=0.162) | +idf_skills(3, sum=11.62) | +hard_req(2: {'Embeddings', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(7.4yr) | +willing_relocate | +github(29)
+
+ 63     CAND_0088441  AI Specialist                          6.5    0.61006       19d      90d  Coimbatore, Tamil Nadu
+     breakdown: title=0.074  idf=0.215  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=0.950  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(2, sum=8.56) | +hard_req(2: {'Qdrant', 'Milvus'}) | +prod_evidence(6 cues) | +yoe(6.5yr) | +product_co(1) | +willing_relocate
+
+ 64     CAND_0022614  Data Scientist                         6.0    0.60843       60d      90d  Gurgaon, Haryana
+     breakdown: title=0.087  idf=0.300  hard_req=0.100  prod=0.050  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(3, sum=12.84) | +hard_req(2: {'Milvus', 'pgvector'}) | +prod_evidence(2 cues) | +yoe(6.0yr) | +product_co(1) | +location_metro
+
+ 65     CAND_0088388  Senior Data Engineer                   6.1    0.60826       22d      90d  Gurgaon, Haryana
+     breakdown: title=0.033  idf=0.292  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=0.950  neg=1.000
+     signals: +title('Senior Data Engineer' rel=0.164) | +idf_skills(3, sum=11.62) | +hard_req(2: {'Pinecone', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(6.1yr) | +location_metro
+
+ 66     CAND_0040178  ML Engineer                            5.0    0.60778       84d      60d  Pune, Maharashtra
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.800  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=14.62) | +hard_req(3: {'Weaviate', 'Vector Search', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(5.0yr) | +product_co(1) | +location_metro
+
+ 67     CAND_0068932  ML Engineer                            5.2    0.60712        7d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.081  idf=0.217  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(2, sum=8.63) | +hard_req(2: {'Milvus', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.2yr) | +product_co(1) | +location_metro
+
+ 68     CAND_0087630  AI Engineer                            7.2    0.60671       78d      30d  Gurgaon, Haryana
+     breakdown: title=0.126  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.027  exp=0.070  avail=0.704  neg=1.000
+     signals: +title('AI Engineer' rel=0.630) | +idf_skills(5, sum=20.21) | +hard_req(4: {'Elasticsearch', 'pgvector', 'Embeddings', 'OpenSearch'}) | +prod_evidence(3 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.2yr) | +product_co(2)
+
+ 69     CAND_0066690  ML Engineer                            4.8    0.60641        6d      30d  Gurgaon, Haryana
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.035  avail=1.000  neg=0.850
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=15.88) | +hard_req(3: {'Elasticsearch', 'Pinecone', 'pgvector'}) | +prod_evidence(3 cues) | +yoe(4.8yr) | +product_co(1) | +location_metro
+
+ 70     CAND_0047327  Junior ML Engineer                     5.0    0.60396       30d      60d  Gurgaon, Haryana
+     breakdown: title=0.072  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.836  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(5, sum=20.23) | +hard_req(4: {'Elasticsearch', 'FAISS', 'Qdrant', 'OpenSearch'}) | +prod_evidence(5 cues) | +yoe(5.0yr) | +location_metro
+
+ 71     CAND_0066179  Senior Software Engineer               4.2    0.60110       24d      90d  Pune, Maharashtra
+     breakdown: title=0.032  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.035  avail=0.950  neg=1.000
+     signals: +title('Senior Software Engineer' rel=0.160) | +idf_skills(4, sum=15.88) | +hard_req(3: {'Milvus', 'Embeddings', 'OpenSearch'}) | +prod_evidence(2 cues) | +yoe(4.2yr) | +location_metro | +github(38)
+
+ 72     CAND_0098780  AI Research Engineer                   5.9    0.59745       45d      60d  Bangalore, Karnataka
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.055  avail=0.880  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(4, sum=15.83) | +hard_req(3: {'Weaviate', 'Pinecone', 'Milvus'}) | +prod_evidence(2 cues) | +yoe(5.9yr) | +location_metro
+
+ 73     CAND_0032216  ML Engineer                            6.1    0.59739       39d      30d  Chennai, Tamil Nadu
+     breakdown: title=0.081  idf=0.290  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=11.53) | +hard_req(2: {'Qdrant', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(6.1yr) | +willing_relocate | +github(14)
+
+ 74     CAND_0096589  Computer Vision Engineer               4.1    0.59585       53d      45d  Indore, Madhya Pradesh
+     breakdown: title=0.072  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.035  avail=0.880  neg=1.000
+     signals: +title('Computer Vision Engineer' rel=0.359) | +idf_skills(7, sum=24.88) | +hard_req(2: {'Vector Search', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(4.1yr) | +product_co(2) | +willing_relocate
+
+ 75     CAND_0046353  ML Engineer                            6.4    0.59328       44d     120d  Gurgaon, Haryana
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.774  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=14.53) | +hard_req(4: {'FAISS', 'Qdrant', 'Weaviate', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(6.4yr) | +location_metro | +github(77)
+
+ 76     CAND_0007052  ML Engineer                            6.5    0.59262       85d      60d  Pune, Maharashtra
+     breakdown: title=0.081  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.070  avail=0.800  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(4, sum=15.87) | +hard_req(4: {'Elasticsearch', 'Weaviate', 'Milvus', 'Vector Search'}) | +prod_evidence(3 cues) | +yoe(6.5yr) | +product_co(1) | +location_metro
+
+ 77     CAND_0076251  Search Engineer                        7.6    0.59158       48d      60d  Bhubaneswar, Odisha
+     breakdown: title=0.125  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.027  exp=0.070  avail=0.880  neg=0.850
+     signals: +title('Search Engineer' rel=0.624) | +idf_skills(5, sum=18.89) | +hard_req(2: {'Elasticsearch', 'Weaviate'}) | +prod_evidence(6 cues) | +ctx_verified(1 JD skills in text) | +yoe(7.6yr) | +product_co(1)
+
+ 78     CAND_0094728  AI Specialist                          6.5    0.59029       54d      30d  Chennai, Tamil Nadu
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.774  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(5, sum=18.87) | +hard_req(4: {'Qdrant', 'pgvector', 'Embeddings', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(6.5yr) | +product_co(1) | +willing_relocate
+
+ 79     CAND_0073982  Data Scientist                         7.0    0.58928       17d      60d  Delhi, Delhi
+     breakdown: title=0.087  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.070  avail=0.950  neg=0.850
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(5, sum=18.90) | +hard_req(3: {'Elasticsearch', 'FAISS', 'Qdrant'}) | +prod_evidence(2 cues) | +yoe(7.0yr) | +product_co(1) | +location_metro
+
+ 80     CAND_0068596  AI Research Engineer                   4.3    0.58699       25d     120d  Jaipur, Rajasthan
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.035  avail=0.836  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(4, sum=13.25) | +hard_req(3: {'FAISS', 'pgvector', 'Embeddings'}) | +prod_evidence(2 cues) | +yoe(4.3yr) | +product_co(2) | +github(56)
+
+ 81     CAND_0016163  Applied ML Engineer                    6.7    0.58636       52d     120d  Gurgaon, Haryana
+     breakdown: title=0.139  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.774  neg=0.850
+     signals: +title('Applied ML Engineer' rel=0.696) | +idf_skills(5, sum=18.80) | +hard_req(4: {'Weaviate', 'Pinecone', 'pgvector', 'Embeddings'}) | +prod_evidence(6 cues) | +yoe(6.7yr) | +product_co(2) | +location_metro
+
+ 82     CAND_0058426  Data Scientist                         6.5    0.58562       39d      45d  Bangalore, Karnataka
+     breakdown: title=0.087  idf=0.291  hard_req=0.050  prod=0.050  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(3, sum=11.56) | +hard_req(1: {'Weaviate'}) | +prod_evidence(2 cues) | +yoe(6.5yr) | +product_co(2) | +location_metro
+
+ 83     CAND_0072688  Data Scientist                         6.9    0.58392       10d      45d  Pune, Maharashtra
+     breakdown: title=0.087  idf=0.300  hard_req=0.100  prod=0.050  ctx=0.000  exp=0.070  avail=1.000  neg=0.850
+     signals: +title('Data Scientist' rel=0.433) | +idf_skills(4, sum=15.83) | +hard_req(2: {'Qdrant', 'Milvus'}) | +prod_evidence(2 cues) | +yoe(6.9yr) | +product_co(1) | +location_metro
+
+ 84     CAND_0063585  AI Research Engineer                   3.1    0.58362       11d     120d  Noida, Uttar Pradesh
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.000  avail=0.880  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(4, sum=14.53) | +hard_req(3: {'Qdrant', 'Vector Search', 'Embeddings'}) | +prod_evidence(2 cues) | +product_co(1) | +location_metro | +github(13)
+
+ 85     CAND_0082086  Senior Software Engineer (ML)          6.0    0.58239       19d      45d  Delhi, Delhi
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.070  avail=0.950  neg=0.850
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(4, sum=14.52) | +hard_req(3: {'FAISS', 'Pinecone', 'Milvus'}) | +prod_evidence(2 cues) | +yoe(6.0yr) | +location_metro | +github(83)
+
+ 86     CAND_0042100  Machine Learning Engineer              7.3    0.58182       71d      90d  Singapore
+     breakdown: title=0.130  idf=0.300  hard_req=0.100  prod=0.050  ctx=0.000  exp=0.070  avail=0.800  neg=1.000
+     signals: +title('Machine Learning Engineer' rel=0.649) | +idf_skills(6, sum=20.55) | +hard_req(2: {'Elasticsearch', 'Pinecone'}) | +prod_evidence(2 cues) | +yoe(7.3yr) | +product_co(1) | +willing_relocate
+
+ 87     CAND_0089211  AI Specialist                          4.4    0.58090        8d      90d  Noida, Uttar Pradesh
+     breakdown: title=0.074  idf=0.217  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.035  avail=1.000  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(2, sum=8.61) | +hard_req(2: {'Elasticsearch', 'pgvector'}) | +prod_evidence(3 cues) | +yoe(4.4yr) | +product_co(1) | +location_metro
+
+ 88     CAND_0004972  ML Engineer                            6.0    0.58006       50d      90d  Gurgaon, Haryana
+     breakdown: title=0.081  idf=0.292  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=0.774  neg=1.000
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=11.60) | +hard_req(2: {'pgvector', 'OpenSearch'}) | +prod_evidence(4 cues) | +yoe(6.0yr) | +product_co(2) | +location_metro
+
+ 89     CAND_0005269  Senior Software Engineer (ML)          6.1    0.57964       34d      45d  Kochi, Kerala
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.070  avail=0.880  neg=0.850
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(4, sum=14.61) | +hard_req(3: {'Elasticsearch', 'FAISS', 'Weaviate'}) | +prod_evidence(5 cues) | +yoe(6.1yr) | +product_co(2) | +github(55)
+
+ 90     CAND_0081480  Computer Vision Engineer               5.6    0.57955       64d      60d  Noida, Uttar Pradesh
+     breakdown: title=0.072  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.055  avail=0.800  neg=1.000
+     signals: +title('Computer Vision Engineer' rel=0.359) | +idf_skills(4, sum=11.96) | +hard_req(2: {'FAISS', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(5.6yr) | +product_co(1) | +location_metro
+
+ 91     CAND_0081852  Senior Data Scientist                  5.9    0.57932       10d      45d  Delhi, Delhi
+     breakdown: title=0.135  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=1.000  neg=0.700
+     signals: +title('Senior Data Scientist' rel=0.675) | +idf_skills(5, sum=20.10) | +hard_req(4: {'Weaviate', 'Milvus', 'pgvector', 'Vector Search'}) | +prod_evidence(6 cues) | +yoe(5.9yr) | +product_co(1) | +location_metro
+
+ 92     CAND_0081086  AI Specialist                          5.2    0.57891       78d      45d  Noida, Uttar Pradesh
+     breakdown: title=0.074  idf=0.300  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=0.800  neg=1.000
+     signals: +title('AI Specialist' rel=0.368) | +idf_skills(4, sum=14.51) | +hard_req(3: {'Weaviate', 'pgvector', 'Embeddings'}) | +prod_evidence(3 cues) | +yoe(5.2yr) | +product_co(1) | +location_metro
+
+ 93     CAND_0025882  Senior Software Engineer (ML)          5.6    0.57803       23d      45d  Chennai, Tamil Nadu
+     breakdown: title=0.079  idf=0.300  hard_req=0.150  prod=0.100  ctx=0.000  exp=0.055  avail=0.950  neg=0.850
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(4, sum=14.54) | +hard_req(3: {'FAISS', 'Milvus', 'Vector Search'}) | +prod_evidence(4 cues) | +yoe(5.6yr) | +willing_relocate | +github(35)
+
+ 94     CAND_0018888  AI Research Engineer                   6.5    0.57793        6d      30d  Noida, Uttar Pradesh
+     breakdown: title=0.074  idf=0.258  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('AI Research Engineer' rel=0.370) | +idf_skills(3, sum=10.24) | +hard_req(2: {'FAISS', 'pgvector'}) | +prod_evidence(5 cues) | +yoe(6.5yr) | +location_metro | +github(51)
+
+ 95     CAND_0091229  Senior Software Engineer (ML)          7.0    0.57757       26d      60d  Bhubaneswar, Odisha
+     breakdown: title=0.079  idf=0.292  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.070  avail=0.950  neg=0.850
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(3, sum=11.60) | +hard_req(3: {'Elasticsearch', 'FAISS', 'Qdrant'}) | +prod_evidence(2 cues) | +yoe(7.0yr) | +product_co(2) | +github(72)
+
+ 96     CAND_0024990  Junior ML Engineer                     5.2    0.57667       10d      60d  Trivandrum, Kerala
+     breakdown: title=0.072  idf=0.300  hard_req=0.150  prod=0.050  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(4, sum=15.95) | +hard_req(3: {'Elasticsearch', 'Milvus', 'OpenSearch'}) | +prod_evidence(2 cues) | +yoe(5.2yr) | +product_co(1) | +github(80)
+
+ 97     CAND_0093763  Senior Software Engineer (ML)          5.0    0.57608        9d      90d  Noida, Uttar Pradesh
+     breakdown: title=0.079  idf=0.258  hard_req=0.150  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(3, sum=10.24) | +hard_req(3: {'FAISS', 'pgvector', 'Vector Search'}) | +prod_evidence(3 cues) | +yoe(5.0yr) | +location_metro | +assessments(1, avg=55.9)
+
+ 98     CAND_0032996  Junior ML Engineer                     6.4    0.57415       13d      90d  Coimbatore, Tamil Nadu
+     breakdown: title=0.072  idf=0.300  hard_req=0.100  prod=0.050  ctx=0.000  exp=0.070  avail=0.880  neg=1.000
+     signals: +title('Junior ML Engineer' rel=0.362) | +idf_skills(4, sum=15.80) | +hard_req(2: {'Weaviate', 'Milvus'}) | +prod_evidence(2 cues) | +yoe(6.4yr) | +product_co(1) | +willing_relocate
+
+ 99     CAND_0051003  Senior Software Engineer (ML)          4.0    0.57299       62d      60d  London
+     breakdown: title=0.079  idf=0.300  hard_req=0.100  prod=0.100  ctx=0.000  exp=0.035  avail=0.800  neg=1.000
+     signals: +title('Senior Software Engineer (ML)' rel=0.394) | +idf_skills(5, sum=17.53) | +hard_req(2: {'Vector Search', 'Embeddings'}) | +prod_evidence(5 cues) | +yoe(4.0yr) | +product_co(2) | +willing_relocate
+
+100     CAND_0010603  ML Engineer                            5.3    0.57083       10d      90d  Bangalore, Karnataka
+     breakdown: title=0.081  idf=0.300  hard_req=0.100  prod=0.075  ctx=0.000  exp=0.055  avail=1.000  neg=0.850
+     signals: +title('ML Engineer' rel=0.404) | +idf_skills(3, sum=12.91) | +hard_req(2: {'pgvector', 'OpenSearch'}) | +prod_evidence(3 cues) | +yoe(5.3yr) | +location_metro | +github(79)
+
+
+────────────────────────────────────────────────────────────────────
+SCORE DISTRIBUTION:
+────────────────────────────────────────────────────────────────────
+  0.80–1.00                   1  (0.0%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.60–0.79                  70  (0.1%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.40–0.59                 440  (0.4%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.20–0.39               1,501  (1.5%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.01–0.19               1,418  (1.4%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+  0.00 (disq/hp)         96,570  (96.6%)  █████████████████████████

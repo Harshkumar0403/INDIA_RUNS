@@ -1,0 +1,1855 @@
+{
+  "Tailwind": {
+    "doc_freq": 11917,
+    "raw_freq": 11917,
+    "idf": 2.1272,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6071,
+      "beginner": 5846
+    }
+  },
+  "NLP": {
+    "doc_freq": 1358,
+    "raw_freq": 1358,
+    "idf": 4.2992,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.1,
+    "avg_end": 18.5,
+    "prof_dist": {
+      "advanced": 676,
+      "intermediate": 643,
+      "expert": 39
+    }
+  },
+  "Image Classification": {
+    "doc_freq": 4761,
+    "raw_freq": 4761,
+    "idf": 3.0447,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.3,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "advanced": 2362,
+      "intermediate": 2399
+    }
+  },
+  "Fine-tuning LLMs": {
+    "doc_freq": 4920,
+    "raw_freq": 4920,
+    "idf": 3.0119,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 16.0,
+    "avg_end": 6.2,
+    "prof_dist": {
+      "advanced": 3051,
+      "intermediate": 1831,
+      "expert": 38
+    }
+  },
+  "Weights & Biases": {
+    "doc_freq": 4685,
+    "raw_freq": 4685,
+    "idf": 3.0608,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.5,
+    "avg_end": 18.8,
+    "prof_dist": {
+      "intermediate": 2305,
+      "advanced": 2380
+    }
+  },
+  "Speech Recognition": {
+    "doc_freq": 4744,
+    "raw_freq": 4744,
+    "idf": 3.0483,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 30.5,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "advanced": 2365,
+      "intermediate": 2378,
+      "expert": 1
+    }
+  },
+  "Photoshop": {
+    "doc_freq": 11917,
+    "raw_freq": 11917,
+    "idf": 2.1272,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5937,
+      "beginner": 5976,
+      "expert": 2,
+      "advanced": 2
+    }
+  },
+  "TTS": {
+    "doc_freq": 4669,
+    "raw_freq": 4669,
+    "idf": 3.0642,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.4,
+    "avg_end": 19.0,
+    "prof_dist": {
+      "advanced": 2363,
+      "intermediate": 2305,
+      "expert": 1
+    }
+  },
+  "LoRA": {
+    "doc_freq": 1371,
+    "raw_freq": 1371,
+    "idf": 4.2896,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 31.8,
+    "avg_end": 19.6,
+    "prof_dist": {
+      "intermediate": 654,
+      "advanced": 681,
+      "expert": 36
+    }
+  },
+  "Apache Beam": {
+    "doc_freq": 12054,
+    "raw_freq": 12054,
+    "idf": 2.1158,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6116,
+      "beginner": 5938
+    }
+  },
+  "AWS": {
+    "doc_freq": 12104,
+    "raw_freq": 12104,
+    "idf": 2.1116,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6144,
+      "intermediate": 5959,
+      "expert": 1
+    }
+  },
+  "Flask": {
+    "doc_freq": 12104,
+    "raw_freq": 12104,
+    "idf": 2.1116,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6008,
+      "intermediate": 6094,
+      "expert": 2
+    }
+  },
+  "BentoML": {
+    "doc_freq": 4726,
+    "raw_freq": 4726,
+    "idf": 3.0521,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.3,
+    "avg_end": 18.8,
+    "prof_dist": {
+      "intermediate": 2364,
+      "advanced": 2361,
+      "expert": 1
+    }
+  },
+  "Milvus": {
+    "doc_freq": 1384,
+    "raw_freq": 1384,
+    "idf": 4.2802,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 31.6,
+    "avg_end": 19.2,
+    "prof_dist": {
+      "advanced": 689,
+      "intermediate": 659,
+      "expert": 36
+    }
+  },
+  "GANs": {
+    "doc_freq": 4815,
+    "raw_freq": 4815,
+    "idf": 3.0334,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.4,
+    "avg_end": 18.8,
+    "prof_dist": {
+      "advanced": 2387,
+      "intermediate": 2427,
+      "expert": 1
+    }
+  },
+  "Statistical Modeling": {
+    "doc_freq": 4634,
+    "raw_freq": 4634,
+    "idf": 3.0717,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.3,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "intermediate": 2332,
+      "advanced": 2302
+    }
+  },
+  "GCP": {
+    "doc_freq": 11983,
+    "raw_freq": 11983,
+    "idf": 2.1217,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6073,
+      "intermediate": 5906,
+      "expert": 2,
+      "advanced": 2
+    }
+  },
+  "Project Management": {
+    "doc_freq": 12106,
+    "raw_freq": 12106,
+    "idf": 2.1115,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6063,
+      "beginner": 6041,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "React": {
+    "doc_freq": 11811,
+    "raw_freq": 11811,
+    "idf": 2.1361,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5941,
+      "beginner": 5867,
+      "advanced": 1,
+      "expert": 2
+    }
+  },
+  "TypeScript": {
+    "doc_freq": 12048,
+    "raw_freq": 12048,
+    "idf": 2.1163,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6072,
+      "intermediate": 5974,
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "Marketing": {
+    "doc_freq": 12037,
+    "raw_freq": 12037,
+    "idf": 2.1172,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6043,
+      "intermediate": 5991,
+      "advanced": 2,
+      "expert": 1
+    }
+  },
+  "Kafka": {
+    "doc_freq": 12114,
+    "raw_freq": 12114,
+    "idf": 2.1108,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6086,
+      "beginner": 6026,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "JavaScript": {
+    "doc_freq": 12047,
+    "raw_freq": 12047,
+    "idf": 2.1164,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6032,
+      "intermediate": 6013,
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "Feature Engineering": {
+    "doc_freq": 4809,
+    "raw_freq": 4809,
+    "idf": 3.0347,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.9,
+    "avg_end": 18.9,
+    "prof_dist": {
+      "intermediate": 2394,
+      "advanced": 2415
+    }
+  },
+  "Angular": {
+    "doc_freq": 12173,
+    "raw_freq": 12173,
+    "idf": 2.1059,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6147,
+      "beginner": 6024,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "SEO": {
+    "doc_freq": 11990,
+    "raw_freq": 11990,
+    "idf": 2.1211,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.6,
+    "prof_dist": {
+      "beginner": 6015,
+      "intermediate": 5974,
+      "advanced": 1
+    }
+  },
+  "Excel": {
+    "doc_freq": 12109,
+    "raw_freq": 12109,
+    "idf": 2.1112,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6018,
+      "beginner": 6089,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "Accounting": {
+    "doc_freq": 12136,
+    "raw_freq": 12136,
+    "idf": 2.109,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5973,
+      "intermediate": 6160,
+      "expert": 2,
+      "advanced": 1
+    }
+  },
+  "Kubernetes": {
+    "doc_freq": 12071,
+    "raw_freq": 12071,
+    "idf": 2.1144,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6071,
+      "beginner": 6000
+    }
+  },
+  "Databricks": {
+    "doc_freq": 12244,
+    "raw_freq": 12244,
+    "idf": 2.1001,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6155,
+      "intermediate": 6087,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "Node.js": {
+    "doc_freq": 11838,
+    "raw_freq": 11838,
+    "idf": 2.1339,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "intermediate": 5899,
+      "beginner": 5935,
+      "expert": 2,
+      "advanced": 2
+    }
+  },
+  "Content Writing": {
+    "doc_freq": 11948,
+    "raw_freq": 11948,
+    "idf": 2.1246,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.6,
+    "prof_dist": {
+      "beginner": 5903,
+      "intermediate": 6042,
+      "expert": 3
+    }
+  },
+  "Redux": {
+    "doc_freq": 12222,
+    "raw_freq": 12222,
+    "idf": 2.1019,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6143,
+      "intermediate": 6076,
+      "advanced": 2,
+      "expert": 1
+    }
+  },
+  "Airflow": {
+    "doc_freq": 12105,
+    "raw_freq": 12105,
+    "idf": 2.1116,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6032,
+      "beginner": 6070,
+      "advanced": 2,
+      "expert": 1
+    }
+  },
+  "GraphQL": {
+    "doc_freq": 12027,
+    "raw_freq": 12027,
+    "idf": 2.118,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6043,
+      "intermediate": 5983,
+      "advanced": 1
+    }
+  },
+  "Object Detection": {
+    "doc_freq": 4705,
+    "raw_freq": 4705,
+    "idf": 3.0565,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.1,
+    "avg_end": 18.3,
+    "prof_dist": {
+      "intermediate": 2407,
+      "advanced": 2298
+    }
+  },
+  "Webpack": {
+    "doc_freq": 12026,
+    "raw_freq": 12026,
+    "idf": 2.1181,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5968,
+      "intermediate": 6056,
+      "expert": 2
+    }
+  },
+  "Six Sigma": {
+    "doc_freq": 11991,
+    "raw_freq": 11991,
+    "idf": 2.121,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5957,
+      "intermediate": 6033,
+      "expert": 1
+    }
+  },
+  "SAP": {
+    "doc_freq": 11989,
+    "raw_freq": 11989,
+    "idf": 2.1212,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "intermediate": 5968,
+      "beginner": 6019,
+      "expert": 2
+    }
+  },
+  "SQL": {
+    "doc_freq": 11935,
+    "raw_freq": 11935,
+    "idf": 2.1257,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6035,
+      "intermediate": 5899,
+      "expert": 1
+    }
+  },
+  "PowerPoint": {
+    "doc_freq": 11908,
+    "raw_freq": 11908,
+    "idf": 2.128,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.6,
+    "prof_dist": {
+      "beginner": 5982,
+      "intermediate": 5925,
+      "advanced": 1
+    }
+  },
+  "Apache Flink": {
+    "doc_freq": 11958,
+    "raw_freq": 11958,
+    "idf": 2.1238,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6024,
+      "beginner": 5934
+    }
+  },
+  "Sales": {
+    "doc_freq": 12138,
+    "raw_freq": 12138,
+    "idf": 2.1088,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6121,
+      "beginner": 6015,
+      "advanced": 2
+    }
+  },
+  "gRPC": {
+    "doc_freq": 11957,
+    "raw_freq": 11957,
+    "idf": 2.1239,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5986,
+      "intermediate": 5966,
+      "expert": 4,
+      "advanced": 1
+    }
+  },
+  "Django": {
+    "doc_freq": 11899,
+    "raw_freq": 11899,
+    "idf": 2.1287,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "intermediate": 5989,
+      "beginner": 5909,
+      "advanced": 1
+    }
+  },
+  "Terraform": {
+    "doc_freq": 12187,
+    "raw_freq": 12187,
+    "idf": 2.1048,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6254,
+      "intermediate": 5932,
+      "expert": 1
+    }
+  },
+  "MongoDB": {
+    "doc_freq": 11841,
+    "raw_freq": 11841,
+    "idf": 2.1336,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5858,
+      "beginner": 5980,
+      "expert": 3
+    }
+  },
+  "Spark": {
+    "doc_freq": 12038,
+    "raw_freq": 12038,
+    "idf": 2.1171,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6073,
+      "intermediate": 5961,
+      "advanced": 2,
+      "expert": 2
+    }
+  },
+  "Scrum": {
+    "doc_freq": 12083,
+    "raw_freq": 12083,
+    "idf": 2.1134,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6035,
+      "intermediate": 6047,
+      "expert": 1
+    }
+  },
+  "Illustrator": {
+    "doc_freq": 12072,
+    "raw_freq": 12072,
+    "idf": 2.1143,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.8,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6120,
+      "intermediate": 5951,
+      "expert": 1
+    }
+  },
+  "Java": {
+    "doc_freq": 12049,
+    "raw_freq": 12049,
+    "idf": 2.1162,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6042,
+      "beginner": 6006,
+      "expert": 1
+    }
+  },
+  "BigQuery": {
+    "doc_freq": 12108,
+    "raw_freq": 12108,
+    "idf": 2.1113,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6049,
+      "intermediate": 6057,
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "Rust": {
+    "doc_freq": 11960,
+    "raw_freq": 11960,
+    "idf": 2.1236,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5920,
+      "beginner": 6036,
+      "expert": 3,
+      "advanced": 1
+    }
+  },
+  "HTML": {
+    "doc_freq": 12246,
+    "raw_freq": 12246,
+    "idf": 2.1,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6074,
+      "intermediate": 6169,
+      "advanced": 3
+    }
+  },
+  "Snowflake": {
+    "doc_freq": 12027,
+    "raw_freq": 12027,
+    "idf": 2.118,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "intermediate": 5996,
+      "beginner": 6030,
+      "expert": 1
+    }
+  },
+  "OpenCV": {
+    "doc_freq": 4803,
+    "raw_freq": 4803,
+    "idf": 3.0359,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.7,
+    "avg_end": 18.8,
+    "prof_dist": {
+      "intermediate": 2388,
+      "advanced": 2414,
+      "expert": 1
+    }
+  },
+  "Go": {
+    "doc_freq": 12049,
+    "raw_freq": 12049,
+    "idf": 2.1162,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6030,
+      "beginner": 6018,
+      "expert": 1
+    }
+  },
+  "Spring Boot": {
+    "doc_freq": 11906,
+    "raw_freq": 11906,
+    "idf": 2.1281,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.2,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5865,
+      "intermediate": 6039,
+      "advanced": 2
+    }
+  },
+  "Kubeflow": {
+    "doc_freq": 4730,
+    "raw_freq": 4730,
+    "idf": 3.0512,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.4,
+    "avg_end": 18.4,
+    "prof_dist": {
+      "intermediate": 2427,
+      "advanced": 2303
+    }
+  },
+  "Figma": {
+    "doc_freq": 12157,
+    "raw_freq": 12157,
+    "idf": 2.1073,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6097,
+      "intermediate": 6056,
+      "expert": 3,
+      "advanced": 1
+    }
+  },
+  "Elasticsearch": {
+    "doc_freq": 1311,
+    "raw_freq": 1311,
+    "idf": 4.3344,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 31.4,
+    "avg_end": 19.1,
+    "prof_dist": {
+      "intermediate": 649,
+      "advanced": 618,
+      "expert": 44
+    }
+  },
+  "CNN": {
+    "doc_freq": 4740,
+    "raw_freq": 4740,
+    "idf": 3.0491,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.5,
+    "avg_end": 18.5,
+    "prof_dist": {
+      "intermediate": 2394,
+      "advanced": 2345,
+      "expert": 1
+    }
+  },
+  "Azure": {
+    "doc_freq": 11828,
+    "raw_freq": 11828,
+    "idf": 2.1347,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5879,
+      "intermediate": 5946,
+      "expert": 2,
+      "advanced": 1
+    }
+  },
+  "Prompt Engineering": {
+    "doc_freq": 5062,
+    "raw_freq": 5062,
+    "idf": 2.9834,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.4,
+    "avg_end": 6.4,
+    "prof_dist": {
+      "advanced": 3093,
+      "intermediate": 1939,
+      "expert": 30
+    }
+  },
+  "MLOps": {
+    "doc_freq": 4727,
+    "raw_freq": 4727,
+    "idf": 3.0519,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.5,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "intermediate": 2368,
+      "advanced": 2357,
+      "expert": 2
+    }
+  },
+  "Python": {
+    "doc_freq": 1378,
+    "raw_freq": 1378,
+    "idf": 4.2845,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.9,
+    "avg_end": 19.8,
+    "prof_dist": {
+      "intermediate": 659,
+      "advanced": 679,
+      "expert": 40
+    }
+  },
+  "BM25": {
+    "doc_freq": 1382,
+    "raw_freq": 1382,
+    "idf": 4.2816,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.2,
+    "avg_end": 19.3,
+    "prof_dist": {
+      "advanced": 680,
+      "intermediate": 661,
+      "expert": 41
+    }
+  },
+  "Recommendation Systems": {
+    "doc_freq": 5091,
+    "raw_freq": 5091,
+    "idf": 2.9777,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 16.7,
+    "avg_end": 6.7,
+    "prof_dist": {
+      "advanced": 3152,
+      "intermediate": 1911,
+      "expert": 28
+    }
+  },
+  "FastAPI": {
+    "doc_freq": 11917,
+    "raw_freq": 11917,
+    "idf": 2.1272,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5999,
+      "intermediate": 5918
+    }
+  },
+  "Hugging Face Transformers": {
+    "doc_freq": 5163,
+    "raw_freq": 5163,
+    "idf": 2.9637,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.6,
+    "avg_end": 6.7,
+    "prof_dist": {
+      "intermediate": 1910,
+      "expert": 35,
+      "advanced": 3218
+    }
+  },
+  "PostgreSQL": {
+    "doc_freq": 11983,
+    "raw_freq": 11983,
+    "idf": 2.1217,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5930,
+      "beginner": 6053
+    }
+  },
+  "Vue.js": {
+    "doc_freq": 12142,
+    "raw_freq": 12142,
+    "idf": 2.1085,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6040,
+      "beginner": 6101,
+      "expert": 1
+    }
+  },
+  "dbt": {
+    "doc_freq": 12046,
+    "raw_freq": 12046,
+    "idf": 2.1164,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6003,
+      "beginner": 6041,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "Agile": {
+    "doc_freq": 12135,
+    "raw_freq": 12135,
+    "idf": 2.1091,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6137,
+      "beginner": 5995,
+      "expert": 2,
+      "advanced": 1
+    }
+  },
+  "Data Pipelines": {
+    "doc_freq": 11905,
+    "raw_freq": 11905,
+    "idf": 2.1282,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5928,
+      "beginner": 5975,
+      "advanced": 2
+    }
+  },
+  "FAISS": {
+    "doc_freq": 5052,
+    "raw_freq": 5052,
+    "idf": 2.9854,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 16.4,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "advanced": 3074,
+      "intermediate": 1947,
+      "expert": 31
+    }
+  },
+  "OpenSearch": {
+    "doc_freq": 1286,
+    "raw_freq": 1286,
+    "idf": 4.3536,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 32.0,
+    "avg_end": 20.5,
+    "prof_dist": {
+      "advanced": 657,
+      "intermediate": 582,
+      "expert": 47
+    }
+  },
+  "YOLO": {
+    "doc_freq": 4827,
+    "raw_freq": 4827,
+    "idf": 3.0309,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.7,
+    "avg_end": 18.8,
+    "prof_dist": {
+      "advanced": 2443,
+      "intermediate": 2383,
+      "expert": 1
+    }
+  },
+  "REST APIs": {
+    "doc_freq": 12040,
+    "raw_freq": 12040,
+    "idf": 2.1169,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "beginner": 5967,
+      "intermediate": 6073
+    }
+  },
+  "PyTorch": {
+    "doc_freq": 1378,
+    "raw_freq": 1378,
+    "idf": 4.2845,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.7,
+    "avg_end": 19.8,
+    "prof_dist": {
+      "intermediate": 638,
+      "advanced": 708,
+      "expert": 32
+    }
+  },
+  "Qdrant": {
+    "doc_freq": 1379,
+    "raw_freq": 1379,
+    "idf": 4.2838,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 31.5,
+    "avg_end": 19.1,
+    "prof_dist": {
+      "intermediate": 657,
+      "advanced": 676,
+      "expert": 46
+    }
+  },
+  "Computer Vision": {
+    "doc_freq": 4755,
+    "raw_freq": 4755,
+    "idf": 3.046,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 30.3,
+    "avg_end": 18.4,
+    "prof_dist": {
+      "intermediate": 2428,
+      "advanced": 2327
+    }
+  },
+  "Next.js": {
+    "doc_freq": 12058,
+    "raw_freq": 12058,
+    "idf": 2.1154,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.6,
+    "prof_dist": {
+      "intermediate": 6076,
+      "beginner": 5981,
+      "expert": 1
+    }
+  },
+  "Tally": {
+    "doc_freq": 12030,
+    "raw_freq": 12030,
+    "idf": 2.1178,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 6022,
+      "beginner": 6007,
+      "expert": 1
+    }
+  },
+  "Hadoop": {
+    "doc_freq": 11931,
+    "raw_freq": 11931,
+    "idf": 2.126,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.4,
+    "prof_dist": {
+      "intermediate": 5961,
+      "beginner": 5967,
+      "expert": 2,
+      "advanced": 1
+    }
+  },
+  "Salesforce CRM": {
+    "doc_freq": 12157,
+    "raw_freq": 12157,
+    "idf": 2.1073,
+    "tier": "TIER_1_GENERIC",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.1,
+    "avg_end": 7.6,
+    "prof_dist": {
+      "beginner": 6010,
+      "intermediate": 6145,
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "Microservices": {
+    "doc_freq": 11909,
+    "raw_freq": 11909,
+    "idf": 2.1279,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5924,
+      "beginner": 5982,
+      "advanced": 3
+    }
+  },
+  "ETL": {
+    "doc_freq": 12068,
+    "raw_freq": 12068,
+    "idf": 2.1146,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.8,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6064,
+      "intermediate": 6003,
+      "expert": 1
+    }
+  },
+  "LangChain": {
+    "doc_freq": 5162,
+    "raw_freq": 5162,
+    "idf": 2.9638,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 16.4,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "intermediate": 1935,
+      "advanced": 3189,
+      "expert": 38
+    }
+  },
+  "Pinecone": {
+    "doc_freq": 5062,
+    "raw_freq": 5062,
+    "idf": 2.9834,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 16.4,
+    "avg_end": 6.4,
+    "prof_dist": {
+      "intermediate": 1898,
+      "expert": 33,
+      "advanced": 3131
+    }
+  },
+  "Vector Search": {
+    "doc_freq": 5065,
+    "raw_freq": 5065,
+    "idf": 2.9828,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 16.2,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "intermediate": 1840,
+      "advanced": 3192,
+      "expert": 33
+    }
+  },
+  "Embeddings": {
+    "doc_freq": 5080,
+    "raw_freq": 5080,
+    "idf": 2.9799,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 16.4,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "advanced": 3131,
+      "expert": 44,
+      "intermediate": 1905
+    }
+  },
+  "Redis": {
+    "doc_freq": 11928,
+    "raw_freq": 11928,
+    "idf": 2.1263,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 5958,
+      "intermediate": 5968,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "Forecasting": {
+    "doc_freq": 4676,
+    "raw_freq": 4676,
+    "idf": 3.0627,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.7,
+    "avg_end": 18.9,
+    "prof_dist": {
+      "advanced": 2367,
+      "intermediate": 2309
+    }
+  },
+  "Docker": {
+    "doc_freq": 12062,
+    "raw_freq": 12062,
+    "idf": 2.1151,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.0,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6065,
+      "intermediate": 5995,
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "PEFT": {
+    "doc_freq": 1377,
+    "raw_freq": 1377,
+    "idf": 4.2853,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 31.4,
+    "avg_end": 18.9,
+    "prof_dist": {
+      "advanced": 694,
+      "intermediate": 654,
+      "expert": 29
+    }
+  },
+  "Data Science": {
+    "doc_freq": 4708,
+    "raw_freq": 4708,
+    "idf": 3.0559,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.4,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "advanced": 2373,
+      "intermediate": 2335
+    }
+  },
+  "Information Retrieval": {
+    "doc_freq": 5135,
+    "raw_freq": 5135,
+    "idf": 2.9691,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.5,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "intermediate": 1948,
+      "expert": 30,
+      "advanced": 3157
+    }
+  },
+  "CI/CD": {
+    "doc_freq": 12108,
+    "raw_freq": 12108,
+    "idf": 2.1113,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "beginner": 6062,
+      "intermediate": 6044,
+      "advanced": 1,
+      "expert": 1
+    }
+  },
+  "MLflow": {
+    "doc_freq": 4691,
+    "raw_freq": 4691,
+    "idf": 3.0595,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.1,
+    "avg_end": 18.5,
+    "prof_dist": {
+      "advanced": 2298,
+      "intermediate": 2392,
+      "expert": 1
+    }
+  },
+  "Machine Learning": {
+    "doc_freq": 1349,
+    "raw_freq": 1349,
+    "idf": 4.3058,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.3,
+    "avg_end": 20.0,
+    "prof_dist": {
+      "advanced": 693,
+      "intermediate": 621,
+      "expert": 35
+    }
+  },
+  "Sentence Transformers": {
+    "doc_freq": 5081,
+    "raw_freq": 5081,
+    "idf": 2.9797,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.5,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "expert": 40,
+      "advanced": 3212,
+      "intermediate": 1829
+    }
+  },
+  "scikit-learn": {
+    "doc_freq": 1288,
+    "raw_freq": 1288,
+    "idf": 4.3521,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.9,
+    "avg_end": 20.1,
+    "prof_dist": {
+      "advanced": 667,
+      "intermediate": 585,
+      "expert": 36
+    }
+  },
+  "CSS": {
+    "doc_freq": 12065,
+    "raw_freq": 12065,
+    "idf": 2.1149,
+    "tier": "TIER_2_DOMAIN",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 15.9,
+    "avg_end": 7.5,
+    "prof_dist": {
+      "intermediate": 5931,
+      "beginner": 6133,
+      "advanced": 1
+    }
+  },
+  "Weaviate": {
+    "doc_freq": 1389,
+    "raw_freq": 1389,
+    "idf": 4.2766,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 30.9,
+    "avg_end": 19.1,
+    "prof_dist": {
+      "advanced": 681,
+      "intermediate": 675,
+      "expert": 33
+    }
+  },
+  "Haystack": {
+    "doc_freq": 1333,
+    "raw_freq": 1333,
+    "idf": 4.3177,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.3,
+    "avg_end": 19.5,
+    "prof_dist": {
+      "advanced": 686,
+      "intermediate": 614,
+      "expert": 33
+    }
+  },
+  "TensorFlow": {
+    "doc_freq": 1381,
+    "raw_freq": 1381,
+    "idf": 4.2824,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 31.0,
+    "avg_end": 19.3,
+    "prof_dist": {
+      "intermediate": 694,
+      "advanced": 656,
+      "expert": 31
+    }
+  },
+  "Reinforcement Learning": {
+    "doc_freq": 4708,
+    "raw_freq": 4708,
+    "idf": 3.0559,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.7,
+    "avg_end": 18.4,
+    "prof_dist": {
+      "advanced": 2366,
+      "intermediate": 2342
+    }
+  },
+  "Deep Learning": {
+    "doc_freq": 1342,
+    "raw_freq": 1342,
+    "idf": 4.311,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.1,
+    "avg_end": 19.3,
+    "prof_dist": {
+      "intermediate": 671,
+      "advanced": 645,
+      "expert": 26
+    }
+  },
+  "Diffusion Models": {
+    "doc_freq": 4701,
+    "raw_freq": 4701,
+    "idf": 3.0574,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.5,
+    "avg_end": 18.6,
+    "prof_dist": {
+      "intermediate": 2330,
+      "advanced": 2370,
+      "expert": 1
+    }
+  },
+  "ASR": {
+    "doc_freq": 4788,
+    "raw_freq": 4788,
+    "idf": 3.0391,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.4,
+    "avg_end": 19.0,
+    "prof_dist": {
+      "intermediate": 2375,
+      "advanced": 2413
+    }
+  },
+  "RAG": {
+    "doc_freq": 4995,
+    "raw_freq": 4995,
+    "idf": 2.9967,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.3,
+    "avg_end": 6.5,
+    "prof_dist": {
+      "advanced": 3150,
+      "intermediate": 1821,
+      "expert": 24
+    }
+  },
+  "LLMs": {
+    "doc_freq": 5094,
+    "raw_freq": 5094,
+    "idf": 2.9771,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 15.9,
+    "avg_end": 6.3,
+    "prof_dist": {
+      "advanced": 3187,
+      "intermediate": 1879,
+      "expert": 28
+    }
+  },
+  "Semantic Search": {
+    "doc_freq": 5087,
+    "raw_freq": 5087,
+    "idf": 2.9785,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 16.2,
+    "avg_end": 6.3,
+    "prof_dist": {
+      "advanced": 3133,
+      "intermediate": 1924,
+      "expert": 30
+    }
+  },
+  "Learning to Rank": {
+    "doc_freq": 1383,
+    "raw_freq": 1383,
+    "idf": 4.2809,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 32.0,
+    "avg_end": 19.5,
+    "prof_dist": {
+      "advanced": 700,
+      "intermediate": 651,
+      "expert": 32
+    }
+  },
+  "QLoRA": {
+    "doc_freq": 1401,
+    "raw_freq": 1401,
+    "idf": 4.268,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 31.7,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "intermediate": 670,
+      "advanced": 679,
+      "expert": 52
+    }
+  },
+  "pgvector": {
+    "doc_freq": 1394,
+    "raw_freq": 1394,
+    "idf": 4.273,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 31.1,
+    "avg_end": 19.8,
+    "prof_dist": {
+      "intermediate": 642,
+      "advanced": 722,
+      "expert": 30
+    }
+  },
+  "Time Series": {
+    "doc_freq": 4686,
+    "raw_freq": 4686,
+    "idf": 3.0606,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 30.3,
+    "avg_end": 18.7,
+    "prof_dist": {
+      "advanced": 2315,
+      "intermediate": 2371
+    }
+  },
+  "LlamaIndex": {
+    "doc_freq": 1308,
+    "raw_freq": 1308,
+    "idf": 4.3367,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_NEGATIVE",
+    "avg_dur_mo": 31.7,
+    "avg_end": 19.5,
+    "prof_dist": {
+      "advanced": 633,
+      "intermediate": 637,
+      "expert": 38
+    }
+  },
+  "Vector Representations": {
+    "doc_freq": 4,
+    "raw_freq": 4,
+    "idf": 10.1266,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 44.8,
+    "avg_end": 36.0,
+    "prof_dist": {
+      "expert": 3,
+      "advanced": 1
+    }
+  },
+  "Content Matching": {
+    "doc_freq": 4,
+    "raw_freq": 4,
+    "idf": 10.1266,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 63.5,
+    "avg_end": 42.8,
+    "prof_dist": {
+      "advanced": 2,
+      "expert": 2
+    }
+  },
+  "Information Retrieval Systems": {
+    "doc_freq": 7,
+    "raw_freq": 7,
+    "idf": 9.567,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 46.7,
+    "avg_end": 31.4,
+    "prof_dist": {
+      "advanced": 5,
+      "expert": 2
+    }
+  },
+  "Workflow Orchestration": {
+    "doc_freq": 3,
+    "raw_freq": 3,
+    "idf": 10.4143,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 56.7,
+    "avg_end": 46.7,
+    "prof_dist": {
+      "expert": 3
+    }
+  },
+  "Natural Language Processing": {
+    "doc_freq": 2,
+    "raw_freq": 2,
+    "idf": 10.8198,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 47.0,
+    "avg_end": 19.0,
+    "prof_dist": {
+      "expert": 1,
+      "advanced": 1
+    }
+  },
+  "Search Backend": {
+    "doc_freq": 5,
+    "raw_freq": 5,
+    "idf": 9.9035,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 41.0,
+    "avg_end": 26.4,
+    "prof_dist": {
+      "advanced": 4,
+      "expert": 1
+    }
+  },
+  "Model Adaptation": {
+    "doc_freq": 4,
+    "raw_freq": 4,
+    "idf": 10.1266,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 61.0,
+    "avg_end": 50.2,
+    "prof_dist": {
+      "expert": 3,
+      "advanced": 1
+    }
+  },
+  "Ranking Systems": {
+    "doc_freq": 4,
+    "raw_freq": 4,
+    "idf": 10.1266,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 58.0,
+    "avg_end": 33.0,
+    "prof_dist": {
+      "advanced": 2,
+      "expert": 2
+    }
+  },
+  "Text Encoders": {
+    "doc_freq": 5,
+    "raw_freq": 5,
+    "idf": 9.9035,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 56.8,
+    "avg_end": 31.0,
+    "prof_dist": {
+      "advanced": 1,
+      "expert": 4
+    }
+  },
+  "Search & Discovery": {
+    "doc_freq": 4,
+    "raw_freq": 4,
+    "idf": 10.1266,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 56.8,
+    "avg_end": 33.2,
+    "prof_dist": {
+      "advanced": 1,
+      "expert": 3
+    }
+  },
+  "Search Infrastructure": {
+    "doc_freq": 3,
+    "raw_freq": 3,
+    "idf": 10.4143,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 60.0,
+    "avg_end": 43.0,
+    "prof_dist": {
+      "expert": 3
+    }
+  },
+  "Indexing Algorithms": {
+    "doc_freq": 3,
+    "raw_freq": 3,
+    "idf": 10.4143,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_HARD_REQ",
+    "avg_dur_mo": 44.7,
+    "avg_end": 39.0,
+    "prof_dist": {
+      "expert": 3
+    }
+  },
+  "Document Processing": {
+    "doc_freq": 1,
+    "raw_freq": 1,
+    "idf": 11.5129,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "NEUTRAL",
+    "avg_dur_mo": 61.0,
+    "avg_end": 56.0,
+    "prof_dist": {
+      "expert": 1
+    }
+  },
+  "Open-source ML libraries": {
+    "doc_freq": 3,
+    "raw_freq": 3,
+    "idf": 10.4143,
+    "tier": "TIER_3_SPECIALIST",
+    "jd_label": "JD_POSITIVE",
+    "avg_dur_mo": 59.0,
+    "avg_end": 6.3,
+    "prof_dist": {
+      "expert": 2,
+      "advanced": 1
+    }
+  }
+}

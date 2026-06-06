@@ -1,0 +1,67 @@
+====================================================================
+SIGNAL CORRELATION REPORT  (v2: IDF fit proxy, data-driven sets)
+Dataset: 100,000 candidates  |  2026-06-02
+====================================================================
+
+====================================================================
+SECTION 1 : SIGNAL CORRELATIONS WITH FIT PROXY
+fit_proxy = title_relevance × idf_sum_jd_positive × (yoe>3 ? 1 : 0.5)
+All skill signals use vocab-derived sets — no hardcoding
+====================================================================
+
+  Signal                      Pearson r     |r|  Strength  Direction
+  ------------------------------------------------------------------------
+  title_relevance               +0.7895  0.7895  STRONG      ↑ positive
+  prod_jobs                     +0.6066  0.6066  STRONG      ↑ positive
+  idf_sum_positive              +0.5520  0.5520  STRONG      ↑ positive
+  hard_req_count                +0.4706  0.4706  STRONG      ↑ positive
+  ctx_verified                  +0.3951  0.3951  STRONG      ↑ positive
+  saved_recruiters              +0.3123  0.3123  STRONG      ↑ positive
+  profile_views                 +0.2357  0.2357  moderate    ↑ positive
+  prod_cue_hits                 +0.1937  0.1937  moderate    ↑ positive
+  connections                   +0.1760  0.1760  moderate    ↑ positive
+  idf_sum_negative              +0.1727  0.1727  moderate    ↑ positive
+  github_score                  +0.1478  0.1478  weak        ↑ positive
+  applications                  +0.1189  0.1189  weak        ↑ positive
+  edu_score                     +0.1122  0.1122  weak        ↑ positive
+  d_inactive                    -0.1012  0.1012  weak        ↓ negative
+  completeness                  +0.0927  0.0927  weak        ↑ positive
+  icr                           +0.0898  0.0898  weak        ↑ positive
+  oar                           +0.0896  0.0896  weak        ↑ positive
+  response_rate                 +0.0742  0.0742  weak        ↑ positive
+  open_to_work                  +0.0635  0.0635  weak        ↑ positive
+  yoe                           -0.0475  0.0475  negligible  ↓ negative
+  notice                        -0.0358  0.0358  negligible  ↓ negative
+  loc_score                     +0.0294  0.0294  negligible  ↑ positive
+  is_consulting                 -0.0200  0.0200  negligible  ↓ negative
+
+  SIGNALS POSITIVELY CORRELATED WITH FIT  (use to boost score):
+    title_relevance               r=+0.7895  → HIGH weight
+    prod_jobs                     r=+0.6066  → HIGH weight
+    idf_sum_positive              r=+0.5520  → HIGH weight
+    hard_req_count                r=+0.4706  → HIGH weight
+    ctx_verified                  r=+0.3951  → HIGH weight
+    saved_recruiters              r=+0.3123  → HIGH weight
+    profile_views                 r=+0.2357  → MEDIUM weight
+    prod_cue_hits                 r=+0.1937  → MEDIUM weight
+    connections                   r=+0.1760  → MEDIUM weight
+    idf_sum_negative              r=+0.1727  → MEDIUM weight
+    github_score                  r=+0.1478  → LOW weight
+    applications                  r=+0.1189  → LOW weight
+    edu_score                     r=+0.1122  → LOW weight
+    completeness                  r=+0.0927  → LOW weight
+    icr                           r=+0.0898  → LOW weight
+    oar                           r=+0.0896  → LOW weight
+    response_rate                 r=+0.0742  → LOW weight
+    open_to_work                  r=+0.0635  → LOW weight
+
+  SIGNALS NEGATIVELY CORRELATED WITH FIT  (use to penalise):
+    d_inactive                    r=-0.1012  → penalise high values
+
+  FIT PROXY DISTRIBUTION  (across 100,000 candidates):
+  0 (no fit)               79,532  (79.5%)  ██████████████████████
+  0.01–5                   20,006  (20.0%)  ██████░░░░░░░░░░░░░░░░
+  5–15                        409  (0.4%)  ░░░░░░░░░░░░░░░░░░░░░░
+  15–30                        47  (0.0%)  ░░░░░░░░░░░░░░░░░░░░░░
+  30–50                         4  (0.0%)  ░░░░░░░░░░░░░░░░░░░░░░
+  50+  (top tier)               2  (0.0%)  ░░░░░░░░░░░░░░░░░░░░░░

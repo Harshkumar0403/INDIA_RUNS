@@ -1,0 +1,141 @@
+======================================================================
+  REDROB HACKATHON — MODEL DESIGN CHEAT SHEET  (updated from 100k EDA)
+  Dataset: 100,000 candidates  |  Role: Senior AI Engineer (Redrob AI)
+  Generated: 2026-06-02
+======================================================================
+
+┌─────────────────────────────────────────────────────────────────┐
+│  SCORING COMPONENTS  (weights validated on 100k corpus)        │
+├─────────────────────────────────────────────────────────────────┤
+│  Component                      Weight   Basis                 │
+│  ──────────────────────────── ────────── ─────────────────── ─ │
+│  Hard gate (DQ + honeypot)      binary   95.0% eliminated     │
+│  Title relevance                20%      corpus-derived score  │
+│  IDF-weighted JD skill score    30%      22 golden skills      │
+│  Hard-req skill depth           15%      vector DB / retrieval │
+│  Production evidence (cues)     10%      career text signals   │
+│  Context-verified skills         8%      skill in job desc     │
+│  Experience range 6–8 yrs        7%      JD ideal range       │
+│  Availability multiplier        ×mult    59% cold/inactive     │
+│  Negative skill penalty         ×mult    JD explicit negatives │
+│  Location / visa                 3%      India metro required  │
+│  GitHub + assessments            4%      open source signal    │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  HARD DISQUALIFIERS  (corpus-derived, not hardcoded)           │
+├─────────────────────────────────────────────────────────────────┤
+│  1. Title in non-relevant set (<15% JD skill coverage)        │
+│     → 94,541 candidates (94.5%) eliminated by this alone      │
+│  2. Pure consulting career (name-pattern check)               │
+│     → 3,724 additional disqualified (3.7%)                    │
+│  3. JD-negative skills dominate (vocab-derived jd_negative)   │
+│     → 387 candidates (LangChain/CV/Speech dominant)           │
+│  4. Wrapper-only + low exp (<3yr, no hard-req skills)         │
+│     → 4,105 candidates (LangChain-only, <3yr)                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  HONEYPOT DETECTION FLAGS  (100k validated)                    │
+├─────────────────────────────────────────────────────────────────┤
+│  SKILL_DURATION_IMPOSSIBLE    : 29,816  (29.8%)               │
+│  PERFECTLY_CONTIGUOUS_CAREER  : 25,611  (25.6%) ← v2 new      │
+│  INFLATED_PROFICIENCY         :    196   (0.2%)               │
+│  YOE_CAREER_MISMATCH          :     28   (0.0%)               │
+│  TENURE_LONGER_THAN_POSSIBLE  :     19   (0.0%)               │
+│  Total flagged                : 39,208  (39.2%)               │
+│  Note: CONTIGUOUS_CAREER → use as penalty mult, not hard DQ   │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  AVAILABILITY MULTIPLIER TABLE                                 │
+├─────────────────────────────────────────────────────────────────┤
+│  Active ≤14d   → ×1.00  │  Active ≤60d  → ×0.88             │
+│  Active ≤30d   → ×0.95  │  Active ≤90d  → ×0.80             │
+│  Active ≤120d  → ×0.70  │  Active ≤180d → ×0.58             │
+│  Active 180d+  → ×0.40  │                                    │
+│  open_to_work=False     → ×0.88 additional                   │
+│  notice_period > 90d    → ×0.88 additional                   │
+│  recruiter_rr < 0.20    → ×0.85 additional                   │
+│  International (no visa)→ ×0.35 location penalty             │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  TOP RELEVANT TITLES  (corpus-derived coverage scores)         │
+├─────────────────────────────────────────────────────────────────┤
+│  Senior Applied Scientist                       1.0000  │
+│  Lead AI Engineer                               0.9195  │
+│  Staff Machine Learning Engineer                0.8276  │
+│  Senior AI Engineer                             0.7931  │
+│  Senior Machine Learning Engineer               0.7816  │
+│  Senior NLP Engineer                            0.7586  │
+│  Applied ML Engineer                            0.6957  │
+│  Recommendation Systems Engineer                0.6897  │
+│  Senior Data Scientist                          0.6751  │
+│  Machine Learning Engineer                      0.6494  │
+│  AI Engineer                                    0.6305  │
+│  Search Engineer                                0.6237  │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  PRODUCT-LIKE INDUSTRIES  (corpus-derived, score ≥ 0.40)       │
+├─────────────────────────────────────────────────────────────────┤
+│  AI Services                                                      │
+│  AI/ML                                                            │
+│  Consumer Electronics                                             │
+│  Conversational AI                                                │
+│  HealthTech AI                                                    │
+│  Internet                                                         │
+│  Media                                                            │
+│  Voice AI                                                         │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  GOLDEN SKILLS  (TIER_3_SPECIALIST + JD_HARD_REQ)              │
+├─────────────────────────────────────────────────────────────────┤
+│  Indexing Algorithms     IDF=10.41  df=3                       │
+│  Vector Representations  IDF=10.13  df=4                       │
+│  Ranking Systems         IDF=10.13  df=4                       │
+│  Text Encoders           IDF=9.90   df=5                       │
+│  OpenSearch              IDF=4.35   df=1,286                   │
+│  Elasticsearch           IDF=4.33   df=1,311                   │
+│  Qdrant/Milvus/Weaviate  IDF=4.27–4.28  df=1,379–1,389        │
+│  FAISS/Pinecone/Embeddings IDF≈2.98  df=5,052–5,080           │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  KEY 100k CORPUS NUMBERS                                       │
+├─────────────────────────────────────────────────────────────────┤
+│  Total candidates         : 100,000                            │
+│  Eligible after DQ+HP gate:   3,430  (3.4%)                   │
+│  Active ≤30d              :  12,085  (12.1%)                  │
+│  Open to work flag        :  35,339  (35.3%)                  │
+│  Notice ≤30d (JD ideal)   :  13,809  (13.8%)                  │
+│  India-based              :  75,113  (75.1%)                  │
+│  Mean notice period       :    87.4 days                      │
+│  Consulting firm roles    :  90,948  (30.3% of all jobs)      │
+│  96.2% of candidates self-report skills (no context verify)   │
+│  22 golden skills: IDF 2.98–10.41, df 3–5,080                 │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  FIXES FOR FINAL RANKER  (identified during EDA)               │
+├─────────────────────────────────────────────────────────────────┤
+│  FIX 1: Location — international candidates get ×0.35 penalty │
+│         unless willing_to_relocate=True AND prior India exp.   │
+│  FIX 2: Title gate threshold 0.15→0.10 (Cloud/Devops/FullStack│
+│         too aggressively DQ'd — IDF should differentiate)     │
+│  FIX 3: Industry override — company size 11-200 = product     │
+│         (Fintech/E-comm misclassified as services in corpus)   │
+│  FIX 4: CONTIGUOUS_CAREER = ×0.6 penalty, not hard DQ        │
+│         (strong ML engineers shouldn't be zeroed by this)     │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│  COMPUTE CONSTRAINTS                                           │
+├─────────────────────────────────────────────────────────────────┤
+│  Ranking step: ≤5 min · CPU only · ≤16GB · no network calls  │
+│  Offline: compute IDF features + arc events → feature matrix  │
+│  Online: load matrix + vocab → weighted score → sort → CSV   │
+│  No LLM calls during ranking — all precomputed offline        │
+└─────────────────────────────────────────────────────────────────┘

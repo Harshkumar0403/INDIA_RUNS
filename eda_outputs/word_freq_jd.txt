@@ -1,0 +1,115 @@
+====================================================================
+JD WORD FREQUENCY REPORT  (v2: polarity-labelled)
+Generated: 2026-06-02
+====================================================================
+
+====================================================================
+SECTION 4 : JD WORD / PHRASE FREQUENCY ANALYSIS
+Tokens extracted directly from the JD text — no hardcoded lists.
+====================================================================
+
+  Top 60 JD tokens  (stopwords removed):
+  Token                            Count  Frequency bar
+  -------------------------------------------------------
+  retrieval                            3  ███████████████
+  systems                              3  ███████████████
+  hybrid                               3  ███████████████
+  evaluation                           3  ███████████████
+  offline                              3  ███████████████
+  online                               3  ███████████████
+  search                               2  ██████████░░░░░
+  ranking                              2  ██████████░░░░░
+  llm                                  2  ██████████░░░░░
+  ranker                               2  ██████████░░░░░
+  tech                                 2  ██████████░░░░░
+  scale                                2  ██████████░░░░░
+  open                                 2  ██████████░░░░░
+  source                               2  ██████████░░░░░
+  experience                           2  ██████████░░░░░
+  quality                              2  ██████████░░░░░
+  dense                                2  ██████████░░░░░
+  end                                  2  ██████████░░░░░
+  embeddings-based                     1  █████░░░░░░░░░░
+  sentence-transformers                1  █████░░░░░░░░░░
+  openai                               1  █████░░░░░░░░░░
+  embeddings                           1  █████░░░░░░░░░░
+  bge                                  1  █████░░░░░░░░░░
+  vector                               1  █████░░░░░░░░░░
+  databases                            1  █████░░░░░░░░░░
+  infrastructure                       1  █████░░░░░░░░░░
+  pinecone                             1  █████░░░░░░░░░░
+  weaviate                             1  █████░░░░░░░░░░
+  qdrant                               1  █████░░░░░░░░░░
+  milvus                               1  █████░░░░░░░░░░
+  opensearch                           1  █████░░░░░░░░░░
+  elasticsearch                        1  █████░░░░░░░░░░
+  faiss                                1  █████░░░░░░░░░░
+  python                               1  █████░░░░░░░░░░
+  frameworks                           1  █████░░░░░░░░░░
+  ndcg                                 1  █████░░░░░░░░░░
+  mrr                                  1  █████░░░░░░░░░░
+  map                                  1  █████░░░░░░░░░░
+  testing                              1  █████░░░░░░░░░░
+  recruiter                            1  █████░░░░░░░░░░
+  feedback                             1  █████░░░░░░░░░░
+  loops                                1  █████░░░░░░░░░░
+  fine-tuning                          1  █████░░░░░░░░░░
+  lora                                 1  █████░░░░░░░░░░
+  qlora                                1  █████░░░░░░░░░░
+  peft                                 1  █████░░░░░░░░░░
+  learning                             1  █████░░░░░░░░░░
+  rank                                 1  █████░░░░░░░░░░
+  xgboost                              1  █████░░░░░░░░░░
+  neural                               1  █████░░░░░░░░░░
+  recruiting                           1  █████░░░░░░░░░░
+  marketplace                          1  █████░░░░░░░░░░
+  products                             1  █████░░░░░░░░░░
+  distributed                          1  █████░░░░░░░░░░
+  large                                1  █████░░░░░░░░░░
+  inference                            1  █████░░░░░░░░░░
+  optimization                         1  █████░░░░░░░░░░
+  contributions                        1  █████░░░░░░░░░░
+  nlp                                  1  █████░░░░░░░░░░
+  production                           1  █████░░░░░░░░░░
+
+  Top 30 JD bigrams  (concept phrases):
+  Bigram                                     Count
+  --------------------------------------------------
+  offline online                                 3
+  hybrid dense                                   2
+  dense evaluation                               2
+  evaluation offline                             2
+  embeddings-based retrieval                     1
+  retrieval systems                              1
+  systems sentence-transformers                  1
+  sentence-transformers openai                   1
+  openai embeddings                              1
+  embeddings bge                                 1
+  bge vector                                     1
+  vector databases                               1
+  databases hybrid                               1
+  hybrid search                                  1
+  search infrastructure                          1
+  infrastructure pinecone                        1
+  pinecone weaviate                              1
+  weaviate qdrant                                1
+  qdrant milvus                                  1
+  milvus opensearch                              1
+  opensearch elasticsearch                       1
+  elasticsearch faiss                            1
+  faiss python                                   1
+  python evaluation                              1
+  evaluation frameworks                          1
+  frameworks ranking                             1
+  ranking systems                                1
+  systems ndcg                                   1
+  ndcg mrr                                       1
+  mrr map                                        1
+
+  JD POLARITY TERMS  (extracted from JD structure):
+  POSITIVE (sections A+B+C): embeddings, retrieval, ranking, ndcg, mrr,
+    faiss, pinecone, elasticsearch, weaviate, qdrant, milvus, opensearch,
+    python, lora, qlora, peft, xgboost, distributed, open source
+  NEGATIVE (section D 'DO NOT WANT'): langchain, llamaindex, tcs,
+    infosys, wipro, accenture, computer vision, speech, robotics,
+    closed source, consulting

@@ -1,0 +1,97 @@
+====================================================================
+DISQUALIFIER STATISTICS  (v2: data-driven)
+====================================================================
+
+  Total candidates          : 100,000
+  Disqualified              : 95,014  (95.0%)
+  Honeypot flags            : 39,208  (39.2%)
+  Eligible for ranking      : 3,430  (3.4%)
+
+  Honeypot rate in top 10   : 0/10
+  (Hackathon limit: ≤1/10 to avoid disqualification)
+
+────────────────────────────────────────────────────────────────────
+CORPUS-DERIVED NON-RELEVANT TITLES  (<15% JD skill coverage):
+────────────────────────────────────────────────────────────────────
+  .NET Developer
+  Accountant
+  Business Analyst
+  Civil Engineer
+  Cloud Engineer
+  Content Writer
+  Customer Support
+  DevOps Engineer
+  Frontend Engineer
+  Full Stack Developer
+  Graphic Designer
+  HR Manager
+  Java Developer
+  Marketing Manager
+  Mechanical Engineer
+  Mobile Developer
+  Operations Manager
+  Project Manager
+  QA Engineer
+  Sales Executive
+  Software Engineer
+
+────────────────────────────────────────────────────────────────────
+TOP RELEVANT TITLES  (by JD skill coverage, data-driven):
+────────────────────────────────────────────────────────────────────
+  Title                                              Coverage
+  ------------------------------------------------------------
+  Senior Applied Scientist                             1.0000
+  Lead AI Engineer                                     0.9195
+  Staff Machine Learning Engineer                      0.8276
+  Senior AI Engineer                                   0.7931
+  Senior Machine Learning Engineer                     0.7816
+  Senior NLP Engineer                                  0.7586
+  Applied ML Engineer                                  0.6957
+  Recommendation Systems Engineer                      0.6897
+  Senior Data Scientist                                0.6751
+  Machine Learning Engineer                            0.6494
+  AI Engineer                                          0.6305
+  Search Engineer                                      0.6237
+  NLP Engineer                                         0.5813
+  Data Scientist                                       0.4328
+  ML Engineer                                          0.4039
+  Senior Software Engineer (ML)                        0.3944
+  AI Research Engineer                                 0.3696
+  AI Specialist                                        0.3682
+  Junior ML Engineer                                   0.3622
+  Computer Vision Engineer                             0.3595
+  Data Engineer                                        0.1741
+  Senior Data Engineer                                 0.1642
+  Backend Engineer                                     0.1632
+  Data Analyst                                         0.1620
+  Senior Software Engineer                             0.1599
+
+────────────────────────────────────────────────────────────────────
+INDUSTRY SCORES  (corpus-derived, product_like >= 0.40):
+────────────────────────────────────────────────────────────────────
+  Industry                                      Score  Type
+  --------------------------------------------------------------
+  Consumer Electronics                         1.0000  PRODUCT
+  Media                                        0.9709  PRODUCT
+  Internet                                     0.9047  PRODUCT
+  AI Services                                  0.5904  PRODUCT
+  Conversational AI                            0.5663  PRODUCT
+  Voice AI                                     0.5647  PRODUCT
+  HealthTech AI                                0.5562  PRODUCT
+  AI/ML                                        0.5512  PRODUCT
+  Transportation                               0.2818  neutral
+  Gaming                                       0.2723  neutral
+  EdTech                                       0.2676  neutral
+  SaaS                                         0.2649  neutral
+  AdTech                                       0.2638  neutral
+  Insurance Tech                               0.2594  neutral
+  HealthTech                                   0.2538  neutral
+  E-commerce                                   0.1427  SERVICES
+  Fintech                                      0.1256  SERVICES
+  Food Delivery                                0.1083  SERVICES
+  Consulting                                   0.0949  SERVICES
+  IT Services                                  0.0770  SERVICES
+  Conglomerate                                 0.0721  SERVICES
+  Software                                     0.0715  SERVICES
+  Manufacturing                                0.0711  SERVICES
+  Paper Products                               0.0698  SERVICES

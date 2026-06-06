@@ -1,0 +1,102 @@
+====================================================================
+CAREER ARC PATTERNS REPORT  (v2: corpus-derived industry sets)
+Dataset: 100,000 candidates  |  2026-06-02
+====================================================================
+
+====================================================================
+SECTION 2 : CAREER ARC PATTERNS  (Event-Centric KG Perspective)
+Career event taxonomy analogous to paper's 7-type narrative events.
+PRODUCT_DOMAIN uses corpus-derived industry relevance — no hardcoding.
+====================================================================
+
+  Career event type distribution  (100,000 candidates):
+  Event Type                       Count        %  Distribution
+  -----------------------------------------------------------------
+  CORE_ML_ROLE                     1,259     0.4%  ░░░░░░░░░░░░░░░░░░░░░░
+  DATA_ENGINEERING                18,623     6.2%  █████░░░░░░░░░░░░░░░░░
+  SOFTWARE_ENGINEERING            65,126    21.7%  ████████████████░░░░░░
+  LEADERSHIP_EVENT                54,846    18.3%  █████████████░░░░░░░░░
+  RESEARCH_WORK                      590     0.2%  ░░░░░░░░░░░░░░░░░░░░░░
+  CONSULTING_STINT                90,948    30.3%  ██████████████████████
+  PRODUCT_DOMAIN                     113     0.0%  ░░░░░░░░░░░░░░░░░░░░░░
+  OTHER_ROLE                      68,666    22.9%  █████████████████░░░░░
+
+  Top 25 career event transitions  (first-order Markov):
+  From                         → To                               Count    P(j|i)
+  ------------------------------------------------------------------------------
+  CONSULTING_STINT             → CONSULTING_STINT                18,892     0.316
+  OTHER_ROLE                   → OTHER_ROLE                      14,360     0.300
+  SOFTWARE_ENGINEERING         → CONSULTING_STINT                14,258     0.348
+  CONSULTING_STINT             → SOFTWARE_ENGINEERING            14,220     0.238
+  SOFTWARE_ENGINEERING         → SOFTWARE_ENGINEERING            14,116     0.345
+  CONSULTING_STINT             → OTHER_ROLE                      12,953     0.217
+  OTHER_ROLE                   → CONSULTING_STINT                12,953     0.271
+  OTHER_ROLE                   → LEADERSHIP_EVENT                11,706     0.245
+  LEADERSHIP_EVENT             → OTHER_ROLE                      11,458     0.299
+  LEADERSHIP_EVENT             → CONSULTING_STINT                10,601     0.277
+  CONSULTING_STINT             → LEADERSHIP_EVENT                10,349     0.173
+  LEADERSHIP_EVENT             → LEADERSHIP_EVENT                 9,175     0.240
+  SOFTWARE_ENGINEERING         → OTHER_ROLE                       5,855     0.143
+  OTHER_ROLE                   → SOFTWARE_ENGINEERING             5,811     0.122
+  SOFTWARE_ENGINEERING         → LEADERSHIP_EVENT                 4,712     0.115
+  LEADERSHIP_EVENT             → SOFTWARE_ENGINEERING             4,654     0.122
+  CONSULTING_STINT             → DATA_ENGINEERING                 3,282     0.055
+  DATA_ENGINEERING             → CONSULTING_STINT                 3,234     0.264
+  DATA_ENGINEERING             → OTHER_ROLE                       2,954     0.241
+  OTHER_ROLE                   → DATA_ENGINEERING                 2,931     0.061
+  LEADERSHIP_EVENT             → DATA_ENGINEERING                 2,364     0.062
+  DATA_ENGINEERING             → LEADERSHIP_EVENT                 2,331     0.190
+  DATA_ENGINEERING             → SOFTWARE_ENGINEERING             2,003     0.164
+  SOFTWARE_ENGINEERING         → DATA_ENGINEERING                 1,929     0.047
+  DATA_ENGINEERING             → DATA_ENGINEERING                 1,723     0.141
+
+  Self-transitions  (P(same→same) — career persistence):
+  Event Type                      P(self-loop)  Interpretation
+  --------------------------------------------------------------------
+  CORE_ML_ROLE                           0.515  HIGH persistence
+  DATA_ENGINEERING                       0.141  low persistence
+  SOFTWARE_ENGINEERING                   0.345  moderate
+  LEADERSHIP_EVENT                       0.240  low persistence
+  RESEARCH_WORK                          0.208  low persistence
+  CONSULTING_STINT                       0.316  moderate
+  PRODUCT_DOMAIN                         0.038  low persistence
+  OTHER_ROLE                             0.300  moderate
+
+  GOOD arc patterns  (what the JD actually wants):
+  Pattern                                                Count        %  Bar
+  --------------------------------------------------------------------------------
+  Pure ML career                                           842     0.8%  ███░░░░░░░░░░░░░░░░░
+  Eng → ML (strong transition)                             117     0.1%  ░░░░░░░░░░░░░░░░░░░░
+  Data → ML (strong transition)                              0     0.0%  ░░░░░░░░░░░░░░░░░░░░
+  Research → ML (academic→applied)                         294     0.3%  █░░░░░░░░░░░░░░░░░░░
+  ML → Lead (seniority growth)                              10     0.0%  ░░░░░░░░░░░░░░░░░░░░
+  Eng → ML → Lead (ideal arc)                                0     0.0%  ░░░░░░░░░░░░░░░░░░░░
+  Data → ML → Lead (ideal arc)                               0     0.0%  ░░░░░░░░░░░░░░░░░░░░
+
+  BAD arc patterns  (penalise in ranker):
+  Pattern                                                Count        %
+  --------------------------------------------------------------------
+  Consulting → Consulting  (JD hard DQ)                 61,472    61.5%
+  Manager → Manager  (no hands-on code)                 38,423    38.4%
+  → Consulting  (moving wrong direction)                25,770    25.8%
+  Consulting sandwich  (reverted)                       26,806    26.8%
+
+  Career arc length distribution (# distinct roles):
+   1 roles :   18,508  ( 18.5%)  ███████████████████░░░░░░
+   2 roles :   24,186  ( 24.2%)  █████████████████████████
+   3 roles :   22,126  ( 22.1%)  ███████████████████████░░
+   4 roles :   17,131  ( 17.1%)  ██████████████████░░░░░░░
+   5 roles :   11,469  ( 11.5%)  ████████████░░░░░░░░░░░░░
+   6 roles :    5,196  (  5.2%)  █████░░░░░░░░░░░░░░░░░░░░
+   7 roles :    1,218  (  1.2%)  █░░░░░░░░░░░░░░░░░░░░░░░░
+   8 roles :      152  (  0.2%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+   9 roles :       14  (  0.0%)  ░░░░░░░░░░░░░░░░░░░░░░░░░
+
+  Arc quality score distribution:
+  (CORE_ML=+2, SOFTWARE/DATA=+1, CONSULTING=-2, other=0)
+  ≤-2  (strong negative)         39,899  ( 39.9%)  ██████████████████████
+  -1   (mild negative)           13,541  ( 13.5%)  ███████░░░░░░░░░░░░░░░
+  0    (neutral)                 20,050  ( 20.1%)  ███████████░░░░░░░░░░░
+  1–2  (mild positive)           22,893  ( 22.9%)  █████████████░░░░░░░░░
+  3–4  (good)                     3,420  (  3.4%)  ██░░░░░░░░░░░░░░░░░░░░
+  5+   (excellent)                  197  (  0.2%)  ░░░░░░░░░░░░░░░░░░░░░░

@@ -1,0 +1,518 @@
+====================================================================
+HONEYPOT & DISQUALIFIER DETECTION  (v2: data-driven)
+Dataset: 100,000  |  2026-06-02
+====================================================================
+
+HONEYPOT FLAG TYPES:
+  SKILL_DURATION_IMPOSSIBLE                         29,816  (29.8%)
+  PERFECTLY_CONTIGUOUS_CAREER                       25,611  (25.6%)
+  INFLATED_PROFICIENCY                                 196  (0.2%)
+  YOE_CAREER_MISMATCH                                   28  (0.0%)
+  TENURE_LONGER_THAN_POSSIBLE                           19  (0.0%)
+
+  Total with ≥1 honeypot flag : 39,208  (39.2%)
+
+DISQUALIFIER FLAG TYPES:
+  DQ_NON_RELEVANT_TITLE                             94,541  (94.5%)
+  DQ_WRAPPER_ONLY_LOW_EXP                            4,105  (4.1%)
+  DQ_PURE_CONSULTING                                 3,724  (3.7%)
+  DQ_NEGATIVE_SKILLS_DOMINANT                          387  (0.4%)
+
+  Total disqualified : 95,014  (95.0%)
+
+────────────────────────────────────────────────────────────────────
+HONEYPOT DETAILS (first 50)
+────────────────────────────────────────────────────────────────────
+
+  CAND_0000002  |  Operations Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000003  |  Customer Support
+    [SKILL_DURATION_IMPOSSIBLE]  'Kubernetes' claimed 34mo but career is only 13mo
+
+  CAND_0000005  |  Accountant
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000009  |  Mechanical Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000011  |  QA Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'Recommendation Systems' claimed 40mo but career is only 24mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Spring Boot' claimed 31mo but career is only 24mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Kubeflow' claimed 59mo but career is only 24mo
+
+  CAND_0000012  |  Operations Manager
+    [SKILL_DURATION_IMPOSSIBLE]  'AWS' claimed 30mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'dbt' claimed 22mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'PowerPoint' claimed 27mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Content Writing' claimed 36mo but career is only 13mo
+
+  CAND_0000013  |  Civil Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'React' claimed 23mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Spark' claimed 30mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Data Pipelines' claimed 36mo but career is only 13mo
+
+  CAND_0000017  |  Accountant
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000022  |  Mechanical Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'Django' claimed 23mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'SQL' claimed 36mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'AWS' claimed 29mo but career is only 13mo
+
+  CAND_0000028  |  Operations Manager
+    [SKILL_DURATION_IMPOSSIBLE]  'REST APIs' claimed 21mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Photoshop' claimed 30mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Data Pipelines' claimed 23mo but career is only 13mo
+    [SKILL_DURATION_IMPOSSIBLE]  'CNN' claimed 29mo but career is only 13mo
+
+  CAND_0000031  |  Recommendation Systems Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'Pinecone' claimed 88mo but career is only 72mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Information Retrieval' claimed 84mo but career is only 72mo
+
+  CAND_0000035  |  Full Stack Developer
+    [SKILL_DURATION_IMPOSSIBLE]  'BentoML' claimed 59mo but career is only 52mo
+
+  CAND_0000036  |  Project Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 5 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000037  |  Business Analyst
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 5 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000040  |  Customer Support
+    [SKILL_DURATION_IMPOSSIBLE]  'Spring Boot' claimed 27mo but career is only 19mo
+
+  CAND_0000041  |  Operations Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 5 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000043  |  Cloud Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000045  |  Project Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 7 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000048  |  Mobile Developer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000050  |  Business Analyst
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000052  |  Mechanical Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'Webpack' claimed 35mo but career is only 17mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Docker' claimed 30mo but career is only 17mo
+    [SKILL_DURATION_IMPOSSIBLE]  'BigQuery' claimed 24mo but career is only 17mo
+
+  CAND_0000055  |  Full Stack Developer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000056  |  Frontend Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'BentoML' claimed 48mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Accounting' claimed 30mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Image Classification' claimed 53mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'FastAPI' claimed 26mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'MongoDB' claimed 24mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'PyTorch' claimed 38mo but career is only 16mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Embeddings' claimed 24mo but career is only 16mo
+
+  CAND_0000059  |  Frontend Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'GANs' claimed 26mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'HTML' claimed 26mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Rust' claimed 36mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'CNN' claimed 35mo but career is only 18mo
+
+  CAND_0000060  |  Cloud Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000065  |  Project Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000068  |  Java Developer
+    [SKILL_DURATION_IMPOSSIBLE]  'SQL' claimed 27mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Weights & Biases' claimed 33mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Excel' claimed 33mo but career is only 18mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Java' claimed 30mo but career is only 18mo
+
+  CAND_0000069  |  Business Analyst
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 5 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000071  |  DevOps Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'CNN' claimed 36mo but career is only 22mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Figma' claimed 34mo but career is only 22mo
+    [SKILL_DURATION_IMPOSSIBLE]  'OpenCV' claimed 38mo but career is only 22mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Tally' claimed 34mo but career is only 22mo
+
+  CAND_0000072  |  Frontend Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000074  |  Operations Manager
+    [SKILL_DURATION_IMPOSSIBLE]  'Go' claimed 34mo but career is only 23mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Webpack' claimed 30mo but career is only 23mo
+
+  CAND_0000075  |  Full Stack Developer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000078  |  Business Analyst
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000079  |  Customer Support
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 6 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000081  |  Accountant
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000089  |  Mechanical Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'Terraform' claimed 23mo but career is only 13mo
+
+  CAND_0000090  |  QA Engineer
+    [SKILL_DURATION_IMPOSSIBLE]  'YOLO' claimed 35mo but career is only 20mo
+    [SKILL_DURATION_IMPOSSIBLE]  'MLOps' claimed 50mo but career is only 20mo
+    [SKILL_DURATION_IMPOSSIBLE]  'Forecasting' claimed 31mo but career is only 20mo
+
+  CAND_0000093  |  Civil Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000098  |  Business Analyst
+    [SKILL_DURATION_IMPOSSIBLE]  'MongoDB' claimed 31mo but career is only 20mo
+
+  CAND_0000100  |  Graphic Designer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 6 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000103  |  Mechanical Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000110  |  Software Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 5 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000112  |  AI Specialist
+    [SKILL_DURATION_IMPOSSIBLE]  'GANs' claimed 58mo but career is only 46mo
+
+  CAND_0000113  |  .NET Developer
+    [SKILL_DURATION_IMPOSSIBLE]  'Scrum' claimed 28mo but career is only 22mo
+
+  CAND_0000115  |  Operations Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000116  |  Full Stack Developer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000119  |  Graphic Designer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000122  |  Civil Engineer
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000123  |  Marketing Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+  CAND_0000124  |  Operations Manager
+    [PERFECTLY_CONTIGUOUS_CAREER]  all 4 roles have 0-1mo gap — fabricated dates?
+
+────────────────────────────────────────────────────────────────────
+DISQUALIFIER DETAILS (first 100)
+────────────────────────────────────────────────────────────────────
+
+  CAND_0000002  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000003  |  Customer Support
+    DQ_NON_RELEVANT_TITLE: 'Customer Support' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000004  |  Marketing Manager
+    DQ_NON_RELEVANT_TITLE: 'Marketing Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000005  |  Accountant
+    DQ_NON_RELEVANT_TITLE: 'Accountant' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000006  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000007  |  Civil Engineer
+    DQ_NON_RELEVANT_TITLE: 'Civil Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000008  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000009  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000011  |  QA Engineer
+    DQ_NON_RELEVANT_TITLE: 'QA Engineer' (corpus-derived: <15% JD skill coverage)
+    DQ_WRAPPER_ONLY_LOW_EXP: JD-negative tools {'Snowflake'} with no hard-req skills, only 2.0yr exp
+
+  CAND_0000012  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000013  |  Civil Engineer
+    DQ_NON_RELEVANT_TITLE: 'Civil Engineer' (corpus-derived: <15% JD skill coverage)
+    DQ_WRAPPER_ONLY_LOW_EXP: JD-negative tools {'Snowflake'} with no hard-req skills, only 1.1yr exp
+
+  CAND_0000014  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000015  |  Software Engineer
+    DQ_NON_RELEVANT_TITLE: 'Software Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000016  |  Accountant
+    DQ_NON_RELEVANT_TITLE: 'Accountant' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000017  |  Accountant
+    DQ_NON_RELEVANT_TITLE: 'Accountant' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000018  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000019  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000020  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000021  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000022  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000023  |  Software Engineer
+    DQ_NON_RELEVANT_TITLE: 'Software Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000024  |  HR Manager
+    DQ_NON_RELEVANT_TITLE: 'HR Manager' (corpus-derived: <15% JD skill coverage)
+    DQ_PURE_CONSULTING: all 2 roles at services firms: ['TCS', 'Infosys']
+
+  CAND_0000025  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000026  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000027  |  DevOps Engineer
+    DQ_NON_RELEVANT_TITLE: 'DevOps Engineer' (corpus-derived: <15% JD skill coverage)
+    DQ_PURE_CONSULTING: all 2 roles at services firms: ['Infosys', 'Wipro']
+
+  CAND_0000028  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+    DQ_WRAPPER_ONLY_LOW_EXP: JD-negative tools {'Snowflake'} with no hard-req skills, only 1.1yr exp
+
+  CAND_0000029  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000030  |  Marketing Manager
+    DQ_NON_RELEVANT_TITLE: 'Marketing Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000032  |  .NET Developer
+    DQ_NON_RELEVANT_TITLE: '.NET Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000033  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000034  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000035  |  Full Stack Developer
+    DQ_NON_RELEVANT_TITLE: 'Full Stack Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000036  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000037  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000038  |  Java Developer
+    DQ_NON_RELEVANT_TITLE: 'Java Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000039  |  Marketing Manager
+    DQ_NON_RELEVANT_TITLE: 'Marketing Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000040  |  Customer Support
+    DQ_NON_RELEVANT_TITLE: 'Customer Support' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000041  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000042  |  HR Manager
+    DQ_NON_RELEVANT_TITLE: 'HR Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000043  |  Cloud Engineer
+    DQ_NON_RELEVANT_TITLE: 'Cloud Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000044  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000045  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000046  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000047  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000048  |  Mobile Developer
+    DQ_NON_RELEVANT_TITLE: 'Mobile Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000049  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000050  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000051  |  Cloud Engineer
+    DQ_NON_RELEVANT_TITLE: 'Cloud Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000052  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000053  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000054  |  QA Engineer
+    DQ_NON_RELEVANT_TITLE: 'QA Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000055  |  Full Stack Developer
+    DQ_NON_RELEVANT_TITLE: 'Full Stack Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000056  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000057  |  Customer Support
+    DQ_NON_RELEVANT_TITLE: 'Customer Support' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000058  |  HR Manager
+    DQ_NON_RELEVANT_TITLE: 'HR Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000059  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000060  |  Cloud Engineer
+    DQ_NON_RELEVANT_TITLE: 'Cloud Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000061  |  DevOps Engineer
+    DQ_NON_RELEVANT_TITLE: 'DevOps Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000062  |  DevOps Engineer
+    DQ_NON_RELEVANT_TITLE: 'DevOps Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000063  |  Java Developer
+    DQ_NON_RELEVANT_TITLE: 'Java Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000064  |  Accountant
+    DQ_NON_RELEVANT_TITLE: 'Accountant' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000065  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000066  |  Content Writer
+    DQ_NON_RELEVANT_TITLE: 'Content Writer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000067  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000068  |  Java Developer
+    DQ_NON_RELEVANT_TITLE: 'Java Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000069  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000070  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000071  |  DevOps Engineer
+    DQ_NON_RELEVANT_TITLE: 'DevOps Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000072  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000073  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000074  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000075  |  Full Stack Developer
+    DQ_NON_RELEVANT_TITLE: 'Full Stack Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000076  |  Project Manager
+    DQ_NON_RELEVANT_TITLE: 'Project Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000077  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000078  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000079  |  Customer Support
+    DQ_NON_RELEVANT_TITLE: 'Customer Support' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000080  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000081  |  Accountant
+    DQ_NON_RELEVANT_TITLE: 'Accountant' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000083  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000084  |  Marketing Manager
+    DQ_NON_RELEVANT_TITLE: 'Marketing Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000085  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000086  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+    DQ_PURE_CONSULTING: all 2 roles at services firms: ['TCS', 'TCS']
+
+  CAND_0000087  |  Full Stack Developer
+    DQ_NON_RELEVANT_TITLE: 'Full Stack Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000088  |  Java Developer
+    DQ_NON_RELEVANT_TITLE: 'Java Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000089  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000090  |  QA Engineer
+    DQ_NON_RELEVANT_TITLE: 'QA Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000091  |  Frontend Engineer
+    DQ_NON_RELEVANT_TITLE: 'Frontend Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000092  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000093  |  Civil Engineer
+    DQ_NON_RELEVANT_TITLE: 'Civil Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000094  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000095  |  HR Manager
+    DQ_NON_RELEVANT_TITLE: 'HR Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000096  |  QA Engineer
+    DQ_NON_RELEVANT_TITLE: 'QA Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000097  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000098  |  Business Analyst
+    DQ_NON_RELEVANT_TITLE: 'Business Analyst' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000099  |  Full Stack Developer
+    DQ_NON_RELEVANT_TITLE: 'Full Stack Developer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000100  |  Graphic Designer
+    DQ_NON_RELEVANT_TITLE: 'Graphic Designer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000101  |  Customer Support
+    DQ_NON_RELEVANT_TITLE: 'Customer Support' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000102  |  Operations Manager
+    DQ_NON_RELEVANT_TITLE: 'Operations Manager' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000103  |  Mechanical Engineer
+    DQ_NON_RELEVANT_TITLE: 'Mechanical Engineer' (corpus-derived: <15% JD skill coverage)
+
+  CAND_0000104  |  Mobile Developer
+    DQ_NON_RELEVANT_TITLE: 'Mobile Developer' (corpus-derived: <15% JD skill coverage)

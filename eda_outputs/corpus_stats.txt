@@ -1,0 +1,507 @@
+====================================================================
+REDROB HACKATHON  —  EDA REPORT  (v2: data-driven + JD-aware)
+Generated : 2026-06-02
+Dataset   : 100,000 candidates
+Vocab size: 133 unique skills (corpus-derived, no hardcoding)
+====================================================================
+
+====================================================================
+SECTION 1 : CORPUS OVERVIEW
+====================================================================
+
+  Total candidates               : 100,000
+  Total summary tokens           : 8,687,349
+  Total career-desc tokens       : 17,620,398
+
+  Summary length (tokens)                           mean=    86.9  median=    78.0  min=    72.0  max=   167.0
+  Career desc length (tokens)                       mean=   176.2  median=   172.0  min=    45.0  max=   564.0
+  Jobs per candidate                                mean=     3.0  median=     3.0  min=     1.0  max=     9.0
+  Skills per candidate                              mean=     9.6  median=     9.0  min=     5.0  max=    23.0
+  Certifications per candidate                      mean=     0.4  median=     0.0  min=     0.0  max=     3.0
+
+====================================================================
+SECTION 2 : TITLE & EXPERIENCE DISTRIBUTION
+====================================================================
+
+  Top 30 current titles  (N=100,000):
+  Title                                           Count       %  Bar
+  ------------------------------------------------------------------------------
+  Business Analyst                                5,833    5.8%  ████████████████████
+  HR Manager                                      5,830    5.8%  ████████████████████
+  Mechanical Engineer                             5,791    5.8%  ████████████████████
+  Accountant                                      5,764    5.8%  ████████████████████
+  Project Manager                                 5,754    5.8%  ████████████████████
+  Customer Support                                5,750    5.8%  ████████████████████
+  Operations Manager                              5,744    5.7%  ████████████████████
+  Content Writer                                  5,727    5.7%  ████████████████████
+  Sales Executive                                 5,713    5.7%  ████████████████████
+  Civil Engineer                                  5,702    5.7%  ████████████████████
+  Graphic Designer                                5,689    5.7%  ████████████████████
+  Marketing Manager                               5,524    5.5%  ███████████████████░
+  Software Engineer                               3,450    3.5%  ████████████░░░░░░░░
+  Full Stack Developer                            2,873    2.9%  ██████████░░░░░░░░░░
+  Cloud Engineer                                  2,836    2.8%  ██████████░░░░░░░░░░
+  Java Developer                                  2,809    2.8%  ██████████░░░░░░░░░░
+  .NET Developer                                  2,788    2.8%  ██████████░░░░░░░░░░
+  DevOps Engineer                                 2,787    2.8%  ██████████░░░░░░░░░░
+  Mobile Developer                                2,757    2.8%  █████████░░░░░░░░░░░
+  Frontend Engineer                               2,738    2.7%  █████████░░░░░░░░░░░
+  QA Engineer                                     2,682    2.7%  █████████░░░░░░░░░░░
+  Analytics Engineer                                764    0.8%  ███░░░░░░░░░░░░░░░░░
+  Data Engineer                                     744    0.7%  ███░░░░░░░░░░░░░░░░░
+  Data Analyst                                      728    0.7%  ██░░░░░░░░░░░░░░░░░░
+  Backend Engineer                                  704    0.7%  ██░░░░░░░░░░░░░░░░░░
+  Senior Data Engineer                              687    0.7%  ██░░░░░░░░░░░░░░░░░░
+  Senior Software Engineer                          653    0.7%  ██░░░░░░░░░░░░░░░░░░
+  ML Engineer                                       167    0.2%  █░░░░░░░░░░░░░░░░░░░
+  AI Research Engineer                              153    0.2%  █░░░░░░░░░░░░░░░░░░░
+  Data Scientist                                    145    0.1%  ░░░░░░░░░░░░░░░░░░░░
+
+  Experience distribution:
+  < 2 yrs                                  7,470    7.5%  ██████░░░░░░░░░░░░░░
+  2-4 yrs                                 17,575   17.6%  ██████████████░░░░░░
+  4-6 yrs                                 17,473   17.5%  ██████████████░░░░░░
+  6-9 yrs ← JD sweet spot                 24,963   25.0%  ████████████████████
+  9-12 yrs                                17,648   17.6%  ██████████████░░░░░░
+  12+ yrs                                 14,871   14.9%  ████████████░░░░░░░░
+  Experience (years)                                mean=     7.2  median=     6.8  min=     1.0  max=    16.9
+
+====================================================================
+SECTION 3 : SKILLS ANALYSIS  (data-driven vocabulary, no hardcoding)
+====================================================================
+
+  Unique skills in corpus : 133
+
+  Frequency-tier distribution  (derived from corpus IDF):
+  Tier                            Unique skills  Meaning
+  ----------------------------------------------------------------------
+  TIER_1_GENERIC                             13  Top 10% by doc-freq — everyone has it (low signal)
+  TIER_2_DOMAIN                              40  10-40% doc-freq — domain indicator (medium signal)
+  TIER_3_SPECIALIST                          80  Bottom 60% doc-freq — rare, high-signal skill
+
+  JD polarity labeling  (substring match against JD sections):
+  JD_HARD_REQ              14 skills   Matches JD 'Must have' section  → high positive weight
+  JD_POSITIVE               8 skills   Matches JD 'Ideal' or 'Nice to have' → moderate boost
+  JD_NEGATIVE               6 skills   Matches JD 'DO NOT WANT' section → RED FLAG / penalty
+  NEUTRAL                 105 skills   Not explicitly mentioned in JD
+
+  Top 50 skills by doc-frequency  (with tier, IDF, JD-label):
+  Skill                                DocFreq     IDF   AvgDur   AvgEnd  Tier / JD-label
+  -----------------------------------------------------------------------------------------------
+  HTML                                  12,246   2.100     16mo      7.5  TIER_1_GENERIC
+  Databricks                            12,244   2.100     16mo      7.5  TIER_1_GENERIC
+  Redux                                 12,222   2.102     16mo      7.5  TIER_1_GENERIC
+  Terraform                             12,187   2.105     16mo      7.5  TIER_1_GENERIC
+  Angular                               12,173   2.106     16mo      7.5  TIER_1_GENERIC
+  Figma                                 12,157   2.107     16mo      7.5  TIER_1_GENERIC
+  Salesforce CRM                        12,157   2.107     16mo      7.6  TIER_1_GENERIC
+  Vue.js                                12,142   2.108     16mo      7.5  TIER_1_GENERIC
+  Sales                                 12,138   2.109     16mo      7.5  TIER_1_GENERIC
+  Accounting                            12,136   2.109     16mo      7.5  TIER_1_GENERIC
+  Agile                                 12,135   2.109     16mo      7.5  TIER_1_GENERIC
+  Kafka                                 12,114   2.111     16mo      7.5  TIER_1_GENERIC
+  Excel                                 12,109   2.111     16mo      7.5  TIER_1_GENERIC
+  BigQuery                              12,108   2.111     16mo      7.5  TIER_2_DOMAIN
+  CI/CD                                 12,108   2.111     16mo      7.5  TIER_2_DOMAIN
+  Project Management                    12,106   2.111     16mo      7.5  TIER_2_DOMAIN
+  Airflow                               12,105   2.112     16mo      7.5  TIER_2_DOMAIN
+  AWS                                   12,104   2.112     16mo      7.5  TIER_2_DOMAIN
+  Flask                                 12,104   2.112     16mo      7.5  TIER_2_DOMAIN
+  Scrum                                 12,083   2.113     16mo      7.5  TIER_2_DOMAIN
+  Illustrator                           12,072   2.114     16mo      7.5  TIER_2_DOMAIN
+  Kubernetes                            12,071   2.114     16mo      7.5  TIER_2_DOMAIN
+  ETL                                   12,068   2.115     16mo      7.5  TIER_2_DOMAIN
+  CSS                                   12,065   2.115     16mo      7.5  TIER_2_DOMAIN
+  Docker                                12,062   2.115     16mo      7.5  TIER_2_DOMAIN
+  Next.js                               12,058   2.115     16mo      7.6  TIER_2_DOMAIN
+  Apache Beam                           12,054   2.116     16mo      7.5  TIER_2_DOMAIN
+  Java                                  12,049   2.116     16mo      7.5  TIER_2_DOMAIN
+  Go                                    12,049   2.116     16mo      7.5  TIER_2_DOMAIN
+  TypeScript                            12,048   2.116     16mo      7.5  TIER_2_DOMAIN
+  JavaScript                            12,047   2.116     16mo      7.5  TIER_2_DOMAIN
+  dbt                                   12,046   2.116     16mo      7.5  TIER_2_DOMAIN
+  REST APIs                             12,040   2.117     16mo      7.4  TIER_2_DOMAIN
+  Spark                                 12,038   2.117     16mo      7.5  TIER_2_DOMAIN
+  Marketing                             12,037   2.117     16mo      7.5  TIER_2_DOMAIN
+  Tally                                 12,030   2.118     16mo      7.5  TIER_2_DOMAIN
+  GraphQL                               12,027   2.118     16mo      7.5  TIER_2_DOMAIN
+  Snowflake                             12,027   2.118     16mo      7.4  TIER_2_DOMAIN ✗  JD-NEG
+  Webpack                               12,026   2.118     16mo      7.5  TIER_2_DOMAIN
+  Six Sigma                             11,991   2.121     16mo      7.5  TIER_2_DOMAIN
+  SEO                                   11,990   2.121     16mo      7.6  TIER_2_DOMAIN
+  SAP                                   11,989   2.121     16mo      7.4  TIER_2_DOMAIN
+  GCP                                   11,983   2.122     16mo      7.5  TIER_2_DOMAIN
+  PostgreSQL                            11,983   2.122     16mo      7.5  TIER_2_DOMAIN
+  Rust                                  11,960   2.124     16mo      7.5  TIER_2_DOMAIN
+  Apache Flink                          11,958   2.124     16mo      7.5  TIER_2_DOMAIN
+  gRPC                                  11,957   2.124     16mo      7.5  TIER_2_DOMAIN
+  Content Writing                       11,948   2.125     16mo      7.6  TIER_2_DOMAIN
+  SQL                                   11,935   2.126     16mo      7.5  TIER_2_DOMAIN
+  Hadoop                                11,931   2.126     16mo      7.4  TIER_2_DOMAIN
+
+  JD-NEGATIVE skills in corpus  (these PENALISE score when present):
+  Skill                                DocFreq   % Cands
+  -------------------------------------------------------
+  Snowflake                             12,027     12.0%
+  Node.js                               11,838     11.8%
+  LangChain                              5,162      5.2%
+  Computer Vision                        4,755      4.8%
+  Speech Recognition                     4,744      4.7%
+  LlamaIndex                             1,308      1.3%
+
+  GOLDEN SKILLS  (TIER_3_SPECIALIST + JD_HARD_REQ):
+  Rare in corpus AND required by JD — highest discriminating power
+  Skill                                DocFreq     IDF
+  -------------------------------------------------------
+  Indexing Algorithms                        3  10.414
+  Vector Representations                     4  10.127
+  Ranking Systems                            4  10.127
+  Text Encoders                              5   9.903
+  OpenSearch                             1,286   4.354
+  Elasticsearch                          1,311   4.334
+  Qdrant                                 1,379   4.284
+  Milvus                                 1,384   4.280
+  Weaviate                               1,389   4.277
+  pgvector                               1,394   4.273
+  FAISS                                  5,052   2.985
+  Pinecone                               5,062   2.983
+  Vector Search                          5,065   2.983
+  Embeddings                             5,080   2.980
+
+====================================================================
+SECTION 4 : SKILL-IN-CONTEXT ANALYSIS  (keyword stuffer detector)
+====================================================================
+
+  Three evidence levels:
+    PRODUCTION_PROVEN  — skill in description + production cue words nearby
+    CONTEXT_VERIFIED   — skill name appears in career history text
+    SELF_REPORTED      — skill only in skills[] array, not in descriptions
+  
+  High ratio of SELF_REPORTED → CONTEXT_VERIFIED is the keyword-stuffer signal.
+
+  Production-proven skills per candidate            mean=     0.3  median=     0.0  min=     0.0  max=     5.0
+  Context-verified skills per candidate             mean=     0.3  median=     0.0  min=     0.0  max=     5.0
+  Self-reported only  skills per candidate          mean=     9.1  median=     9.0  min=     2.0  max=    23.0
+  Self-reported ratio (0=verified, 1=all stuffed)   mean=     0.9  median=     1.0  min=     0.3  max=     1.0
+
+  Candidate stuffer-ratio distribution:
+  0-25%  (mostly verified)                  0    0.0%  ░░░░░░░░░░░░░░░░░░░░
+  25-50% (mixed)                           95    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  50-75% (mostly unverified)            3,695    3.7%  █░░░░░░░░░░░░░░░░░░░
+  75-100% (keyword stuffer!)           96,210   96.2%  ████████████████████
+
+  Evidence quality for JD-relevant skills:
+  Skill                               TotalCands  ProdProven    CtxVer  SelfOnly  StufferRate
+  -----------------------------------------------------------------------------------------------
+  LLMs                                     5,094           0         0     5,094  100%
+  Recommendation Systems                   5,091           0         0     5,091  100%
+  Embeddings                               5,080          37         0     5,043  99%
+  Vector Search                            5,065           0         0     5,065  100%
+  Pinecone                                 5,062          16         0     5,046  100%
+  FAISS                                    5,052          17         0     5,035  100%
+  Fine-tuning LLMs                         4,920           0         0     4,920  100%
+  QLoRA                                    1,401           4         0     1,397  100%
+  pgvector                                 1,394           0         0     1,394  100%
+  Weaviate                                 1,389           0         0     1,389  100%
+  Milvus                                   1,384           0         0     1,384  100%
+  Qdrant                                   1,379           0         0     1,379  100%
+  PEFT                                     1,377           0         0     1,377  100%
+  LoRA                                     1,371           5         0     1,366  100%
+  Elasticsearch                            1,311          13         0     1,298  99%
+  OpenSearch                               1,286           0         0     1,286  100%
+  Information Retrieval Systems                7           0         0         7  100%
+  Text Encoders                                5           0         0         5  100%
+  Vector Representations                       4           0         0         4  100%
+  Ranking Systems                              4           0         0         4  100%
+  Indexing Algorithms                          3           0         0         3  100%
+  Open-source ML libraries                     3           0         0         3  100%
+
+====================================================================
+SECTION 5 : JD POLARITY ANALYSIS  (signed sections)
+====================================================================
+
+  The JD has FOUR sections with different polarities.
+  Simple keyword extraction treats ALL sections as positive — this is WRONG.
+  Section D (DO NOT WANT) terms should PENALISE, not reward.
+
+
+  ─────────────────────────────────────────────────────────────────
+  HARD_REQUIREMENT  [+++ MUST HAVE]
+  Weight=+1.00  Polarity=positive
+  ─────────────────────────────────────────────────────────────────
+  Phrase                                    Profiles with match        %
+  ------------------------------------------------------------------------
+  vector databases                                        5,517     5.5%
+  faiss                                                   5,114     5.1%
+  pinecone                                                5,107     5.1%
+  weaviate                                                1,389     1.4%
+  milvus                                                  1,384     1.4%
+  qdrant                                                  1,379     1.4%
+  elasticsearch                                           1,353     1.4%
+  opensearch                                              1,286     1.3%
+  ranking system                                            548     0.5%
+  sentence-transformers                                      80     0.1%
+  bge                                                        75     0.1%
+  openai embeddings                                          53     0.1%
+  ndcg                                                       18     0.0%
+  mrr                                                        13     0.0%
+  index refresh                                              10     0.0%
+  embedding drift                                             8     0.0%
+
+  ─────────────────────────────────────────────────────────────────
+  IDEAL_PROFILE  [++  IDEAL]
+  Weight=+0.60  Polarity=positive
+  ─────────────────────────────────────────────────────────────────
+  Phrase                                    Profiles with match        %
+  ------------------------------------------------------------------------
+  product companies                                         171     0.2%
+  applied ml                                                150     0.1%
+  applied ai                                                150     0.1%
+  end-to-end ranking                                          8     0.0%
+
+  ─────────────────────────────────────────────────────────────────
+  NICE_TO_HAVE  [+   BONUS]
+  Weight=+0.25  Polarity=positive
+  ─────────────────────────────────────────────────────────────────
+  Phrase                                    Profiles with match        %
+  ------------------------------------------------------------------------
+  distributed systems                                     8,556     8.6%
+  lora                                                    2,691     2.7%
+  qlora                                                   1,408     1.4%
+  peft                                                    1,377     1.4%
+  learning-to-rank                                           85     0.1%
+
+  ─────────────────────────────────────────────────────────────────
+  EXPLICIT_NEGATIVE  [--- PENALISE/DISQUALIFY]
+  Weight=-1.00  Polarity=negative
+  ─────────────────────────────────────────────────────────────────
+  Phrase                                    Profiles with match        %
+  ------------------------------------------------------------------------
+  langchain                                               6,896     6.9%  ⚠ RED FLAG
+  llamaindex                                              1,308     1.3%  ⚠ RED FLAG
+
+  POLARITY COVERAGE SUMMARY:
+  Section                     Weight   Total Matches  Notes
+  -----------------------------------------------------------------
+  HARD_REQUIREMENT             +1.00          23,334  Candidates must satisfy these
+  IDEAL_PROFILE                +0.60             479  Strong positive signal
+  NICE_TO_HAVE                 +0.25          14,117  Small bonus only
+  EXPLICIT_NEGATIVE            -1.00           8,204  Match here REDUCES score
+
+====================================================================
+SECTION 6 : NEGATIVE PATTERN DETECTION  (JD Section D)
+====================================================================
+
+  Three behavioral anti-patterns explicitly called out by the JD:
+    1. Title-chaser        — short tenures, escalating titles, company-hopping
+    2. Framework enthusiast — wrapper tools (LangChain) without depth skills
+    3. Closed-source isolation — 5yr+ career, no GitHub, no external validation
+
+
+  TITLE_CHASER  (4 candidates)  —  Short tenures + escalating title levels
+  Prevalence: 0.0%
+  CandidateID      Title                                  Evidence
+  -------------------------------------------------------------------------------------
+  CAND_0077296     Computer Vision Engineer               3/4 roles <20mo, avg=17mo, titles escalating
+  CAND_0088378     AI Research Engineer                   3/4 roles <20mo, avg=18mo, titles escalating
+  CAND_0088385     Computer Vision Engineer               3/4 roles <20mo, avg=21mo, titles escalating
+  CAND_0094025     Data Scientist                         3/4 roles <20mo, avg=18mo, titles escalating
+
+  FRAMEWORK_ENTHUSIAST  (3,785 candidates)  —  Wrapper tools only, no depth in career text
+  Prevalence: 3.8%
+  CandidateID      Title                                  Evidence
+  -------------------------------------------------------------------------------------
+  CAND_0000043     Cloud Engineer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000120     Graphic Designer                       Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000130     Cloud Engineer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000203     Operations Manager                     Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000210     Senior Data Engineer                   Wrapper tools: {'llamaindex', 'langchain'} | No depth skill 
+  CAND_0000220     Marketing Manager                      Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000227     Data Analyst                           Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000273     ML Engineer                            Wrapper tools: {'llamaindex'} | No depth skill evidence in c
+  CAND_0000312     Content Writer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000330     Civil Engineer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000344     Business Analyst                       Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000421     Graphic Designer                       Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000452     Senior Data Engineer                   Wrapper tools: {'llamaindex'} | No depth skill evidence in c
+  CAND_0000466     .NET Developer                         Wrapper tools: {'llamaindex'} | No depth skill evidence in c
+  CAND_0000498     Content Writer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000505     Accountant                             Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000541     Business Analyst                       Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000552     Accountant                             Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000576     Content Writer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  CAND_0000590     .NET Developer                         Wrapper tools: {'langchain'} | No depth skill evidence in ca
+  ... and 3765 more
+
+  CLOSED_SOURCE_ISOLATED  (30,724 candidates)  —  5yr+ career, no GitHub, no open-source signals
+  Prevalence: 30.7%
+  CandidateID      Title                                  Evidence
+  -------------------------------------------------------------------------------------
+  CAND_0000005     Accountant                             YoE=11.0, no GitHub, no open-source signals in career text
+  CAND_0000006     Business Analyst                       YoE=6.0, no GitHub, no open-source signals in career text
+  CAND_0000007     Civil Engineer                         YoE=5.5, no GitHub, no open-source signals in career text
+  CAND_0000009     Mechanical Engineer                    YoE=11.0, no GitHub, no open-source signals in career text
+  CAND_0000014     Frontend Engineer                      YoE=8.4, no GitHub, no open-source signals in career text
+  CAND_0000015     Software Engineer                      YoE=5.4, no GitHub, no open-source signals in career text
+  CAND_0000017     Accountant                             YoE=12.3, no GitHub, no open-source signals in career text
+  CAND_0000018     Frontend Engineer                      YoE=6.6, no GitHub, no open-source signals in career text
+  CAND_0000019     Project Manager                        YoE=6.5, no GitHub, no open-source signals in career text
+  CAND_0000025     Frontend Engineer                      YoE=7.3, no GitHub, no open-source signals in career text
+  CAND_0000032     .NET Developer                         YoE=8.1, no GitHub, no open-source signals in career text
+  CAND_0000036     Project Manager                        YoE=11.3, no GitHub, no open-source signals in career text
+  CAND_0000037     Business Analyst                       YoE=14.3, no GitHub, no open-source signals in career text
+  CAND_0000041     Operations Manager                     YoE=13.7, no GitHub, no open-source signals in career text
+  CAND_0000043     Cloud Engineer                         YoE=8.3, no GitHub, no open-source signals in career text
+  CAND_0000045     Project Manager                        YoE=12.2, no GitHub, no open-source signals in career text
+  CAND_0000048     Mobile Developer                       YoE=9.7, no GitHub, no open-source signals in career text
+  CAND_0000049     Mechanical Engineer                    YoE=11.8, no GitHub, no open-source signals in career text
+  CAND_0000051     Cloud Engineer                         YoE=6.2, no GitHub, no open-source signals in career text
+  CAND_0000058     HR Manager                             YoE=10.1, no GitHub, no open-source signals in career text
+  ... and 30704 more
+
+  SUMMARY — candidates with at least one negative pattern:
+  33,554  (33.6% of corpus)
+
+====================================================================
+SECTION 7 : CAREER HISTORY & COMPANY PATTERNS
+====================================================================
+
+  Total job records              : 300,171
+  Consulting-firm roles          : 90,948  (30.3%)
+  Pure-consulting careers        : 3,724  (3.7%)  ← JD disqualifier
+  Tenure per role (months)                          mean=    28.2  median=    27.0  min=     6.0  max=   228.0
+
+  Top 20 industries:
+  IT Services                                 88,077   29.3%  ████████████████████
+  Software                                    70,746   23.6%  ████████████████░░░░
+  Manufacturing                               70,541   23.5%  ████████████████░░░░
+  Conglomerate                                23,556    7.8%  █████░░░░░░░░░░░░░░░
+  Paper Products                              23,416    7.8%  █████░░░░░░░░░░░░░░░
+  Fintech                                      6,513    2.2%  █░░░░░░░░░░░░░░░░░░░
+  Food Delivery                                5,902    2.0%  █░░░░░░░░░░░░░░░░░░░
+  E-commerce                                   3,644    1.2%  █░░░░░░░░░░░░░░░░░░░
+  Consulting                                   2,871    1.0%  █░░░░░░░░░░░░░░░░░░░
+  EdTech                                       1,384    0.5%  ░░░░░░░░░░░░░░░░░░░░
+  SaaS                                           690    0.2%  ░░░░░░░░░░░░░░░░░░░░
+  AI/ML                                          597    0.2%  ░░░░░░░░░░░░░░░░░░░░
+  AdTech                                         376    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  Transportation                                 364    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  Insurance Tech                                 355    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  HealthTech                                     339    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  Gaming                                         329    0.1%  ░░░░░░░░░░░░░░░░░░░░
+  HealthTech AI                                  132    0.0%  ░░░░░░░░░░░░░░░░░░░░
+  Conversational AI                              124    0.0%  ░░░░░░░░░░░░░░░░░░░░
+  AI Services                                     81    0.0%  ░░░░░░░░░░░░░░░░░░░░
+
+  Company size distribution:
+  11-50             23,754    7.9%  ████░░░░░░░░░░░░░░░░
+  51-200            23,978    8.0%  ████░░░░░░░░░░░░░░░░
+  201-500           47,276   15.7%  ████████░░░░░░░░░░░░
+  501-1000          23,550    7.8%  ████░░░░░░░░░░░░░░░░
+  1001-5000         55,022   18.3%  █████████░░░░░░░░░░░
+  5001-10000         7,964    2.7%  █░░░░░░░░░░░░░░░░░░░
+  10001+           118,627   39.5%  ████████████████████
+
+====================================================================
+SECTION 8 : LOCATION & AVAILABILITY
+====================================================================
+
+  Country distribution  (top 10):
+  India                         75,113   75.1%  ████████████████████
+  USA                            9,978   10.0%  ███░░░░░░░░░░░░░░░░░
+  Australia                      2,579    2.6%  █░░░░░░░░░░░░░░░░░░░
+  Canada                         2,506    2.5%  █░░░░░░░░░░░░░░░░░░░
+  UK                             2,472    2.5%  █░░░░░░░░░░░░░░░░░░░
+  Germany                        2,469    2.5%  █░░░░░░░░░░░░░░░░░░░
+  Singapore                      2,453    2.5%  █░░░░░░░░░░░░░░░░░░░
+  UAE                            2,430    2.4%  █░░░░░░░░░░░░░░░░░░░
+
+  In JD target region (India metros)  : 75,113  (75.1%)
+  Willing to relocate                 : 28,804  (28.8%)
+  Open to work flag = True            : 35,339  (35.3%)
+
+  Preferred work mode:
+  hybrid              25,076   25.1%  ████████████████████
+  onsite              25,000   25.0%  ████████████████████
+  flexible            25,000   25.0%  ████████████████████
+  remote              24,924   24.9%  ████████████████████
+
+  Activity buckets:
+  Active  (≤30d)            12,085   12.1%  ██████░░░░░░░░░░░░░░
+  Recent  (31-90d)          28,294   28.3%  ██████████████░░░░░░
+  Cold    (91-180d)         39,914   39.9%  ████████████████████
+  Inactive(180d+)           19,707   19.7%  ██████████░░░░░░░░░░
+  Notice period (days)                              mean=    87.4  median=    90.0  min=     0.0  max=   150.0
+
+  Notice period buckets:
+  ≤30d  (JD preferred)          13,809   13.8%  █████████░░░░░░░░░░░
+  31-60d                        24,543   24.5%  ████████████████░░░░
+  61-90d                        31,097   31.1%  ████████████████████
+  90+d  (JD penalised)          30,551   30.6%  ████████████████████
+
+====================================================================
+SECTION 9 : BEHAVIORAL SIGNALS (Redrob Platform)
+====================================================================
+
+  Signal                                               Mean    Median       Min       Max
+  ----------------------------------------------------------------------------------------
+  Profile completeness (0-100)                        56.76     56.80     25.00     99.90
+  Profile views  (30d)                                47.99     45.00      0.00    374.00
+  Applications submitted (30d)                         5.39      5.00      0.00     24.00
+  Recruiter response rate (0-1)                        0.44      0.44      0.02      0.95
+  Avg response time (hours)                          132.70    129.90      2.10    280.00
+  Connection count                                   345.66    335.00     10.00   1898.00
+  Endorsements received                               30.07     28.00      0.00    242.00
+  GitHub score  (-1=no account)                       29.03     28.40      0.00     96.90
+  Search appearances (30d)                           117.54    105.00      0.00   1490.00
+  Saved by recruiters (30d)                            7.66      7.00      0.00     80.00
+  Interview completion rate                            0.62      0.62      0.30      1.00
+  Offer acceptance rate (-1=none)                      0.47      0.48      0.15      0.93
+  Notice period (days)                                87.39     90.00      0.00    150.00
+
+  GitHub linked       : 35,363  (35.4%)  |  No GitHub: 64,637  (64.6%)
+  Verified email      : 72,003  (72.0%)
+  Verified phone      : 61,789  (61.8%)
+  LinkedIn connected  : 35,999  (36.0%)
+
+  Salary min INR LPA  : mean=12.2  range=[3, 50]
+  Salary max INR LPA  : mean=19.8  range=[6, 74]
+
+====================================================================
+SECTION 10 : EDUCATION ANALYSIS
+====================================================================
+
+  Education tier  (tier_1 = IIT/IISc/IIM level):
+  tier_1         6,852    6.9%  ███░░░░░░░░░░░░░░░░░
+  tier_2        27,821   27.8%  ██████████░░░░░░░░░░
+  tier_3        53,220   53.2%  ████████████████████
+  tier_4        51,885   51.9%  ███████████████████░
+  tier_5             0    0.0%  ░░░░░░░░░░░░░░░░░░░░
+  unknown            0    0.0%  ░░░░░░░░░░░░░░░░░░░░
+
+  Top 15 fields of study:
+  Information Technology                      12,328   12.3%  ████████████████████
+  Data Science                                12,222   12.2%  ████████████████████
+  Machine Learning                            12,216   12.2%  ████████████████████
+  Computer Engineering                        12,114   12.1%  ████████████████████
+  Artificial Intelligence                     12,009   12.0%  ███████████████████░
+  Computer Science                            11,868   11.9%  ███████████████████░
+  Statistics                                   6,762    6.8%  ███████████░░░░░░░░░
+  Chemical Engineering                         6,740    6.7%  ███████████░░░░░░░░░
+  Electronics                                  6,726    6.7%  ███████████░░░░░░░░░
+  Physics                                      6,726    6.7%  ███████████░░░░░░░░░
+  Civil Engineering                            6,723    6.7%  ███████████░░░░░░░░░
+  MBA                                          6,718    6.7%  ███████████░░░░░░░░░
+  Electrical Engineering                       6,714    6.7%  ███████████░░░░░░░░░
+  Mechanical Engineering                       6,696    6.7%  ███████████░░░░░░░░░
+  Commerce                                     6,670    6.7%  ███████████░░░░░░░░░
+
+  Degree types:
+  M.E.                    17,650
+  M.S.                    17,604
+  M.Sc                    17,562
+  M.Tech                  17,535
+  Ph.D                    17,526
+  B.Tech                  17,465
+  B.E.                    17,259
+  B.Sc                    17,177
