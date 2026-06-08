@@ -31,18 +31,28 @@ from utils import load_pickle
 
 # Feature matrix column indices
 IDX_DQ_TITLE      = 1
-IDX_PURE_CONSULT   = 11
-IDX_CV_SPEECH      = 12
-IDX_FW_ENTHUSIAST  = 13
-IDX_HONEYPOT       = 15
+IDX_PURE_CONSULT  = 11
+IDX_CV_SPEECH     = 12
+IDX_FW_ENTHUSIAST = 13
+IDX_HONEYPOT      = 15
 
 # Gate threshold (features are binary 0/1 — use 0.5 as boundary)
 GATE_THRESHOLD = 0.5
+
+# Issue 5: CV-primary titles — hard gate, not just structural cap.
+# These candidates should be eliminated at the gate layer, not
+# allowed through with a capped structural score.
+# Kept separate from IDX_DQ_TITLE so the elimination log is clear.
+CV_PRIMARY_TITLES_LOWER = {
+    'computer vision engineer', 'cv engineer', 'vision engineer',
+    'computer vision researcher', 'computer vision scientist',
+}
 
 
 def apply_hard_filters(
     feature_matrix: np.ndarray,
     candidate_ids: list,
+    candidates: list = None,
     verbose: bool = True,
 ) -> tuple:
     """
@@ -51,6 +61,7 @@ def apply_hard_filters(
     Args:
         feature_matrix: shape (N, 25) float32
         candidate_ids:  list of candidate_id strings
+        candidates:     optional list of full candidate dicts for CV title gate
         verbose:        print elimination stats
 
     Returns:
@@ -69,19 +80,33 @@ def apply_hard_filters(
     ]
 
     elimination_log = {}
-    prev_count      = N
 
     for feat_idx, gate_name in gates:
         gate_fired       = feature_matrix[:, feat_idx] > GATE_THRESHOLD
-        newly_eliminated = gate_fired & mask   # fired AND still eligible
+        newly_eliminated = gate_fired & mask
         count            = int(newly_eliminated.sum())
-
         mask             = mask & ~gate_fired
         elimination_log[gate_name] = count
-
         if verbose:
             remaining = int(mask.sum())
             print(f"  {gate_name:<35s}  eliminated: {count:>6,}  "
+                  f"remaining: {remaining:>6,}")
+
+    # Issue 5: CV-primary title hard gate
+    # Applied using candidate dicts if available, else skip
+    if candidates is not None:
+        cv_gate = np.array([
+            c.get("profile", {}).get("current_title", "").lower()
+            in CV_PRIMARY_TITLES_LOWER
+            for c in candidates
+        ], dtype=bool)
+        newly_eliminated = cv_gate & mask
+        count = int(newly_eliminated.sum())
+        mask  = mask & ~cv_gate
+        elimination_log["CV-primary title (hard gate)"] = count
+        if verbose:
+            remaining = int(mask.sum())
+            print(f"  {'CV-primary title (hard gate)':<35s}  eliminated: {count:>6,}  "
                   f"remaining: {remaining:>6,}")
 
     total_eliminated = N - int(mask.sum())

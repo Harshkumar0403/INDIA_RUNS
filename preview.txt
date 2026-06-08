@@ -1,4 +1,181 @@
 {
+  "candidate_id": "CAND_0000200",
+  "profile": {
+    "anonymized_name": "Anjali Bansal",
+    "headline": "ML Engineer | Data Science & ML enthusiast",
+    "summary": "Data scientist / ML engineer with 4.3 years of experience in applied machine learning. Worked across predictive modeling, NLP, analytics, and lightweight deployment workflows. I've spent the last couple of years building NLP-based classification and information extraction pipelines. I'm strongest at the modeling and analysis side; comfortable with Python, scikit-learn, pandas, and standard MLOps tooling, but I'm still building depth on the engineering and infra side of production ML. I want to grow into senior AI engineering \u2014 get serious about LLMs and retrieval beyond the surface level.",
+    "location": "Indore, Madhya Pradesh",
+    "country": "India",
+    "years_of_experience": 4.3,
+    "current_title": "ML Engineer",
+    "current_company": "Aganitha",
+    "current_company_size": "51-200",
+    "current_industry": "AI/ML"
+  },
+  "career_history": [
+    {
+      "company": "Aganitha",
+      "title": "ML Engineer",
+      "start_date": "2023-10-10",
+      "end_date": null,
+      "duration_months": 32,
+      "is_current": true,
+      "industry": "AI/ML",
+      "company_size": "51-200",
+      "description": "Worked on customer-facing predictive modeling for an e-commerce platform \u2014 churn prediction, conversion likelihood, lifetime value estimation. Used scikit-learn and XGBoost; main models were gradient-boosted trees with ~80 hand-engineered features. The work was split roughly 60/40 between modeling and data prep / SQL. The churn model is now used by the retention team, though my role was more on the modeling side than the productionization."
+    },
+    {
+      "company": "Swiggy",
+      "title": "AI Specialist",
+      "start_date": "2022-03-19",
+      "end_date": "2023-10-10",
+      "duration_months": 19,
+      "is_current": false,
+      "industry": "Food Delivery",
+      "company_size": "5001-10000",
+      "description": "Built NLP pipelines for sentiment analysis and document classification \u2014 primarily for an internal feedback-analytics dashboard. Started with sklearn-based bag-of-words models, then moved to transformer-based classifiers (DistilBERT) for the harder classes. Comfortable with PyTorch and Hugging Face but most of my training experience has been on small datasets and pre-trained model fine-tuning, not from-scratch model design."
+    }
+  ],
+  "education": [
+    {
+      "institution": "SRM Chennai",
+      "degree": "M.S.",
+      "field_of_study": "Data Science",
+      "start_year": 2017,
+      "end_year": 2022,
+      "grade": "6.96 CGPA",
+      "tier": "tier_3"
+    }
+  ],
+  "skills": [
+    {
+      "name": "BigQuery",
+      "proficiency": "intermediate",
+      "endorsements": 3,
+      "duration_months": 13
+    },
+    {
+      "name": "Vector Search",
+      "proficiency": "advanced",
+      "endorsements": 19,
+      "duration_months": 57
+    },
+    {
+      "name": "Prompt Engineering",
+      "proficiency": "advanced",
+      "endorsements": 25,
+      "duration_months": 44
+    },
+    {
+      "name": "BentoML",
+      "proficiency": "intermediate",
+      "endorsements": 10,
+      "duration_months": 26
+    },
+    {
+      "name": "LlamaIndex",
+      "proficiency": "advanced",
+      "endorsements": 39,
+      "duration_months": 18
+    },
+    {
+      "name": "FAISS",
+      "proficiency": "intermediate",
+      "endorsements": 0,
+      "duration_months": 21
+    },
+    {
+      "name": "RAG",
+      "proficiency": "intermediate",
+      "endorsements": 1,
+      "duration_months": 35
+    },
+    {
+      "name": "Object Detection",
+      "proficiency": "advanced",
+      "endorsements": 58,
+      "duration_months": 34
+    },
+    {
+      "name": "Kubernetes",
+      "proficiency": "intermediate",
+      "endorsements": 8,
+      "duration_months": 35
+    },
+    {
+      "name": "TTS",
+      "proficiency": "advanced",
+      "endorsements": 51,
+      "duration_months": 43
+    },
+    {
+      "name": "Kubeflow",
+      "proficiency": "intermediate",
+      "endorsements": 15,
+      "duration_months": 19
+    },
+    {
+      "name": "Apache Flink",
+      "proficiency": "beginner",
+      "endorsements": 12,
+      "duration_months": 6
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Google Cloud Professional ML Engineer",
+      "issuer": "Google Cloud",
+      "year": 2021
+    },
+    {
+      "name": "NLP Specialization",
+      "issuer": "Coursera/DeepLearning.AI",
+      "year": 2023
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "native"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "professional"
+    }
+  ],
+  "redrob_signals": {
+    "profile_completeness_score": 52.7,
+    "signup_date": "2025-06-21",
+    "last_active_date": "2026-05-02",
+    "open_to_work_flag": true,
+    "profile_views_received_30d": 220,
+    "applications_submitted_30d": 16,
+    "recruiter_response_rate": 0.6,
+    "avg_response_time_hours": 58.5,
+    "skill_assessment_scores": {
+      "Vector Search": 52.6
+    },
+    "connection_count": 1096,
+    "endorsements_received": 36,
+    "notice_period_days": 90,
+    "expected_salary_range_inr_lpa": {
+      "min": 16.3,
+      "max": 45.1
+    },
+    "preferred_work_mode": "remote",
+    "willing_to_relocate": true,
+    "github_activity_score": -1,
+    "search_appearance_30d": 629,
+    "saved_by_recruiters_30d": 40,
+    "interview_completion_rate": 0.99,
+    "offer_acceptance_rate": -1,
+    "verified_email": true,
+    "verified_phone": true,
+    "linkedin_connected": false
+  }
+}
+--------------------------------------------------------------------------------
+{
   "candidate_id": "CAND_0001131",
   "profile": {
     "anonymized_name": "Aarav Goyal",
@@ -1919,182 +2096,6 @@
     "saved_by_recruiters_30d": 13,
     "interview_completion_rate": 0.83,
     "offer_acceptance_rate": 0.83,
-    "verified_email": true,
-    "verified_phone": true,
-    "linkedin_connected": true
-  }
-}
---------------------------------------------------------------------------------
-{
-  "candidate_id": "CAND_0012837",
-  "profile": {
-    "anonymized_name": "Myra Chowdary",
-    "headline": "Junior ML Engineer | Data Science & ML enthusiast",
-    "summary": "Data scientist / ML engineer with 6.4 years of experience in applied machine learning. Worked across predictive modeling, NLP, analytics, and lightweight deployment workflows. My current role is split between dashboarding/analytics and shipping production ML models. I'm strongest at the modeling and analysis side; comfortable with Python, scikit-learn, pandas, and standard MLOps tooling, but I'm still building depth on the engineering and infra side of production ML. I'm looking to grow into a deeper AI/ML system-building role \u2014 closer to retrieval, LLMs, and modern ranking systems.",
-    "location": "Chandigarh, Chandigarh",
-    "country": "India",
-    "years_of_experience": 6.4,
-    "current_title": "Junior ML Engineer",
-    "current_company": "Sarvam AI",
-    "current_company_size": "51-200",
-    "current_industry": "AI/ML"
-  },
-  "career_history": [
-    {
-      "company": "Sarvam AI",
-      "title": "Junior ML Engineer",
-      "start_date": "2023-05-13",
-      "end_date": null,
-      "duration_months": 37,
-      "is_current": true,
-      "industry": "AI/ML",
-      "company_size": "51-200",
-      "description": "Worked on time-series forecasting models for supply-chain demand prediction at a logistics company. Built models in Prophet, LightGBM, and (for one project) a small LSTM \u2014 the LightGBM model ended up shipping. Also ran some reinforcement learning experiments for dynamic pricing but those didn't make it to production. The work was a mix of modeling, analysis, and stakeholder communication with the operations team."
-    },
-    {
-      "company": "CRED",
-      "title": "ML Engineer",
-      "start_date": "2021-03-10",
-      "end_date": "2023-04-29",
-      "duration_months": 26,
-      "is_current": false,
-      "industry": "Fintech",
-      "company_size": "1001-5000",
-      "description": "Built recommendation-style features at a mid-stage startup \u2014 lighter weight than ranking systems at FAANG, but production. Used a combination of collaborative filtering (matrix factorization in implicit-feedback library) and gradient-boosted re-ranking over engagement signals. Pure ML side of the work; production deployment was handled by the platform team."
-    },
-    {
-      "company": "CRED",
-      "title": "Data Scientist",
-      "start_date": "2020-01-31",
-      "end_date": "2021-02-24",
-      "duration_months": 13,
-      "is_current": false,
-      "industry": "Fintech",
-      "company_size": "1001-5000",
-      "description": "Built computer vision models for our product's image moderation feature using PyTorch \u2014 fine-tuned ResNet variants on a labeled dataset of ~200K images. Set up the training pipeline (data loading, augmentation, evaluation) and the inference service. Most of my project work has been in CV; I'm now interested in transitioning toward NLP/LLM work but my professional experience there is limited."
-    }
-  ],
-  "education": [
-    {
-      "institution": "Anna University",
-      "degree": "Ph.D",
-      "field_of_study": "Computer Engineering",
-      "start_year": 2008,
-      "end_year": 2013,
-      "grade": "9.10 CGPA",
-      "tier": "tier_2"
-    },
-    {
-      "institution": "Amity University",
-      "degree": "B.Sc",
-      "field_of_study": "Computer Science",
-      "start_year": 2007,
-      "end_year": 2011,
-      "grade": "71%",
-      "tier": "tier_3"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Forecasting",
-      "proficiency": "intermediate",
-      "endorsements": 2,
-      "duration_months": 29
-    },
-    {
-      "name": "Vector Search",
-      "proficiency": "advanced",
-      "endorsements": 10,
-      "duration_months": 45
-    },
-    {
-      "name": "MLOps",
-      "proficiency": "advanced",
-      "endorsements": 58,
-      "duration_months": 41
-    },
-    {
-      "name": "Weaviate",
-      "proficiency": "advanced",
-      "endorsements": 27,
-      "duration_months": 46
-    },
-    {
-      "name": "LLMs",
-      "proficiency": "intermediate",
-      "endorsements": 15,
-      "duration_months": 31
-    },
-    {
-      "name": "Semantic Search",
-      "proficiency": "intermediate",
-      "endorsements": 2,
-      "duration_months": 26
-    },
-    {
-      "name": "Object Detection",
-      "proficiency": "advanced",
-      "endorsements": 41,
-      "duration_months": 58
-    },
-    {
-      "name": "TypeScript",
-      "proficiency": "intermediate",
-      "endorsements": 10,
-      "duration_months": 8
-    },
-    {
-      "name": "NLP",
-      "proficiency": "advanced",
-      "endorsements": 22,
-      "duration_months": 24
-    },
-    {
-      "name": "Speech Recognition",
-      "proficiency": "advanced",
-      "endorsements": 29,
-      "duration_months": 47
-    }
-  ],
-  "certifications": [],
-  "languages": [
-    {
-      "language": "English",
-      "proficiency": "professional"
-    },
-    {
-      "language": "Hindi",
-      "proficiency": "conversational"
-    }
-  ],
-  "redrob_signals": {
-    "profile_completeness_score": 65.5,
-    "signup_date": "2026-03-18",
-    "last_active_date": "2026-03-22",
-    "open_to_work_flag": true,
-    "profile_views_received_30d": 163,
-    "applications_submitted_30d": 11,
-    "recruiter_response_rate": 0.81,
-    "avg_response_time_hours": 112.1,
-    "skill_assessment_scores": {
-      "Vector Search": 66.5,
-      "MLOps": 59.7,
-      "Weaviate": 40.8
-    },
-    "connection_count": 136,
-    "endorsements_received": 10,
-    "notice_period_days": 60,
-    "expected_salary_range_inr_lpa": {
-      "min": 29.4,
-      "max": 36.2
-    },
-    "preferred_work_mode": "hybrid",
-    "willing_to_relocate": true,
-    "github_activity_score": -1,
-    "search_appearance_30d": 375,
-    "saved_by_recruiters_30d": 37,
-    "interview_completion_rate": 0.52,
-    "offer_acceptance_rate": -1,
     "verified_email": true,
     "verified_phone": true,
     "linkedin_connected": true
@@ -10538,6 +10539,191 @@
 }
 --------------------------------------------------------------------------------
 {
+  "candidate_id": "CAND_0057162",
+  "profile": {
+    "anonymized_name": "Aadhya Bansal",
+    "headline": "ML Engineer | Data Science & ML enthusiast",
+    "summary": "Data scientist / ML engineer with 4.2 years of experience in applied machine learning. Worked across predictive modeling, NLP, analytics, and lightweight deployment workflows. My current role is split between dashboarding/analytics and shipping production ML models. I'm strongest at the modeling and analysis side; comfortable with Python, scikit-learn, pandas, and standard MLOps tooling, but I'm still building depth on the engineering and infra side of production ML. I want to grow into senior AI engineering \u2014 get serious about LLMs and retrieval beyond the surface level.",
+    "location": "Trivandrum, Kerala",
+    "country": "India",
+    "years_of_experience": 4.2,
+    "current_title": "ML Engineer",
+    "current_company": "Genpact AI",
+    "current_company_size": "10001+",
+    "current_industry": "AI Services"
+  },
+  "career_history": [
+    {
+      "company": "Genpact AI",
+      "title": "ML Engineer",
+      "start_date": "2023-04-13",
+      "end_date": null,
+      "duration_months": 38,
+      "is_current": true,
+      "industry": "AI Services",
+      "company_size": "10001+",
+      "description": "Built NLP pipelines for sentiment analysis and document classification \u2014 primarily for an internal feedback-analytics dashboard. Started with sklearn-based bag-of-words models, then moved to transformer-based classifiers (DistilBERT) for the harder classes. Comfortable with PyTorch and Hugging Face but most of my training experience has been on small datasets and pre-trained model fine-tuning, not from-scratch model design."
+    },
+    {
+      "company": "Niramai",
+      "title": "AI Specialist",
+      "start_date": "2022-04-04",
+      "end_date": "2023-03-30",
+      "duration_months": 12,
+      "is_current": false,
+      "industry": "HealthTech AI",
+      "company_size": "51-200",
+      "description": "Worked on time-series forecasting models for supply-chain demand prediction at a logistics company. Built models in Prophet, LightGBM, and (for one project) a small LSTM \u2014 the LightGBM model ended up shipping. Also ran some reinforcement learning experiments for dynamic pricing but those didn't make it to production. The work was a mix of modeling, analysis, and stakeholder communication with the operations team."
+    }
+  ],
+  "education": [
+    {
+      "institution": "COEP Pune",
+      "degree": "M.E.",
+      "field_of_study": "Information Technology",
+      "start_year": 2006,
+      "end_year": 2011,
+      "grade": "8.28 CGPA",
+      "tier": "tier_2"
+    }
+  ],
+  "skills": [
+    {
+      "name": "RAG",
+      "proficiency": "intermediate",
+      "endorsements": 10,
+      "duration_months": 25
+    },
+    {
+      "name": "Time Series",
+      "proficiency": "intermediate",
+      "endorsements": 7,
+      "duration_months": 24
+    },
+    {
+      "name": "Machine Learning",
+      "proficiency": "advanced",
+      "endorsements": 25,
+      "duration_months": 50
+    },
+    {
+      "name": "LLMs",
+      "proficiency": "intermediate",
+      "endorsements": 10,
+      "duration_months": 32
+    },
+    {
+      "name": "Forecasting",
+      "proficiency": "intermediate",
+      "endorsements": 8,
+      "duration_months": 9
+    },
+    {
+      "name": "Speech Recognition",
+      "proficiency": "intermediate",
+      "endorsements": 7,
+      "duration_months": 21
+    },
+    {
+      "name": "FAISS",
+      "proficiency": "intermediate",
+      "endorsements": 7,
+      "duration_months": 10
+    },
+    {
+      "name": "Data Science",
+      "proficiency": "advanced",
+      "endorsements": 42,
+      "duration_months": 51
+    },
+    {
+      "name": "Diffusion Models",
+      "proficiency": "advanced",
+      "endorsements": 19,
+      "duration_months": 21
+    },
+    {
+      "name": "Sentence Transformers",
+      "proficiency": "advanced",
+      "endorsements": 18,
+      "duration_months": 18
+    },
+    {
+      "name": "QLoRA",
+      "proficiency": "advanced",
+      "endorsements": 58,
+      "duration_months": 49
+    },
+    {
+      "name": "CNN",
+      "proficiency": "intermediate",
+      "endorsements": 11,
+      "duration_months": 16
+    },
+    {
+      "name": "TypeScript",
+      "proficiency": "beginner",
+      "endorsements": 15,
+      "duration_months": 7
+    },
+    {
+      "name": "OpenSearch",
+      "proficiency": "advanced",
+      "endorsements": 41,
+      "duration_months": 27
+    },
+    {
+      "name": "GANs",
+      "proficiency": "advanced",
+      "endorsements": 39,
+      "duration_months": 40
+    }
+  ],
+  "certifications": [],
+  "languages": [
+    {
+      "language": "English",
+      "proficiency": "professional"
+    },
+    {
+      "language": "Hindi",
+      "proficiency": "professional"
+    }
+  ],
+  "redrob_signals": {
+    "profile_completeness_score": 70.0,
+    "signup_date": "2024-03-07",
+    "last_active_date": "2026-04-03",
+    "open_to_work_flag": true,
+    "profile_views_received_30d": 29,
+    "applications_submitted_30d": 6,
+    "recruiter_response_rate": 0.54,
+    "avg_response_time_hours": 113.1,
+    "skill_assessment_scores": {
+      "Machine Learning": 83.6,
+      "Data Science": 86.5
+    },
+    "connection_count": 377,
+    "endorsements_received": 11,
+    "notice_period_days": 60,
+    "expected_salary_range_inr_lpa": {
+      "min": 31.3,
+      "max": 54.8
+    },
+    "preferred_work_mode": "onsite",
+    "willing_to_relocate": true,
+    "github_activity_score": -1,
+    "search_appearance_30d": 694,
+    "saved_by_recruiters_30d": 10,
+    "interview_completion_rate": 0.69,
+    "offer_acceptance_rate": 0.6,
+    "verified_email": true,
+    "verified_phone": false,
+    "linkedin_connected": true
+  }
+}
+--------------------------------------------------------------------------------
+{
   "candidate_id": "CAND_0057736",
   "profile": {
     "anonymized_name": "Deepak Dutta",
@@ -10725,203 +10911,6 @@
     "offer_acceptance_rate": 0.69,
     "verified_email": false,
     "verified_phone": true,
-    "linkedin_connected": true
-  }
-}
---------------------------------------------------------------------------------
-{
-  "candidate_id": "CAND_0060303",
-  "profile": {
-    "anonymized_name": "Krishna Iyer",
-    "headline": "AI Research Engineer | 4.9 yrs in analytics & ML",
-    "summary": "Data scientist / ML engineer with 4.9 years of experience in applied machine learning. Worked across predictive modeling, NLP, analytics, and lightweight deployment workflows. I've spent the last couple of years building NLP-based classification and information extraction pipelines. I'm strongest at the modeling and analysis side; comfortable with Python, scikit-learn, pandas, and standard MLOps tooling, but I'm still building depth on the engineering and infra side of production ML. I'm looking to grow into a deeper AI/ML system-building role \u2014 closer to retrieval, LLMs, and modern ranking systems.",
-    "location": "Austin",
-    "country": "USA",
-    "years_of_experience": 4.9,
-    "current_title": "AI Research Engineer",
-    "current_company": "upGrad",
-    "current_company_size": "1001-5000",
-    "current_industry": "EdTech"
-  },
-  "career_history": [
-    {
-      "company": "upGrad",
-      "title": "AI Research Engineer",
-      "start_date": "2025-04-02",
-      "end_date": null,
-      "duration_months": 14,
-      "is_current": true,
-      "industry": "EdTech",
-      "company_size": "1001-5000",
-      "description": "Worked on time-series forecasting models for supply-chain demand prediction at a logistics company. Built models in Prophet, LightGBM, and (for one project) a small LSTM \u2014 the LightGBM model ended up shipping. Also ran some reinforcement learning experiments for dynamic pricing but those didn't make it to production. The work was a mix of modeling, analysis, and stakeholder communication with the operations team."
-    },
-    {
-      "company": "Zomato",
-      "title": "AI Research Engineer",
-      "start_date": "2023-02-12",
-      "end_date": "2025-04-02",
-      "duration_months": 26,
-      "is_current": false,
-      "industry": "Food Delivery",
-      "company_size": "5001-10000",
-      "description": "Built recommendation-style features at a mid-stage startup \u2014 lighter weight than ranking systems at FAANG, but production. Used a combination of collaborative filtering (matrix factorization in implicit-feedback library) and gradient-boosted re-ranking over engagement signals. Pure ML side of the work; production deployment was handled by the platform team."
-    },
-    {
-      "company": "BYJU'S",
-      "title": "Junior ML Engineer",
-      "start_date": "2021-06-22",
-      "end_date": "2022-12-14",
-      "duration_months": 18,
-      "is_current": false,
-      "industry": "EdTech",
-      "company_size": "10001+",
-      "description": "Built computer vision models for our product's image moderation feature using PyTorch \u2014 fine-tuned ResNet variants on a labeled dataset of ~200K images. Set up the training pipeline (data loading, augmentation, evaluation) and the inference service. Most of my project work has been in CV; I'm now interested in transitioning toward NLP/LLM work but my professional experience there is limited."
-    }
-  ],
-  "education": [
-    {
-      "institution": "Manipal Institute of Technology",
-      "degree": "M.S.",
-      "field_of_study": "Computer Engineering",
-      "start_year": 2012,
-      "end_year": 2017,
-      "grade": "6.87 CGPA",
-      "tier": "tier_2"
-    }
-  ],
-  "skills": [
-    {
-      "name": "Semantic Search",
-      "proficiency": "intermediate",
-      "endorsements": 6,
-      "duration_months": 35
-    },
-    {
-      "name": "ASR",
-      "proficiency": "intermediate",
-      "endorsements": 15,
-      "duration_months": 16
-    },
-    {
-      "name": "Excel",
-      "proficiency": "intermediate",
-      "endorsements": 9,
-      "duration_months": 16
-    },
-    {
-      "name": "RAG",
-      "proficiency": "intermediate",
-      "endorsements": 4,
-      "duration_months": 12
-    },
-    {
-      "name": "PyTorch",
-      "proficiency": "intermediate",
-      "endorsements": 15,
-      "duration_months": 19
-    },
-    {
-      "name": "Forecasting",
-      "proficiency": "advanced",
-      "endorsements": 28,
-      "duration_months": 41
-    },
-    {
-      "name": "Weights & Biases",
-      "proficiency": "intermediate",
-      "endorsements": 15,
-      "duration_months": 17
-    },
-    {
-      "name": "LlamaIndex",
-      "proficiency": "advanced",
-      "endorsements": 58,
-      "duration_months": 28
-    },
-    {
-      "name": "Terraform",
-      "proficiency": "intermediate",
-      "endorsements": 0,
-      "duration_months": 20
-    },
-    {
-      "name": "LoRA",
-      "proficiency": "advanced",
-      "endorsements": 44,
-      "duration_months": 22
-    },
-    {
-      "name": "Statistical Modeling",
-      "proficiency": "intermediate",
-      "endorsements": 13,
-      "duration_months": 29
-    },
-    {
-      "name": "PowerPoint",
-      "proficiency": "beginner",
-      "endorsements": 0,
-      "duration_months": 4
-    },
-    {
-      "name": "Weaviate",
-      "proficiency": "advanced",
-      "endorsements": 35,
-      "duration_months": 36
-    },
-    {
-      "name": "Sales",
-      "proficiency": "beginner",
-      "endorsements": 2,
-      "duration_months": 17
-    },
-    {
-      "name": "FAISS",
-      "proficiency": "advanced",
-      "endorsements": 0,
-      "duration_months": 53
-    }
-  ],
-  "certifications": [],
-  "languages": [
-    {
-      "language": "English",
-      "proficiency": "native"
-    },
-    {
-      "language": "Hindi",
-      "proficiency": "professional"
-    }
-  ],
-  "redrob_signals": {
-    "profile_completeness_score": 64.8,
-    "signup_date": "2024-04-01",
-    "last_active_date": "2026-03-22",
-    "open_to_work_flag": false,
-    "profile_views_received_30d": 70,
-    "applications_submitted_30d": 1,
-    "recruiter_response_rate": 0.75,
-    "avg_response_time_hours": 8.5,
-    "skill_assessment_scores": {
-      "Forecasting": 56.5,
-      "LlamaIndex": 62.9,
-      "LoRA": 41.3
-    },
-    "connection_count": 218,
-    "endorsements_received": 79,
-    "notice_period_days": 90,
-    "expected_salary_range_inr_lpa": {
-      "min": 22.8,
-      "max": 45.5
-    },
-    "preferred_work_mode": "flexible",
-    "willing_to_relocate": true,
-    "github_activity_score": 58.3,
-    "search_appearance_30d": 74,
-    "saved_by_recruiters_30d": 5,
-    "interview_completion_rate": 0.82,
-    "offer_acceptance_rate": 0.32,
-    "verified_email": true,
-    "verified_phone": false,
     "linkedin_connected": true
   }
 }

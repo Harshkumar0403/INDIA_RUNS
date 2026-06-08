@@ -123,65 +123,103 @@ def _export_minilm_torch_fallback():
 
 
 # ─────────────────────────────────────────────────────────────────
-# EXPORT 2: T5-small → ONNX int8
+# EXPORT 2: T5-small → ONNX (encoder + decoder separately)
+# reasoning.py expects:  models/t5_tmp/encoder_model.onnx
+#                        models/t5_tmp/decoder_with_past_model.onnx
+#                        models/t5_tokenizer/
 # ─────────────────────────────────────────────────────────────────
 def export_t5():
-    print("\n[2/2] Exporting T5-small (int8 quantized) to ONNX ...")
+    print("\n[2/2] Exporting T5-small to ONNX (encoder + decoder) ...")
 
-    if T5_OUT.exists():
-        print(f"  Already exists: {T5_OUT}  — skipping.")
+    t5_tmp = MODELS_DIR / "t5_tmp"
+    enc_out = t5_tmp / "encoder_model.onnx"
+    dec_out = t5_tmp / "decoder_with_past_model.onnx"
+
+    if enc_out.exists() and dec_out.exists():
+        print(f"  Already exists: {t5_tmp}/  — skipping.")
         return
+
+    t5_tmp.mkdir(exist_ok=True)
 
     try:
         from optimum.onnxruntime import ORTModelForSeq2SeqLM
-        from optimum.onnxruntime.configuration import AutoQuantizationConfig
         from transformers import AutoTokenizer
 
-        print(f"  Downloading from HuggingFace: {T5_HF}")
+        print(f"  Downloading T5-small from HuggingFace ...")
         tokenizer = AutoTokenizer.from_pretrained(T5_HF)
         tokenizer.save_pretrained(T5_TOK)
+        print(f"  Tokenizer saved → {T5_TOK}")
 
-        # Export to ONNX
-        tmp_dir = MODELS_DIR / "t5_tmp"
+        print(f"  Exporting T5 to ONNX (this takes 2-4 min) ...")
         model = ORTModelForSeq2SeqLM.from_pretrained(T5_HF, export=True)
-        model.save_pretrained(tmp_dir)
+        model.save_pretrained(t5_tmp)
 
-        # Quantize to int8
-        from optimum.onnxruntime import ORTQuantizer
-        from optimum.onnxruntime.configuration import AutoQuantizationConfig
+        # List what was exported
+        print(f"  Exported files:")
+        for f in sorted(t5_tmp.rglob("*.onnx")):
+            print(f"    {f.relative_to(MODELS_DIR)}  "
+                  f"({f.stat().st_size/1024/1024:.1f} MB)")
 
-        quantization_config = AutoQuantizationConfig.avx512_vnni(
-            is_static=False, per_channel=False
-        )
+        # Try int8 quantization on the decoder for speed
+        try:
+            from optimum.onnxruntime import ORTQuantizer
+            from optimum.onnxruntime.configuration import AutoQuantizationConfig
+            print(f"  Quantizing decoder to int8 ...")
+            qconfig = AutoQuantizationConfig.avx2(is_static=False, per_channel=False)
+            for component in ["decoder_model.onnx", "decoder_with_past_model.onnx"]:
+                src = t5_tmp / component
+                if src.exists():
+                    q = ORTQuantizer.from_pretrained(t5_tmp, file_name=component)
+                    q.quantize(save_dir=t5_tmp / "int8", quantization_config=qconfig)
+            print(f"  int8 quantized files saved to {t5_tmp}/int8/")
+        except Exception as qe:
+            print(f"  int8 quantization skipped ({qe}) — using fp32.")
 
-        # Quantize encoder and decoder
-        for component in ["encoder_model.onnx", "decoder_model.onnx",
-                          "decoder_with_past_model.onnx"]:
-            src = tmp_dir / component
-            if src.exists():
-                quantizer = ORTQuantizer.from_pretrained(tmp_dir, file_name=component)
-                quantizer.quantize(
-                    save_dir=tmp_dir / "int8",
-                    quantization_config=quantization_config,
-                )
-
-        # Move final model
-        int8_model = tmp_dir / "int8" / "decoder_model_quantized.onnx"
-        if int8_model.exists():
-            int8_model.rename(T5_OUT)
-            print(f"  Saved → {T5_OUT}  ({T5_OUT.stat().st_size/1024/1024:.1f} MB)")
-        else:
-            # Just copy the non-quantized encoder as fallback
-            enc = tmp_dir / "encoder_model.onnx"
-            if enc.exists():
-                import shutil
-                shutil.copy(enc, T5_OUT)
-                print(f"  Saved (non-quantized encoder) → {T5_OUT}")
-
+    except ImportError as e:
+        print(f"  Import error: {e}")
+        print(f"  Install: pip install optimum[onnxruntime] transformers")
+        _export_t5_torch_fallback(t5_tmp)
     except Exception as e:
-        print(f"  T5 export failed: {e}")
-        print("  The ranker will fall back to template-based reasoning.")
-        print("  Template reasoning is still grounded and non-hallucinating.")
+        print(f"  T5 ONNX export failed: {e}")
+        print(f"  Reasoning will use structured fallback (still grounded).")
+
+
+def _export_t5_torch_fallback(t5_tmp: Path):
+    """Fallback: export T5 encoder only via torch.onnx."""
+    print("  Trying torch.onnx fallback for T5 encoder ...")
+    try:
+        import torch
+        from transformers import AutoTokenizer, T5ForConditionalGeneration
+
+        tok   = AutoTokenizer.from_pretrained(T5_HF)
+        model = T5ForConditionalGeneration.from_pretrained(T5_HF)
+        model.eval()
+        tok.save_pretrained(T5_TOK)
+
+        enc_out = t5_tmp / "encoder_model.onnx"
+        dummy   = tok(["test"], return_tensors="pt", max_length=32,
+                      truncation=True, padding=True)
+        enc = model.encoder
+
+        with torch.no_grad():
+            torch.onnx.export(
+                enc,
+                (dummy["input_ids"], dummy["attention_mask"]),
+                str(enc_out),
+                input_names=["input_ids", "attention_mask"],
+                output_names=["last_hidden_state"],
+                dynamic_axes={
+                    "input_ids":        {0:"batch",1:"seq"},
+                    "attention_mask":   {0:"batch",1:"seq"},
+                    "last_hidden_state":{0:"batch",1:"seq"},
+                },
+                opset_version=13,
+            )
+        print(f"  T5 encoder saved → {enc_out}  "
+              f"({enc_out.stat().st_size/1024/1024:.1f} MB)")
+        print(f"  Note: decoder not exported — reasoning will use fallback.")
+    except Exception as e2:
+        print(f"  Torch fallback also failed: {e2}")
 
 
 # ─────────────────────────────────────────────────────────────────

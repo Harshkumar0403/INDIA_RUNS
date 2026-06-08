@@ -71,6 +71,20 @@ from utils import (
 from jd_parser import parse_jd, score_text_against_jd
 
 TODAY    = datetime(2026, 6, 2)
+
+# Issue D: phrases indicating candidate did NOT own production
+NOT_OWNER_PHRASES = [
+    "production deployment was handled by",
+    "deployment was handled by",
+    "was handled by the platform team",
+    "was handled by the infra team",
+    "pure ml side",
+    "my role was more on the modeling side than",
+    "not responsible for production",
+    "productionization was done by",
+]
+
+
 N_FEATS  = 25
 
 # ─────────────────────────────────────────────────────────────────
@@ -207,12 +221,15 @@ def feat_jd_section_scores(cand: dict, jd: dict) -> tuple:
 def feat_skill_evidence(cand: dict) -> tuple:
     """
     [8, 9, 10] Skill evidence quality features.
-    EDA: 96.2% of candidates are keyword stuffers (self_reported > 75%).
-    Production-proven: skill in career text + production cue words.
-    Context-verified: skill in career text only.
-    Self-reported: skills[] array only.
+    Issue D fix: if candidate explicitly says production was done by
+    someone else, production-proven score is halved.
     """
     career_text = get_career_text(cand)
+    career_low  = career_text.lower()
+
+    # Issue D: count "not my production" phrases
+    not_owner_count = sum(1 for ph in NOT_OWNER_PHRASES if ph in career_low)
+
     prod_text   = " ".join(
         (r.get("description", "") or "").lower()
         for r in cand.get("career_history", [])
@@ -241,6 +258,10 @@ def feat_skill_evidence(cand: dict) -> tuple:
     # normalize counts (max 5 production-proven is excellent)
     prod_score = min(prod_proven / 5.0, 1.0)
     ctx_score  = min(ctx_verified / 5.0, 1.0)
+
+    # Issue D: penalise if candidate explicitly said production was someone else's
+    if not_owner_count >= 2:
+        prod_score = prod_score * 0.40  # heavy discount
 
     return prod_score, ctx_score, stuffer_ratio
 
@@ -390,10 +411,11 @@ def feat_company_type_ratios(cand: dict) -> tuple:
 
 def feat_location_score(cand: dict) -> float:
     """
-    [18] Location fit: 1.0 = in target city, 0.5 = willing to relocate,
-    0.0 = outside India with no relocation.
-    JD: Pune/Noida preferred. Hyderabad, Bangalore, Mumbai, Delhi NCR welcome.
-    Outside India: case-by-case, no visa sponsorship.
+    [18] Location fit score.
+    Issue E fix: outside-India without relocation flag gets 0.05
+    (was 0.10) — JD explicitly says no visa sponsorship.
+    Outside-India WITH relocation willing gets 0.35 (was 0.5)
+    — still requires case-by-case approval per JD.
     """
     p       = cand["profile"]
     sig     = cand["redrob_signals"]
@@ -402,12 +424,17 @@ def feat_location_score(cand: dict) -> float:
     in_target = any(t in loc_str for t in TARGET_LOCATIONS)
     if in_target:
         return 1.0
-    if sig.get("willing_to_relocate"):
-        return 0.5
-    # Outside India entirely — low but not zero
-    if "india" not in loc_str:
-        return 0.1
-    return 0.3
+
+    in_india = "india" in loc_str or in_target
+    willing  = bool(sig.get("willing_to_relocate"))
+
+    if in_india and willing:
+        return 0.65   # Indian city but not preferred metro, willing to move
+    if in_india and not willing:
+        return 0.35   # Indian city, not willing to relocate within India
+    if not in_india and willing:
+        return 0.30   # Outside India but willing — case-by-case per JD
+    return 0.05       # Issue E: outside India, not willing — near-zero
 
 
 def feat_availability(cand: dict) -> float:

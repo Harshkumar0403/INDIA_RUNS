@@ -106,7 +106,16 @@ def rank_candidates(verbose: bool = True) -> list:
     # ── Step 1: Hard filter ───────────────────────────────────────
     if verbose:
         print(f"\n  [1/5] Hard filter ({N:,} candidates) ...")
-    eligible_mask, gate_log = apply_hard_filters(fm, ids, verbose=verbose)
+
+    # Load full candidate list for CV title hard gate
+    candidates_for_filter = load_candidates(
+        CANDIDATES_FILE, SAMPLE_FILE, verbose=False
+    )
+    eligible_mask, gate_log = apply_hard_filters(
+        fm, ids,
+        candidates=candidates_for_filter,
+        verbose=verbose,
+    )
     eligible_indices = get_eligible_indices(eligible_mask)
     n_eligible = len(eligible_indices)
     if verbose:
@@ -116,45 +125,71 @@ def rank_candidates(verbose: bool = True) -> list:
     if verbose:
         print(f"  Hard filter time: {t1-t_start:.1f}s")
 
-    # ── Step 2: FAISS retrieval ───────────────────────────────────
+    # ── Step 2: FAISS retrieval on eligible sub-index ────────────
+    # Root cause of previous bug: searching all 100k and filtering
+    # to eligible only returned 198/19,577 candidates because the
+    # JD embedding's top-15k didn't overlap with the eligible pool.
+    # Fix: extract eligible candidate embeddings from the full index,
+    # build a temporary sub-index of ONLY eligible candidates,
+    # then search that. Every search result is guaranteed eligible.
     if verbose:
-        print(f"\n  [2/5] FAISS retrieval (top-{FAISS_CFG['top_k_retrieval']:,}) ...")
+        print(f"\n  [2/5] FAISS retrieval on eligible sub-index ({n_eligible:,} candidates) ...")
 
     query = jd_vec.reshape(1, -1).astype(np.float32)
     faiss.normalize_L2(query)
 
-    # Search ALL candidates in FAISS, then filter to eligible
-    k_search = min(FAISS_CFG["top_k_retrieval"] * 3, N)
-    scores_raw, faiss_indices = index.search(query, k_search)
-    scores_raw  = scores_raw[0]
-    faiss_indices = faiss_indices[0]
+    # Reconstruct eligible embeddings from the full index
+    # faiss.IndexFlatIP stores vectors in order — we can retrieve by ID
+    all_vecs = faiss.rev_swig_ptr(index.get_xb(), index.ntotal * index.d)
+    all_vecs  = np.frombuffer(all_vecs, dtype=np.float32).reshape(index.ntotal, index.d)
+    eligible_vecs = all_vecs[eligible_indices].copy()  # shape (n_eligible, 384)
 
-    # Filter to only eligible candidates
-    eligible_set = set(eligible_indices.tolist())
-    filtered     = [
-        (idx, float(sc))
-        for idx, sc in zip(faiss_indices, scores_raw)
-        if idx in eligible_set and idx >= 0
-    ][:FAISS_CFG["top_k_retrieval"]]
+    # Build temporary flat sub-index of eligible candidates only
+    sub_index = faiss.IndexFlatIP(index.d)
+    sub_index.add(eligible_vecs)
 
-    top_k_indices  = np.array([x[0] for x in filtered], dtype=np.int64)
-    top_k_cosines  = np.array([x[1] for x in filtered], dtype=np.float32)
-    n_retrieved    = len(top_k_indices)
+    # Search sub-index — every result is eligible by construction
+    k_search = min(FAISS_CFG["top_k_retrieval"], n_eligible)
+    sub_scores, sub_positions = sub_index.search(query, k_search)
+    sub_scores    = sub_scores[0]
+    sub_positions = sub_positions[0]   # positions in eligible_indices array
+
+    # Map sub-index positions back to original feature_matrix indices
+    valid = [(eligible_indices[pos], float(sc))
+             for pos, sc in zip(sub_positions, sub_scores)
+             if pos >= 0 and pos < n_eligible]
+
+    top_k_indices = np.array([x[0] for x in valid], dtype=np.int64)
+    top_k_cosines = np.array([x[1] for x in valid], dtype=np.float32)
+    n_retrieved   = len(top_k_indices)
 
     if verbose:
         print(f"  Retrieved: {n_retrieved:,} eligible candidates")
         t2 = time.time()
         print(f"  FAISS time: {t2-t1:.1f}s")
 
-    # ── Step 3: KG scores for retrieved candidates ────────────────
+    # ── Step 3: KG scores + saved_by_recruiters for retrieved candidates
     if verbose:
         print(f"\n  [3/5] KG arc scores ...")
 
-    kg_score_arr = np.zeros(n_retrieved, dtype=np.float32)
+    kg_score_arr        = np.zeros(n_retrieved, dtype=np.float32)
+    saved_recruiters_arr = np.zeros(n_retrieved, dtype=np.int32)
+
+    all_candidates_lookup = load_candidates(
+        CANDIDATES_FILE, SAMPLE_FILE, verbose=False
+    )
+    cand_id_to_saved = {
+        c.get("candidate_id", ""): int(
+            c.get("redrob_signals", {}).get("saved_by_recruiters_30d", 0) or 0
+        )
+        for c in all_candidates_lookup
+    }
+
     for j, idx in enumerate(top_k_indices):
         cid = ids[idx]
         kg  = kg_feats.get(cid, {})
-        kg_score_arr[j] = float(kg.get("kg_score", 0.0))
+        kg_score_arr[j]         = float(kg.get("kg_score", 0.0))
+        saved_recruiters_arr[j] = cand_id_to_saved.get(cid, 0)
 
     # ── Step 4: Scoring matrix ────────────────────────────────────
     if verbose:
@@ -165,6 +200,7 @@ def rank_candidates(verbose: bool = True) -> list:
         faiss_cosine_scores = top_k_cosines,
         kg_scores           = kg_score_arr,
         candidate_indices   = top_k_indices,
+        saved_by_recruiters = saved_recruiters_arr,
     )
 
     # Sort by final score descending
@@ -223,7 +259,7 @@ def rank_candidates(verbose: bool = True) -> list:
     reasoning_map = generate_all_reasoning(
         top_candidates_for_reasoning,
         jd_context=jd_context,
-        use_t5=True,
+        use_llm=True,
     )
 
     # Attach reasoning to rows

@@ -1,4 +1,16 @@
 INDIA_RUNS_Assets/** filter=lfs diff=lfs merge=lfs -text
+models/t5_tokenizer filter=lfs diff=lfs merge=lfs -text
+models/minilm_l6.onnx filter=lfs diff=lfs merge=lfs -text
+models/minilm_tmp filter=lfs diff=lfs merge=lfs -text
+models/minilm_tokenizer filter=lfs diff=lfs merge=lfs -text
+models/t5_small_int8.onnx filter=lfs diff=lfs merge=lfs -text
+models/t5_tmp filter=lfs diff=lfs merge=lfs -text
+artifacts/candidate_ids.pkl filter=lfs diff=lfs merge=lfs -text
+artifacts/faiss_index.bin filter=lfs diff=lfs merge=lfs -text
+artifacts/feature_matrix.pkl filter=lfs diff=lfs merge=lfs -text
+artifacts/jd_embedding.npy filter=lfs diff=lfs merge=lfs -text
+artifacts/kg_features.pkl filter=lfs diff=lfs merge=lfs -text
+artifacts/role_embeddings.pkl filter=lfs diff=lfs merge=lfs -text
 *.onnx filter=lfs diff=lfs merge=lfs -text
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.npy filter=lfs diff=lfs merge=lfs -text

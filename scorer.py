@@ -38,6 +38,7 @@ IDX_JD_NEG       = 7
 IDX_PROD_PROVEN  = 8
 IDX_CTX_VER      = 9
 IDX_STUFFER      = 10
+IDX_CV_SPEECH    = 12   # cv/speech dominant gate (Issue B)
 IDX_PROD_RATIO   = 16
 IDX_LOC          = 18
 IDX_AVAIL        = 19
@@ -48,6 +49,17 @@ IDX_GITHUB       = 23
 IDX_EDUCATION    = 24
 
 EV_MULT = SCORING["skill_evidence_multipliers"]
+
+# Issue 1: outside-India multiplicative location gates
+# location_score thresholds: ≥1.0=india_target, 0.65=india_non_metro,
+# 0.35=india_unwilling, 0.30=outside_willing, 0.05=outside_unwilling
+OUTSIDE_INDIA_WILLING_MULT  = 0.55  # outside India, willing to relocate
+OUTSIDE_INDIA_NO_RELOC_MULT = 0.30  # outside India, NOT willing — strong penalty
+
+# Issue 6: saved_by_recruiters threshold for availability boost
+# ≥25 saves in 30d = market interest signal, partially offsets inactivity
+SAVED_RECRUITERS_BOOST_THRESHOLD = 25
+SAVED_RECRUITERS_AVAIL_BONUS     = 0.08
 
 
 def compute_semantic_score(
@@ -117,29 +129,39 @@ def compute_skill_idf_score(
     return float(np.clip(skill_score, 0.0, 1.0))
 
 
+# Issue B: CV-primary titles that should be penalised structurally
+CV_PRIMARY_TITLES_LOWER = {
+    'computer vision engineer', 'cv engineer', 'vision engineer',
+    'computer vision researcher', 'computer vision scientist',
+}
+
 def compute_structural_score(
     title_relevance: float,
     yoe_score: float,
     product_ratio: float,
     kg_score: float,
     education_score: float,
+    current_title: str = "",
 ) -> float:
     """
     Structural score: career arc quality + role relevance.
-    Combines title, YoE fit, product-company history, KG arc,
-    and education tier.
-
-    KG score gets highest weight (career arc insight from paper).
-    Returns float [0, 1].
+    Issue B fix: CV-primary titles get a 0.30 cap on structural score
+    regardless of KG arc or education — the JD explicitly rejects them.
     """
     structural = (
         title_relevance  * 0.20 +
         yoe_score        * 0.10 +
         product_ratio    * 0.10 +
-        kg_score         * 0.50 +   # KG arc is primary structural signal
+        kg_score         * 0.50 +
         education_score  * 0.10
     )
-    return float(np.clip(structural, 0.0, 1.0))
+    result = float(np.clip(structural, 0.0, 1.0))
+
+    # Issue B: hard cap for CV-primary titles
+    if current_title.lower() in CV_PRIMARY_TITLES_LOWER:
+        result = min(result, 0.30)
+
+    return result
 
 
 def compute_availability_multiplier(
@@ -147,14 +169,15 @@ def compute_availability_multiplier(
     open_to_work: float,
     notice_score: float,
     response_rate: float,
+    saved_by_recruiters: int = 0,
 ) -> float:
     """
     Availability multiplier — applied multiplicatively to final score.
-    A candidate with perfect skills but zero availability gets near-zero.
 
-    Base: exponential decay (already computed in feature_extractor).
-    Modifiers: OTW flag, notice period, response rate.
-    Floor: AVAILABILITY['min_availability'] to avoid true zeros.
+    Issue 6 fix: saved_by_recruiters_30d is now factored in.
+    A candidate saved by 25+ recruiters in 30 days is clearly active
+    in the market even if their platform login is 47 days ago.
+    High saved count partially offsets inactivity penalty.
     """
     mult = avail_decay   # already e^(-λt)
 
@@ -170,6 +193,11 @@ def compute_availability_multiplier(
     # Low response rate — candidate unlikely to engage
     if response_rate < AVAILABILITY["low_response_threshold"]:
         mult *= AVAILABILITY["low_response_mult"]
+
+    # Issue 6: saved by many recruiters = market interest signal
+    # partially offsets inactivity (cap boost at +8%)
+    if saved_by_recruiters >= SAVED_RECRUITERS_BOOST_THRESHOLD:
+        mult = min(1.0, mult + SAVED_RECRUITERS_AVAIL_BONUS)
 
     # Apply floor
     return float(np.clip(mult, AVAILABILITY["min_availability"], 1.0))
@@ -197,6 +225,7 @@ def score_candidates(
     faiss_cosine_scores: np.ndarray,
     kg_scores: np.ndarray,
     candidate_indices: np.ndarray,
+    saved_by_recruiters: np.ndarray = None,
 ) -> np.ndarray:
     """
     Compute final scores for a set of candidates.
@@ -206,12 +235,16 @@ def score_candidates(
         faiss_cosine_scores: shape (M,) — cosine sims from FAISS for M candidates
         kg_scores:           shape (M,) — KG arc scores for M candidates
         candidate_indices:   shape (M,) — row indices into feature_matrix
+        saved_by_recruiters: shape (M,) — saved_by_recruiters_30d per candidate
+                             (optional; zeros if not provided)
 
     Returns:
         scores: float32 array shape (M,) — final composite scores
     """
     M      = len(candidate_indices)
     scores = np.zeros(M, dtype=np.float32)
+    if saved_by_recruiters is None:
+        saved_by_recruiters = np.zeros(M, dtype=np.int32)
 
     W = SCORING
 
@@ -234,19 +267,22 @@ def score_candidates(
             stuffer_ratio  = float(row[IDX_STUFFER]),
         )
 
-        structural = compute_structural_score(
+        # Issue B: cv_speech_dominant flag caps structural score
+        raw_structural = compute_structural_score(
             title_relevance = float(row[IDX_TITLE_REL]),
             yoe_score       = float(row[IDX_YOE]),
             product_ratio   = float(row[IDX_PROD_RATIO]),
             kg_score        = float(kg_scores[j]),
             education_score = float(row[IDX_EDUCATION]),
         )
+        structural = min(raw_structural, 0.30) if row[IDX_CV_SPEECH] > 0.5 else raw_structural
 
         avail_mult = compute_availability_multiplier(
-            avail_decay  = float(row[IDX_AVAIL]),
-            open_to_work = float(row[IDX_OTW]),
-            notice_score = float(row[IDX_NOTICE]),
-            response_rate= float(row[IDX_RESPONSE]),
+            avail_decay         = float(row[IDX_AVAIL]),
+            open_to_work        = float(row[IDX_OTW]),
+            notice_score        = float(row[IDX_NOTICE]),
+            response_rate       = float(row[IDX_RESPONSE]),
+            saved_by_recruiters = int(saved_by_recruiters[j]),
         )
 
         behavioral = compute_behavioral_score(
@@ -265,6 +301,17 @@ def score_candidates(
 
         # Multiplicative availability — punishes inaccessible candidates
         final = composite * avail_mult
+
+        # Issue 1: location gate — outside India candidates get a hard
+        # multiplicative penalty regardless of technical strength.
+        # location_score: 1.0=india_target, 0.65=india_non_metro,
+        # 0.35=india_unwilling, 0.30=outside+willing, 0.05=outside+unwilling
+        loc = float(row[IDX_LOC])
+        if loc <= 0.10:   # outside India, not willing to relocate
+            final *= OUTSIDE_INDIA_NO_RELOC_MULT
+        elif loc <= 0.32:  # outside India, willing to relocate
+            final *= OUTSIDE_INDIA_WILLING_MULT
+
         scores[j] = float(np.clip(final, 0.0, 1.0))
 
     return scores
@@ -291,11 +338,12 @@ def score_breakdown(
         float(row[IDX_PROD_PROVEN]), float(row[IDX_CTX_VER]),
         float(row[IDX_STUFFER]),
     )
-    structural = compute_structural_score(
+    raw_structural = compute_structural_score(
         float(row[IDX_TITLE_REL]), float(row[IDX_YOE]),
         float(row[IDX_PROD_RATIO]), kg_score,
         float(row[IDX_EDUCATION]),
     )
+    structural = min(raw_structural, 0.30) if row[IDX_CV_SPEECH] > 0.5 else raw_structural
     avail_mult = compute_availability_multiplier(
         float(row[IDX_AVAIL]), float(row[IDX_OTW]),
         float(row[IDX_NOTICE]), float(row[IDX_RESPONSE]),
