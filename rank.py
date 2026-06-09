@@ -12,12 +12,12 @@ Pipeline:
   4. Score matrix — 5-dim multiplicative scoring
   5. KG deep analysis — top-500 get causal arc scoring
   6. Final ranking — top-100 with reasoning strings
-  7. Write submission.csv
+  7. Write Harsh_0403.csv
 
 Run:
     python rank.py
 Output:
-    submission.csv  (100 rows: candidate_id, rank, score, reasoning)
+    Harsh_0403.csv  (100 rows: candidate_id, rank, score, reasoning)
 """
 
 import sys
@@ -172,17 +172,16 @@ def rank_candidates(verbose: bool = True) -> list:
     if verbose:
         print(f"\n  [3/5] KG arc scores ...")
 
-    kg_score_arr        = np.zeros(n_retrieved, dtype=np.float32)
+    kg_score_arr         = np.zeros(n_retrieved, dtype=np.float32)
     saved_recruiters_arr = np.zeros(n_retrieved, dtype=np.int32)
 
-    all_candidates_lookup = load_candidates(
-        CANDIDATES_FILE, SAMPLE_FILE, verbose=False
-    )
+    # Reuse candidates_for_filter — already in memory from step 1.
+    # This avoids a second 100k load which OOMs in Docker.
     cand_id_to_saved = {
         c.get("candidate_id", ""): int(
             c.get("redrob_signals", {}).get("saved_by_recruiters_30d", 0) or 0
         )
-        for c in all_candidates_lookup
+        for c in candidates_for_filter
     }
 
     for j, idx in enumerate(top_k_indices):
@@ -221,9 +220,10 @@ def rank_candidates(verbose: bool = True) -> list:
     if verbose:
         print(f"\n  [5/5] Generating reasoning for top-{top_n} ...")
 
-    # Load full candidates for reasoning (only top-100 needed)
-    all_candidates = load_candidates(CANDIDATES_FILE, SAMPLE_FILE, verbose=False)
-    cand_id_to_obj = {c.get("candidate_id",""): c for c in all_candidates}
+    # Reuse the candidates already loaded for filtering (step 1)
+    # to avoid a second full 100k load which OOMs in Docker.
+    # candidates_for_filter was loaded at the start of rank_candidates.
+    cand_id_to_obj = {c.get("candidate_id",""): c for c in candidates_for_filter}
 
     top_candidates_for_reasoning = []
     final_rows = []
@@ -256,6 +256,11 @@ def rank_candidates(verbose: bool = True) -> list:
         })
 
     # Generate reasoning strings
+    # use_llm=False — structured fallback is more accurate than T5-small.
+    # T5-small (60M params) hallucinates retrieval concept names — it generates
+    # "pinecone" or "ndcg" regardless of what the candidate actually used.
+    # The structured fallback directly reads career text and extracts exact
+    # facts, giving grounded non-hallucinated reasoning verified to be correct.
     reasoning_map = generate_all_reasoning(
         top_candidates_for_reasoning,
         jd_context=jd_context,
@@ -286,6 +291,17 @@ def write_submission(final_rows: list, output_path: Path = None) -> Path:
     """Write submission CSV in the required format."""
     path = output_path or SUBMISSION_FILE
 
+    def clean_text(text: str) -> str:
+        """Replace unicode punctuation with ASCII equivalents."""
+        return (str(text)
+                .replace("\u2014", "--")   # em-dash → --
+                .replace("\u2013", "-")    # en-dash → -
+                .replace("\u2192", "->")   # arrow → ->
+                .replace("\u2019", "'")    # right single quote
+                .replace("\u2018", "'")    # left single quote
+                .replace("\u201c", '"')    # left double quote
+                .replace("\u201d", '"'))   # right double quote
+
     with open(path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(
             f, fieldnames=["candidate_id", "rank", "score", "reasoning"]
@@ -296,7 +312,7 @@ def write_submission(final_rows: list, output_path: Path = None) -> Path:
                 "candidate_id": row["candidate_id"],
                 "rank":         row["rank"],
                 "score":        row["score"],
-                "reasoning":    row["reasoning"],
+                "reasoning":    clean_text(row["reasoning"]),
             })
 
     size_kb = path.stat().st_size / 1024
