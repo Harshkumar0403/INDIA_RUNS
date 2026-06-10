@@ -83,25 +83,8 @@ the same keywords in a disconnected or consulting-heavy career.
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Export ONNX models (one time, needs internet, ~5 min)
-python export_onnx.py
-
-# 3. Build index artifacts (one time, ~50 min on 100k candidates)
-python build_index.py
-
-# 4. Run ranking → produces Harsh_0403.csv
+# 2. Run ranking → produces Harsh_0403.csv
 python rank.py
-```
-
-**Quick test on sample data (no artifacts needed):**
-```bash
-python mini_ranker.py
-# → produces sample_rank.csv from sample_candidates.json
-```
-
-**Custom input:**
-```bash
-python mini_ranker.py --candidates your_candidates.json --out output.csv
 ```
 
 ---
