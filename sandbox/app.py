@@ -381,122 +381,13 @@ st.markdown("---")
 # ══════════════════════════════════════════════════════════════════
 # SECTION 3 — Full 100k Ranking
 # ══════════════════════════════════════════════════════════════════
-st.markdown("## 🏆 Section 3 — Full Ranking (100,000 Candidates)")
-st.markdown("""
-Triggers the complete ArcRank pipeline on the full 100,000-candidate dataset.
-Uses precomputed artifacts (FAISS index, feature matrix, career KGs) so the
-ranking step completes in under **5 minutes on CPU** — no GPU, no API calls.
 
-> ⚠️ **Note:** This requires the full dataset and prebuilt artifacts to be present on the server.
-> On Streamlit Cloud this section shows a download link to the pre-generated result.
-> To run locally with the full dataset, use `python rank.py` directly.
-""")
-
-full_col1, full_col2 = st.columns([1, 2])
-
-with full_col1:
-    full_rank_btn = st.button(
-        "⚡ Run Full 100k Ranking",
-        type="primary",
-        use_container_width=True,
-        help="Runs rank.py — requires prebuilt artifacts and candidates.jsonl"
-    )
-
-with full_col2:
-    # Check if a pre-generated result exists
-    prebuilt_csv = ROOT / "Harsh_0403.csv"
-    if prebuilt_csv.exists():
-        st.download_button(
-            label     = "⬇️ Download Pre-generated Harsh_0403.csv",
-            data      = prebuilt_csv.read_text(encoding="utf-8"),
-            file_name = "Harsh_0403.csv",
-            mime      = "text/csv",
-            help      = "Pre-generated ranking from the full 100k dataset"
-        )
-    else:
-        st.caption("No pre-generated result found. Run the pipeline above.")
-
-if full_rank_btn:
-    candidates_file = ROOT / "INDIA_RUNS_Assets" / "candidates.jsonl"
-    artifacts_ok    = all([
-        (ROOT / "artifacts" / f).exists()
-        for f in ["feature_matrix.pkl","faiss_index.bin","kg_features.pkl","jd_embedding.npy"]
-    ])
-
-    if not candidates_file.exists():
-        st.error(
-            "candidates.jsonl not found at INDIA_RUNS_Assets/candidates.jsonl.\n"
-            "This section requires the full dataset. On Streamlit Cloud, "
-            "download the pre-generated Harsh_0403.csv above."
-        )
-    elif not artifacts_ok:
-        st.error(
-            "Prebuilt artifacts missing. Run `python build_index.py` first "
-            "to generate the FAISS index and feature matrix."
-        )
-    else:
-        st.info("Running full ranking pipeline — this takes 30–90 seconds...")
-        progress_full = st.progress(0, text="Starting rank.py ...")
-        log_full      = st.empty()
-
-        try:
-            t0 = time.time()
-            progress_full.progress(10, text="Running rank.py ...")
-
-            # Run rank.py as a subprocess so its output streams to the log
-            result = subprocess.run(
-                [sys.executable, "-u", str(ROOT / "rank.py")],
-                capture_output=True, text=True,
-                cwd=str(ROOT), timeout=360,
-            )
-
-            elapsed_full = time.time() - t0
-            progress_full.progress(100, text="Done!")
-
-            if result.returncode != 0:
-                st.error("rank.py exited with an error:")
-                st.code(result.stderr[-2000:])
-            else:
-                # Show live output
-                log_full.code(result.stdout[-3000:], language=None)
-                st.success(f"✅ Full ranking complete in {elapsed_full:.1f}s")
-
-                # Load and display results
-                out_csv = ROOT / "Harsh_0403.csv"
-                if out_csv.exists():
-                    csv_content = out_csv.read_text(encoding="utf-8")
-                    st.download_button(
-                        label     = "⬇️ Download Harsh_0403.csv",
-                        data      = csv_content,
-                        file_name = "Harsh_0403.csv",
-                        mime      = "text/csv",
-                        use_container_width=False,
-                    )
-                    # Display top-10
-                    import csv as csv_mod, io
-                    reader = list(csv_mod.DictReader(io.StringIO(csv_content)))
-                    top10 = reader[:10]
-                    df_full = pd.DataFrame([{
-                        "Rank":         r["rank"],
-                        "Candidate ID": r["candidate_id"],
-                        "Score":        r["score"],
-                        "Reasoning":    r["reasoning"][:200],
-                    } for r in top10])
-                    st.markdown("**Top-10 from full ranking:**")
-                    st.dataframe(df_full, use_container_width=True, hide_index=True)
-
-        except subprocess.TimeoutExpired:
-            st.error("rank.py timed out after 6 minutes. "
-                     "Check that all artifacts are prebuilt.")
-        except Exception as e:
-            st.error(f"Error running rank.py: {e}")
 
 # ── footer ────────────────────────────────────────────────────────
 st.markdown("---")
 st.markdown("""
 <div style='text-align:center; color:#94a3b8; font-size:0.82em; padding: 1rem 0;'>
     🕸️ <strong>ArcRank</strong> — Intelligent Hiring via Career Arc Analysis &nbsp;·&nbsp;
-    IIT Guwahati 2026 &nbsp;·&nbsp;
     Event-Centric KG &nbsp;·&nbsp; ONNX MiniLM-L6-v2 &nbsp;·&nbsp;
     CPU-only &nbsp;·&nbsp; No external API calls
 </div>
